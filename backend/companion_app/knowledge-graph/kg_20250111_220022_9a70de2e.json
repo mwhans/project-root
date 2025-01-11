@@ -1,0 +1,347 @@
+[
+  {
+    "entities": [
+      {
+        "name": "Bulldog",
+        "type": "Dog Breed",
+        "description": "The English Bulldog is typically friendly, loyal, and good with other pets and children. They are known to be calm and even lazy, serving as four-legged companions. Despite their reputation for being lazy, Bulldogs benefit from daily exercise. They typically don\u2019t need a significant amount of exercise, but it can be helpful\u2014especially in those that are overweight."
+      },
+      {
+        "name": "Feeding Bulldogs",
+        "type": "Dog Care",
+        "description": "Adult Bulldogs should be fed twice a day, in morning and evening. English Bulldog puppies need to eat more frequently (about three or four times daily). Some English Bulldogs may require a slow feeder bowl so they don\u2019t eat too quickly, which can result in regurgitation or aspiration pneumonia."
+      },
+      {
+        "name": "Bulldog Supplements",
+        "type": "Dog Care",
+        "description": "There are many dog supplements that can help maintain the overall health of your Bulldog. These include Omega-3 fatty acids, joint supplements that contain glucosamine, probiotics, and immune-boosting supplements."
+      },
+      {
+        "name": "Bulldog Grooming",
+        "type": "Dog Care",
+        "description": "The English Bulldog has a short, smooth hair coat with a moderate shedding level. Their wrinkly skin requires frequent and time-consuming grooming. The skin wrinkles and folds around a Bulldog\u2019s face, neck, and tail should be evaluated and cleaned daily."
+      },
+      {
+        "name": "Bulldog Training",
+        "type": "Dog Care",
+        "description": "Begin training and socializing your English Bulldog puppy as soon as you bring them home. Bulldogs respond best to positive reinforcement training. Treats should never make up more than 10% of your dog\u2019s daily calorie intake."
+      },
+      {
+        "name": "Bulldog Health Considerations",
+        "type": "Dog Care",
+        "description": "Bulldogs have potential health issues, sensitivity to heat, weight management requirements, and grooming needs. These considerations are important because they can greatly affect the overall lifestyle of the English Bulldog. They may require lifelong medical care and may ultimately need surgical intervention or a referral to a specialist veterinarian to fully alleviate these medical issues."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "The Bulldog, commonly called the English Bulldog, is well known for their wide stance; muscular low profile; and short, wrinkled face with an underbite. They are short (at only 14\u201315 inches tall), weigh a sturdy 40\u201350 pounds, and have drooping lips with many loose skin wrinkles and folds throughout their face and neck."
+      },
+      {
+        "name": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "type": "Health Condition",
+        "description": "Bulldogs commonly have brachycephalic obstructive airway syndrome (BOAS). This condition is caused by a combination of anatomical abnormalities that can be present due to the breed\u2019s flat face, including narrowed nose openings, elongated soft palate in the mouth, swelling in the larynx, and compressed/distorted nasal passages. This leads to difficulty breathing and a propensity to overheat."
+      },
+      {
+        "name": "Skin Fold Pyoderma and Allergies",
+        "type": "Health Condition",
+        "description": "The excessive skin wrinkles throughout a Bulldog\u2019s face and neck can cause skin issues. Any time an English Bulldog gets wet, their wrinkles can trap moisture if they are not properly dried. The warm, moist environment provides the perfect habitat for bacteria and/or yeast growth\u2014commonly referred to as skin fold pyoderma."
+      },
+      {
+        "name": "Hip Dysplasia",
+        "type": "Health Condition",
+        "description": "It\u2019s extremely common for Bulldogs to develop hip dysplasia, a condition in which the hip joint does not function properly. Because the English Bulldog\u2019s hip joints are elevated above shoulder height, the abnormal position causes the thigh bone (femur) to fit awkwardly in the pelvis at the hip joint."
+      },
+      {
+        "name": "Entropion",
+        "type": "Health Condition",
+        "description": "The English Bulldog can develop entropion, which is the inward rolling-in of the eyelids (usually the lower eyelids). This condition causes the outer hair of the eyelid to make contact with the surface of the eyeball. Entropion can irritate the eye, causing redness, pain, swelling, and discharge."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Condition",
+        "description": "The English Bulldog is prone to obesity, and the extra weight can exacerbate other health concerns. To help prevent unnecessary weight gain, be diligent about the type and amount of food you give your Bulldog."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "The Bulldog, commonly called the English Bulldog, is well known for their wide stance; muscular low profile; and short, wrinkled face with an underbite. They are short (at only 14\u201315 inches tall), weigh a sturdy 40\u201350 pounds, and have drooping lips with many loose skin wrinkles and folds throughout their face and neck."
+      },
+      {
+        "name": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "type": "Health Condition",
+        "description": "Bulldogs commonly have brachycephalic obstructive airway syndrome (BOAS). This condition is caused by a combination of anatomical abnormalities that can be present due to the breed\u2019s flat face, including narrowed nose openings, elongated soft palate in the mouth, swelling in the larynx, and compressed/distorted nasal passages. This leads to difficulty breathing and a propensity to overheat."
+      },
+      {
+        "name": "Skin Fold Pyoderma and Allergies",
+        "type": "Health Condition",
+        "description": "The excessive skin wrinkles throughout a Bulldog\u2019s face and neck can cause skin issues. Any time an English Bulldog gets wet, their wrinkles can trap moisture if they are not properly dried. The warm, moist environment provides the perfect habitat for bacteria and/or yeast growth\u2014commonly referred to as skin fold pyoderma. Allergies also commonly affect Bulldogs, which can lead to skin infection and pyoderma as well."
+      },
+      {
+        "name": "Hip Dysplasia",
+        "type": "Health Condition",
+        "description": "It\u2019s extremely common for Bulldogs to develop hip dysplasia, a condition in which the hip joint does not function properly. Because the English Bulldog\u2019s hip joints are elevated above shoulder height, the abnormal position causes the thigh bone (femur) to fit awkwardly in the pelvis at the hip joint. This abnormal position creates an unstable hip joint, which can lead to arthritis and possible bone fractures over time."
+      },
+      {
+        "name": "Entropion",
+        "type": "Health Condition",
+        "description": "The English Bulldog can develop entropion, which is the inward rolling-in of the eyelids (usually the lower eyelids). This condition causes the outer hair of the eyelid to make contact with the surface of the eyeball. Entropion can irritate the eye, causing redness, pain, swelling, and discharge."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Condition",
+        "description": "The English Bulldog is prone to obesity, and the extra weight can exacerbate other health concerns. To help prevent unnecessary weight gain, be diligent about the type and amount of food you give your Bulldog."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "The English Bulldog is typically friendly, loyal, and good with other pets and children. They are known to be calm and even lazy, serving as four-legged companions. They have a short, smooth hair coat with a moderate shedding level and their coats can come in a wide range of colors and combinations. Their wrinkly skin requires frequent and time-consuming grooming."
+      },
+      {
+        "name": "Feeding",
+        "type": "Activity",
+        "description": "Adult Bulldogs should be fed twice a day, in the morning and evening. English Bulldog puppies need to eat more frequently, about three or four times daily. Some English Bulldogs may require a slow feeder bowl so they don\u2019t eat too quickly, which can result in regurgitation or aspiration pneumonia."
+      },
+      {
+        "name": "Exercise",
+        "type": "Activity",
+        "description": "Despite their reputation for being lazy, Bulldogs benefit from daily exercise. They typically don\u2019t need a significant amount of exercise, but it can be helpful\u2014especially in those that are overweight. Bulldogs that are prone to or have been diagnosed with brachycephalic obstructive airway syndrome might not tolerate any exercise without having breathing issues."
+      },
+      {
+        "name": "Training",
+        "type": "Activity",
+        "description": "Bulldogs need to be well-trained and socialized to be confident and well-mannered. Bulldogs respond best to positive reinforcement training. Treats should never make up more than 10% of your dog\u2019s daily calorie intake."
+      },
+      {
+        "name": "Grooming",
+        "type": "Activity",
+        "description": "The skin wrinkles and folds around a Bulldog\u2019s face, neck, and tail should be evaluated and cleaned daily. English Bulldogs should be bathed once a week to every other week, with special attention given to their skin wrinkles/folds. Brushing your English Bulldog once a week with a soft bristle brush is recommended to help maintain a healthy coat."
+      },
+      {
+        "name": "Health Considerations",
+        "type": "Health",
+        "description": "Because of their health considerations, there are many dog supplements that can help maintain the overall health of your Bulldog. These include Omega-3 fatty acids, joint supplements that contain glucosamine, probiotics, and immune-boosting supplements."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "The English Bulldog is typically friendly, loyal, and good with other pets and children. They are known to be calm and even lazy, serving as four-legged companions. They have a short, smooth hair coat with a moderate shedding level and their coats can come in a wide range of colors and combinations. Their wrinkly skin requires frequent and time-consuming grooming."
+      },
+      {
+        "name": "Bulldog's Health Issues",
+        "type": "Health Condition",
+        "description": "Bulldogs can be prone to health issues such as brachycephalic obstructive airway syndrome, eye issues, allergies, and skin infections. They may require lifelong medical care and may ultimately need surgical intervention or a referral to a specialist veterinarian to fully alleviate these medical issues."
+      },
+      {
+        "name": "Bulldog's Weight Management",
+        "type": "Health Condition",
+        "description": "Bulldogs require careful weight management due to their propensity for weight gain. Treats should never make up more than 10% of your dog\u2019s daily calorie intake."
+      },
+      {
+        "name": "Bulldog's Grooming Needs",
+        "type": "Care Requirement",
+        "description": "Bulldogs require frequent and time-consuming grooming due to their wrinkly skin. Their skin wrinkles and folds around their face, neck, and tail should be evaluated and cleaned daily."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "The Bulldog, commonly called the English Bulldog, is well known for their wide stance; muscular low profile; and short, wrinkled face with an underbite. They have drooping lips with many loose skin wrinkles and folds throughout their face and neck. They\u2019re now calm\u2014even lazy\u2014dogs that serve as four-legged companions."
+      },
+      {
+        "name": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "type": "Health Condition",
+        "description": "Bulldogs commonly have brachycephalic obstructive airway syndrome (BOAS). This condition is caused by a combination of anatomical abnormalities that can be present due to the breed\u2019s flat face, including: Narrowed nose openings, Elongated soft palate in the mouth, Swelling in the larynx, Compressed/distorted nasal passages. This leads to difficulty breathing and a propensity to overheat."
+      },
+      {
+        "name": "Skin Fold Pyoderma and Allergies",
+        "type": "Health Condition",
+        "description": "The excessive skin wrinkles throughout a Bulldog\u2019s face and neck can cause skin issues. Any time an English Bulldog gets wet, their wrinkles can trap moisture if they are not properly dried. The warm, moist environment provides the perfect habitat for bacteria and/or yeast growth\u2014commonly referred to as skin fold pyoderma."
+      },
+      {
+        "name": "Hip Dysplasia",
+        "type": "Health Condition",
+        "description": "It\u2019s extremely common for Bulldogs to develop hip dysplasia, a condition in which the hip joint does not function properly. Because the English Bulldog\u2019s hip joints are elevated above shoulder height, the abnormal position causes the thigh bone (femur) to fit awkwardly in the pelvis at the hip joint."
+      },
+      {
+        "name": "Entropion",
+        "type": "Health Condition",
+        "description": "The English Bulldog can develop entropion, which is the inward rolling-in of the eyelids (usually the lower eyelids). This condition causes the outer hair of the eyelid to make contact with the surface of the eyeball. Entropion can irritate the eye, causing redness, pain, swelling, and discharge."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Condition",
+        "description": "The English Bulldog is prone to obesity, and the extra weight can exacerbate other health concerns. To help prevent unnecessary weight gain, be diligent about the type and amount of food you give your Bulldog."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Bulldog",
+        "target": "Feeding Bulldogs",
+        "relation_type": "requires",
+        "description": "Bulldogs require specific feeding schedules and methods to maintain their health."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bulldog Supplements",
+        "relation_type": "may benefit from",
+        "description": "Bulldogs may benefit from certain supplements to maintain their overall health."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bulldog Grooming",
+        "relation_type": "requires",
+        "description": "Bulldogs require frequent and time-consuming grooming due to their short, smooth hair coat and wrinkly skin."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bulldog Training",
+        "relation_type": "requires",
+        "description": "Bulldogs require training and socialization from a young age."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bulldog Health Considerations",
+        "relation_type": "has",
+        "description": "Bulldogs have potential health issues, sensitivity to heat, weight management requirements, and grooming needs that pet parents need to consider."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to Brachycephalic Obstructive Airway Syndrome (BOAS) due to their flat face and anatomical abnormalities."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Fold Pyoderma and Allergies",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to skin fold pyoderma and allergies due to their excessive skin wrinkles."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Hip Dysplasia",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to hip dysplasia due to the abnormal position of their hip joints."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Entropion",
+        "relation_type": "prone to",
+        "description": "English Bulldogs can develop entropion, which causes the eyelids to roll inward and irritate the eye."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Obesity",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to obesity, and the extra weight can exacerbate other health concerns."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to Brachycephalic Obstructive Airway Syndrome (BOAS) due to their flat face and anatomical abnormalities."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Fold Pyoderma and Allergies",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to skin fold pyoderma and allergies due to their excessive skin wrinkles."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Hip Dysplasia",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to hip dysplasia due to the abnormal position of their hip joints."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Entropion",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs can develop entropion, a condition where the eyelids roll inward."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Obesity",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to obesity due to their short and stocky nature."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Feeding",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require specific feeding schedules and methods to maintain their health."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Exercise",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require daily exercise to maintain their health and manage their weight."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Training",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require training and socialization to be confident and well-mannered."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Grooming",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require frequent and time-consuming grooming due to their wrinkly skin and hair coat."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Health Considerations",
+        "relation_type": "Has",
+        "description": "English Bulldogs have specific health considerations that may require supplements and special care."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Bulldog's Health Issues",
+        "relation_type": "Prone to",
+        "description": "English Bulldogs can be prone to health issues such as brachycephalic obstructive airway syndrome, eye issues, allergies, and skin infections."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Bulldog's Weight Management",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require careful weight management due to their propensity for weight gain."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Bulldog's Grooming Needs",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require frequent and time-consuming grooming due to their wrinkly skin."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to Brachycephalic Obstructive Airway Syndrome (BOAS) due to their flat face and anatomical abnormalities."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Fold Pyoderma and Allergies",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to skin fold pyoderma and allergies due to their excessive skin wrinkles."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Hip Dysplasia",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to hip dysplasia due to their elevated hip joints."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Entropion",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs can develop entropion, which causes the eyelids to roll inward."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Obesity",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to obesity due to their short and stocky nature."
+      }
+    ],
+    "error": false
+  }
+]

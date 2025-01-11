@@ -1,0 +1,559 @@
+[
+  {
+    "entities": [
+      {
+        "name": "Bathing",
+        "type": "Health Concept",
+        "description": "Bathe your dog once or twice each year. If you bathe your dog more frequently, you could remove the natural oils which protect its skin. Use tear-free shampoo and work it into your dog\u2019s skin folds when bathing. Lather the shampoo and let it sit for a minute or two before rinsing."
+      },
+      {
+        "name": "Feeding Puppy",
+        "type": "Health Concept",
+        "description": "Young bulldogs need several small meals throughout the day. Your puppy may need to eat up to four times a day. Puppies generally need about 20-70 calories per pound of body weight. Don\u2019t just leave food out for your puppy. Even though it needs to eat more frequently than an adult bulldog, it is still susceptible to overeating. Removing bowls of food after your puppy has finished will keep it healthy."
+      },
+      {
+        "name": "Diet Change",
+        "type": "Health Concept",
+        "description": "Do not change your bulldog\u2019s diet until it is at least three to four months old. After obtaining your bulldog (of any age), wait at least two weeks before changing its diet. After two weeks, gradually introduce new foods into its diet and alternate new foods with its standard diet. Monitor your dog\u2019s reaction. If it has soft or excessive stool, switch back to the old diet, then try again later to introduce a different new food after two more weeks."
+      },
+      {
+        "name": "Feeding Adult",
+        "type": "Health Concept",
+        "description": "The caloric needs of your bulldog will depend on its age and activity level. After about 18 months, your bulldog should be treated nutritionally as an adult. Older dogs usually need about 937 calories per day. Typical adult bulldogs need around 1,145 calories each day. A very active English bulldog could need as much as 1,300 calories in a day. While puppies require four meals each day, an adult will usually eat just twice each day."
+      },
+      {
+        "name": "Nutritious Diet",
+        "type": "Health Concept",
+        "description": "Your bulldog should receive a healthy balance of protein, carbs, fats, vitamins, and minerals. There are many commercial dog foods available which can satisfy your dog, and some dog foods that are designed specifically for bulldogs. Look for a dog food that is nutritious and ask your vet if you have specific concerns about what your dog is eating. Avoid dog foods that are predominately carbs like corn and sugar. Dog foods that include high protein contents and slowly-digestible carbs like sweet potatoes and barley are good choices."
+      },
+      {
+        "name": "Healthy Weight",
+        "type": "Health Concept",
+        "description": "If your bulldog is overweight, it may have heart, hip, and breathing problems later in life. Obesity also increases your dog\u2019s chances of developing cancer by as much as 20%. You can keep its weight down by feeding it only moderate meals and providing opportunities for regular light exercise like going for walks at the park, or romps at the local dog park."
+      },
+      {
+        "name": "Diet Variety",
+        "type": "Health Concept",
+        "description": "While table scraps can often upset a bulldog\u2019s tummy, there are many ways to include new foods and make fun changes to your dog\u2019s meals. For instance, your bulldog might enjoy apple cinnamon drops."
+      },
+      {
+        "name": "Toxic Foods",
+        "type": "Health Concept",
+        "description": "There are many foods that humans find yummy but are toxic to bulldogs. For instance, grapes, raisins, beer, raw bread dough, chocolate or anything caffeinated, garlic, and onions should never be consumed by dogs. English bulldogs, like all dogs, should especially avoid alcohol, grapes, and raisins. Foods that are nonfatal but may irritate your bulldog include peas, beans, milk, and fatty or spicy foods."
+      },
+      {
+        "name": "English Bulldog Eye Health",
+        "type": "Health Concept",
+        "description": "English Bulldogs can develop many eye problems. Daily monitoring of the eyes is necessary. Heavy crusty layer and excessively runny eyes are signs of potential issues. Conditions like entropion (eyelids rolling inward) and ectropion (eyelids sagging or rolling down) can occur. Any unusual eye problems should be immediately addressed by a vet."
+      },
+      {
+        "name": "Beta-carotene",
+        "type": "Nutrient",
+        "description": "Beta carotene strengthens the eyes. Foods high in beta-carotene are hard to find in dog food. However, adding small portions of foods high in beta carotene to your dog\u2019s diet can keep its eyes healthy. Sweet potatoes and carrots are good sources of beta carotene."
+      },
+      {
+        "name": "Cherry Eye",
+        "type": "Health Condition",
+        "description": "Cherry eye is a common problem in English bulldogs. The red swelling is a tear gland that has prolapsed forward. It should be kept well lubricated to prevent secondary infections. While it does not usually cause pain for your dog immediately, if it gets infected, it may. Treatment usually involves a surgical procedure or keeping the gland lubricated."
+      },
+      {
+        "name": "English Bulldog Exercise",
+        "type": "Health Concept",
+        "description": "English bulldogs are low-energy animals but require exercise to stay healthy and engaged. Short walks around the block and indoor play are recommended. Exercise also provides bonding time for the owner and the dog."
+      },
+      {
+        "name": "English Bulldog Training",
+        "type": "Health Concept",
+        "description": "Training an English bulldog can be difficult. Start slowly and practice a trick for a short time each day. Patience is required during the training process."
+      },
+      {
+        "name": "English Bulldog Overwork",
+        "type": "Health Concept",
+        "description": "English bulldogs have lower energy levels than other dogs. They have a hard time running long distances or engaging in vigorous exercise. Bulldogs have flattened noses and find it more difficult to breathe. They are prone to heat stroke in hot weather. Gentle walks in the cooler parts of the day, sticking to the shade, and providing them with plenty of water are recommended."
+      },
+      {
+        "name": "Neuter or Spay",
+        "type": "Health Procedure",
+        "description": "Neutering or spaying a dog makes them less aggressive and easier to control. It also has many other positive benefits, such as lower licensing fees, reduced chance for prostrate disorders, and reduced chance for testicular cancer."
+      },
+      {
+        "name": "English Bulldog Heat Sensitivity",
+        "type": "Health Concept",
+        "description": "English bulldogs have weak respiratory systems and have even greater difficulty breathing in hot, humid weather. During the hot season, keep your dog in air-conditioning. Monitor your dog when it plays outside on hot days to ensure it doesn\u2019t tire itself out. Do not leave your dog in a hot house or car."
+      },
+      {
+        "name": "English Bulldog Attention and Love",
+        "type": "Health Concept",
+        "description": "Bulldogs thrive off attention from their owners. Giving them lots of attention and love helps form a bond that will last as long as your Bulldog lives."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog with a lovable appearance and gentle manners. Keeping it healthy is a challenge due to its many inborn physical deficiencies."
+      },
+      {
+        "name": "Skin Folds",
+        "type": "Dog Health Concept",
+        "description": "English bulldogs\u2019 skin is layered in folds, which is susceptible to diseases like yeast intertrigo, a condition which leads to itchy rashes on the skin."
+      },
+      {
+        "name": "Anti-fungal Wipe",
+        "type": "Dog Care Product",
+        "description": "Used to clean the skin folds of an English Bulldog. It should be nontoxic and preferably contain natural ingredients like cucumber and chamomile."
+      },
+      {
+        "name": "Skin Irritation",
+        "type": "Dog Health Issue",
+        "description": "A condition that can occur in English Bulldogs due to their skin folds. Signs include constant scratching, rubbing, or biting, nasty odors, and brown discharge from the skin folds."
+      },
+      {
+        "name": "Vet",
+        "type": "Professional Role",
+        "description": "A professional who can help with severe skin problems in English Bulldogs, such as infected, itching, and dry skin."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog that requires specific care and feeding routines."
+      },
+      {
+        "name": "Puppy Feeding",
+        "type": "Dog Care Activity",
+        "description": "Young bulldogs need several small meals throughout the day, up to four times a day. Puppies generally need about 20-70 calories per pound of body weight."
+      },
+      {
+        "name": "Diet Change",
+        "type": "Dog Care Activity",
+        "description": "Do not change your bulldog\u2019s diet until it is at least three to four months old. After obtaining your bulldog, wait at least two weeks before changing its diet."
+      },
+      {
+        "name": "Adult Bulldog Feeding",
+        "type": "Dog Care Activity",
+        "description": "The caloric needs of your bulldog will depend on its age and activity level. After about 18 months, your bulldog should be treated nutritionally as an adult. Older dogs usually need about 937 calories per day. Typical adult bulldogs need around 1,145 calories each day."
+      },
+      {
+        "name": "Nutritious Diet",
+        "type": "Dog Care Activity",
+        "description": "Your bulldog should receive a healthy balance of protein, carbs, fats, vitamins, and minerals. Avoid dog foods that are predominately carbs like corn and sugar."
+      },
+      {
+        "name": "Healthy Weight",
+        "type": "Dog Health Concept",
+        "description": "If your bulldog is overweight, it may have heart, hip, and breathing problems later in life. Obesity also increases your dog\u2019s chances of developing cancer by as much as 20%."
+      },
+      {
+        "name": "Diet Variety",
+        "type": "Dog Care Activity",
+        "description": "While table scraps can often upset a bulldog\u2019s tummy, there are many ways to include new foods and make fun changes to your dog\u2019s meals."
+      },
+      {
+        "name": "Toxic Foods",
+        "type": "Dog Health Concept",
+        "description": "There are many foods that humans find yummy but are toxic to bulldogs. For instance, grapes, raisins, beer, raw bread dough, chocolate or anything caffeinated, garlic, and onions should never be consumed by dogs."
+      },
+      {
+        "name": "Eye Health",
+        "type": "Health Concept",
+        "description": "Refers to the overall health and condition of a dog's eyes. Regular checks are necessary to identify any unusual changes or symptoms."
+      },
+      {
+        "name": "Entropion",
+        "type": "Health Condition",
+        "description": "A condition where the dog's eyelids roll inward, leading to tearing, squinting, and ulcers in the eye."
+      },
+      {
+        "name": "Ectropion",
+        "type": "Health Condition",
+        "description": "A condition where the dog's eyelids sag or appear to be rolling down, leading to signs of dry eyes and unusual frequency of blinking."
+      },
+      {
+        "name": "Cherry Eye",
+        "type": "Health Condition",
+        "description": "A common problem in English bulldogs where the red swelling is a tear gland that has prolapsed forward. It should be kept well lubricated to prevent secondary infections."
+      },
+      {
+        "name": "Beta-carotene",
+        "type": "Nutrient",
+        "description": "A nutrient that strengthens the eyes. Foods high in beta-carotene, such as sweet potatoes and carrots, can be added to the dog's diet to keep its eyes healthy."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog with a lovable appearance and gentle manners. It has many inborn physical deficiencies, making its health a challenge to maintain."
+      },
+      {
+        "name": "Skin Folds",
+        "type": "Physical Feature",
+        "description": "Layered skin folds in English Bulldogs that are susceptible to diseases like yeast intertrigo, leading to itchy rashes on the skin."
+      },
+      {
+        "name": "Anti-fungal Wipe",
+        "type": "Cleaning Product",
+        "description": "A nontoxic wipe used to clean the skin folds of an English Bulldog. It should contain natural ingredients like cucumber and chamomile and be free of harmful chemicals and additives."
+      },
+      {
+        "name": "Skin Irritation",
+        "type": "Health Condition",
+        "description": "A condition that can occur in English Bulldogs due to issues with their skin folds. Signs include constant scratching, rubbing, biting, nasty odors, and brown discharge from the skin folds."
+      },
+      {
+        "name": "Vet",
+        "type": "Professional Role",
+        "description": "A professional who is trained to deal with severe problems like infected, itching, and dry skin in dogs, including English Bulldogs."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog that requires specific care and feeding routines."
+      },
+      {
+        "name": "Puppy Feeding",
+        "type": "Dog Care Activity",
+        "description": "Young bulldogs need several small meals throughout the day, up to four times a day. Puppies generally need about 20-70 calories per pound of body weight."
+      },
+      {
+        "name": "Adult Bulldog Feeding",
+        "type": "Dog Care Activity",
+        "description": "The caloric needs of your bulldog will depend on its age and activity level. After about 18 months, your bulldog should be treated nutritionally as an adult. Older dogs usually need about 937 calories per day. Typical adult bulldogs need around 1,145 calories each day. A very active English bulldog could need as much as 1,300 calories in a day."
+      },
+      {
+        "name": "Diet Variety",
+        "type": "Dog Care Activity",
+        "description": "There are many ways to include new foods and make fun changes to your dog\u2019s meals. For instance, your bulldog might enjoy apple cinnamon drops."
+      },
+      {
+        "name": "Toxic Foods",
+        "type": "Dog Health Warning",
+        "description": "There are many foods that humans find yummy but are toxic to bulldogs. For instance, grapes, raisins, beer, raw bread dough, chocolate or anything caffeinated, garlic, and onions should never be consumed by dogs."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog with a lovable appearance and gentle manners. It has many inborn physical deficiencies, making its health a challenge to maintain."
+      },
+      {
+        "name": "Skin Folds",
+        "type": "Physical Feature",
+        "description": "Layered skin folds in English Bulldogs that are susceptible to diseases like yeast intertrigo, leading to itchy rashes on the skin."
+      },
+      {
+        "name": "Anti-fungal Wipe",
+        "type": "Cleaning Product",
+        "description": "A nontoxic wipe used to clean the skin folds of an English Bulldog. It should contain natural ingredients like cucumber and chamomile and should be free from harmful chemicals and additives."
+      },
+      {
+        "name": "Skin Irritation",
+        "type": "Health Condition",
+        "description": "A condition that can occur in English Bulldogs due to issues with their skin folds. Signs include constant scratching, rubbing, or biting, nasty odors, and a brown discharge from the skin folds."
+      },
+      {
+        "name": "Vet",
+        "type": "Professional Role",
+        "description": "A professional who is trained to deal with severe problems like infected, itching, and dry skin in dogs, including English Bulldogs."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog known for its distinctive wrinkled face and pushed-in nose. They have lower energy levels than other dogs and have weak respiratory systems."
+      },
+      {
+        "name": "Exercise",
+        "type": "Activity",
+        "description": "English bulldogs require light exercise to stay healthy and engaged. This can include short walks, playing with a ball, or tug of war."
+      },
+      {
+        "name": "Training",
+        "type": "Activity",
+        "description": "Training an English bulldog can be difficult and requires patience. They may not learn tricks as fast as other dogs."
+      },
+      {
+        "name": "Heat",
+        "type": "Environmental Condition",
+        "description": "English bulldogs have difficulty breathing in hot, humid weather. They should be kept in air-conditioning during hot seasons and monitored when playing outside on hot days."
+      },
+      {
+        "name": "Neutering/Spaying",
+        "type": "Medical Procedure",
+        "description": "Neutering or spaying an English bulldog can make them less aggressive and easier to control. It also has other benefits such as lower licensing fees and reduced chance for prostrate disorders and testicular cancer."
+      },
+      {
+        "name": "Attention and Love",
+        "type": "Care Requirement",
+        "description": "English bulldogs thrive off attention from their owners. Giving them attention and love helps form a strong bond."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Bathing",
+        "target": "Feeding Puppy",
+        "relation_type": "Sequential",
+        "description": "After bathing, the next step in caring for an English Bulldog is feeding, especially for puppies."
+      },
+      {
+        "source": "Feeding Puppy",
+        "target": "Diet Change",
+        "relation_type": "Sequential",
+        "description": "After feeding the puppy, the diet of the bulldog should be changed slowly as it grows."
+      },
+      {
+        "source": "Diet Change",
+        "target": "Feeding Adult",
+        "relation_type": "Sequential",
+        "description": "After the diet change, the feeding pattern changes as the bulldog matures."
+      },
+      {
+        "source": "Feeding Adult",
+        "target": "Nutritious Diet",
+        "relation_type": "Sequential",
+        "description": "After establishing the feeding pattern, the focus should be on providing a nutritious diet."
+      },
+      {
+        "source": "Nutritious Diet",
+        "target": "Healthy Weight",
+        "relation_type": "Sequential",
+        "description": "Maintaining a nutritious diet helps in keeping the bulldog within a healthy weight."
+      },
+      {
+        "source": "Healthy Weight",
+        "target": "Diet Variety",
+        "relation_type": "Sequential",
+        "description": "While maintaining a healthy weight, variety can be introduced in the diet."
+      },
+      {
+        "source": "Diet Variety",
+        "target": "Toxic Foods",
+        "relation_type": "Sequential",
+        "description": "While introducing variety in the diet, care should be taken to avoid toxic foods."
+      },
+      {
+        "source": "English Bulldog Eye Health",
+        "target": "Beta-carotene",
+        "relation_type": "improves",
+        "description": "Feeding your dog foods high in beta-carotene can help keep its eyes healthy."
+      },
+      {
+        "source": "English Bulldog Eye Health",
+        "target": "Cherry Eye",
+        "relation_type": "can lead to",
+        "description": "English Bulldogs can develop a condition known as Cherry Eye."
+      },
+      {
+        "source": "English Bulldog Exercise",
+        "target": "English Bulldog Overwork",
+        "relation_type": "prevents",
+        "description": "Providing light exercise for your dog can prevent overwork and related health issues."
+      },
+      {
+        "source": "English Bulldog Training",
+        "target": "Neuter or Spay",
+        "relation_type": "is easier after",
+        "description": "Training an English bulldog can be easier after the dog is neutered or spayed."
+      },
+      {
+        "source": "English Bulldog Heat Sensitivity",
+        "target": "English Bulldog Overwork",
+        "relation_type": "can lead to",
+        "description": "Overworking an English bulldog, especially in hot weather, can lead to heat stroke due to their heat sensitivity."
+      },
+      {
+        "source": "English Bulldog Attention and Love",
+        "target": "English Bulldog Training",
+        "relation_type": "facilitates",
+        "description": "Giving your English bulldog lots of attention and love can facilitate the training process."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Folds",
+        "relation_type": "has",
+        "description": "English Bulldogs have skin folds which can lead to health issues."
+      },
+      {
+        "source": "Skin Folds",
+        "target": "Anti-fungal Wipe",
+        "relation_type": "cleaned_by",
+        "description": "The skin folds of an English Bulldog should be cleaned daily with an anti-fungal wipe to prevent diseases."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Irritation",
+        "relation_type": "can_have",
+        "description": "English Bulldogs can have skin irritation due to their skin folds."
+      },
+      {
+        "source": "Skin Irritation",
+        "target": "Vet",
+        "relation_type": "treated_by",
+        "description": "Severe skin irritation in English Bulldogs can be treated by a vet."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Puppy Feeding",
+        "relation_type": "Requires",
+        "description": "English Bulldog puppies require several small meals throughout the day."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Diet Change",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require a gradual change in diet after they are three to four months old."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Adult Bulldog Feeding",
+        "relation_type": "Requires",
+        "description": "Adult English Bulldogs require specific caloric intake based on their age and activity level."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Nutritious Diet",
+        "relation_type": "Requires",
+        "description": "English Bulldogs require a balanced and nutritious diet."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Healthy Weight",
+        "relation_type": "Should Maintain",
+        "description": "English Bulldogs should maintain a healthy weight to avoid health problems."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Diet Variety",
+        "relation_type": "Can Have",
+        "description": "English Bulldogs can have a variety in their diet, but certain foods can upset their stomach."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Toxic Foods",
+        "relation_type": "Should Avoid",
+        "description": "English Bulldogs should avoid certain foods that are toxic to them."
+      },
+      {
+        "source": "Eye Health",
+        "target": "Entropion",
+        "relation_type": "can lead to",
+        "description": "If a dog's eyelids are rolling inward, it might have entropion."
+      },
+      {
+        "source": "Eye Health",
+        "target": "Ectropion",
+        "relation_type": "can lead to",
+        "description": "If a dog's eyelids are sagging or appear to be rolling down, it might have ectropion."
+      },
+      {
+        "source": "Eye Health",
+        "target": "Cherry Eye",
+        "relation_type": "can lead to",
+        "description": "Cherry eye is a common problem in English bulldogs."
+      },
+      {
+        "source": "Beta-carotene",
+        "target": "Eye Health",
+        "relation_type": "supports",
+        "description": "Beta carotene strengthens the eyes. Foods high in beta-carotene can keep a dog's eyes healthy."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Folds",
+        "relation_type": "has_feature",
+        "description": "English Bulldogs have a characteristic feature of layered skin folds."
+      },
+      {
+        "source": "Skin Folds",
+        "target": "Anti-fungal Wipe",
+        "relation_type": "cleaned_with",
+        "description": "The skin folds of an English Bulldog should be cleaned daily with an anti-fungal wipe to prevent diseases like yeast intertrigo."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Irritation",
+        "relation_type": "can_have_condition",
+        "description": "English Bulldogs can have skin irritation due to issues with their skin folds."
+      },
+      {
+        "source": "Skin Irritation",
+        "target": "Vet",
+        "relation_type": "treated_by",
+        "description": "Skin irritation in English Bulldogs that cannot be managed by the owner should be treated by a vet."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Puppy Feeding",
+        "relation_type": "Requires",
+        "description": "English Bulldog puppies require several small meals throughout the day."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Adult Bulldog Feeding",
+        "relation_type": "Requires",
+        "description": "Adult English Bulldogs require specific caloric intake based on their age and activity level."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Diet Variety",
+        "relation_type": "Can Benefit From",
+        "description": "English Bulldogs can benefit from a variety in their diet, such as apple cinnamon drops."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Toxic Foods",
+        "relation_type": "Should Avoid",
+        "description": "English Bulldogs should avoid certain foods that are toxic to them, such as grapes, raisins, beer, raw bread dough, chocolate or anything caffeinated, garlic, and onions."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Folds",
+        "relation_type": "has_feature",
+        "description": "English Bulldogs have a characteristic feature of layered skin folds."
+      },
+      {
+        "source": "Skin Folds",
+        "target": "Anti-fungal Wipe",
+        "relation_type": "cleaned_with",
+        "description": "The skin folds of an English Bulldog should be cleaned daily with an anti-fungal wipe to prevent diseases like yeast intertrigo."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin Irritation",
+        "relation_type": "can_have_condition",
+        "description": "English Bulldogs can have skin irritation due to issues with their skin folds."
+      },
+      {
+        "source": "Skin Irritation",
+        "target": "Vet",
+        "relation_type": "treated_by",
+        "description": "Skin irritation in English Bulldogs that cannot be managed by the owner should be treated by a vet."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Exercise",
+        "relation_type": "Requires",
+        "description": "English bulldogs require light exercise to stay healthy and engaged."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Training",
+        "relation_type": "Requires",
+        "description": "Training an English bulldog can be difficult and requires patience."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Heat",
+        "relation_type": "Sensitive To",
+        "description": "English bulldogs have difficulty breathing in hot, humid weather."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Neutering/Spaying",
+        "relation_type": "Can Benefit From",
+        "description": "Neutering or spaying an English bulldog can make them less aggressive and easier to control."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Attention and Love",
+        "relation_type": "Requires",
+        "description": "English bulldogs thrive off attention from their owners."
+      }
+    ],
+    "error": false
+  }
+]

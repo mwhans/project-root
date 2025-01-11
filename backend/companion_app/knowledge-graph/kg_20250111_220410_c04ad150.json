@@ -1,0 +1,619 @@
+[
+  {
+    "entities": [
+      {
+        "name": "Spaying or Neutering",
+        "type": "Procedure",
+        "description": "Surgical removal of reproductive organs in pets. In females, this means the ovaries and usually the uterus are removed, and in males, it means the testicles are removed. This procedure decreases the likelihood of certain types of cancers and eliminates the possibility of your pet becoming pregnant or fathering unwanted puppies."
+      },
+      {
+        "name": "Bone and Joint Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are prone to a number of different musculoskeletal problems, including dysplasia in hips and elbows, osteochondritis dissecans (OCD), and torn cranial cruciate ligament."
+      },
+      {
+        "name": "Spinal Deformities",
+        "type": "Health Condition",
+        "description": "Bulldogs are more likely than other canines to be born with spinal deformities (a condition called hemivertebrae), which may lead to spinal cord damage, instability, or disability."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs can inherit or develop a number of different eye conditions, including Distichiasis, Entropion, Dry eye (KCS), and Cherry eye."
+      },
+      {
+        "name": "Bladder or Kidney Stones",
+        "type": "Health Condition",
+        "description": "Bulldogs are more likely to develop kidney or bladder stones than other breeds. These stones are painful and can cause blood in urine, inability to urinate, or straining to urinate."
+      },
+      {
+        "name": "Respiratory Distress Syndrome",
+        "type": "Health Condition",
+        "description": "Also known as brachycephalic syndrome, this disease affects dogs with a short nose, like Bulldogs. It leads to a narrow and obstructed airway, causing breathing difficulties, exercise intolerance, loud breathing, coughing, bluish gums, or fainting."
+      },
+      {
+        "name": "Bleeding Disorders",
+        "type": "Health Condition",
+        "description": "Bulldogs are prone to bleeding disorders, which can cause serious health issues."
+      },
+      {
+        "name": "Von Willebrand\u2019s disease",
+        "type": "Disease",
+        "description": "A blood clotting disorder frequently found in Bulldogs. It can cause severe bleeding during serious injury or surgery."
+      },
+      {
+        "name": "Reproductive Difficulties",
+        "type": "Health Condition",
+        "description": "Breeds with a large head and small pelvis like Bulldogs are more prone to difficulties during the birthing process. A C-section is often required for the health of the mother and puppies."
+      },
+      {
+        "name": "Heart Disease",
+        "type": "Disease",
+        "description": "Bulldogs are prone to multiple types of heart disease, which can occur both early and later in life. Early detection often allows treatment with medication that usually prolongs the pet\u2019s life for many years."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are susceptible to different kinds of skin infections and diseases, including yeast infections and seborrhea, which can cause itching, redness, and hair loss."
+      },
+      {
+        "name": "Mange",
+        "type": "Disease",
+        "description": "A condition caused by an overabundance of microscopic mites that live in the hair follicles of dogs. It can cause dry, irritated, hairless lesions and secondary skin infections."
+      },
+      {
+        "name": "Laryngeal Paralysis",
+        "type": "Disease",
+        "description": "A disease that can develop in older Bulldogs, where the vocal cords become paralyzed and hang down into the airway. It can cause noisy breathing, exercise intolerance, and in severe cases, difficulty breathing."
+      },
+      {
+        "name": "Cancer",
+        "type": "Disease",
+        "description": "A leading cause of death in older dogs. Bulldogs are more prone to get cancer in their golden years. Many cancers are curable by surgical removal, and some types are treatable with chemotherapy."
+      },
+      {
+        "name": "Dental Abnormalities",
+        "type": "Health Condition",
+        "description": "Teeth abnormalities are often genetically induced and are relatively common in Bulldogs. These can include malocclusion, oligodontia, and misaligned teeth."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "The English Bulldog is an affectionate, easygoing, and lovable breed. They are quiet, good with kids and other pets, and make excellent guard dogs. They are adaptable to a wide variety of living conditions and have an outgoing and friendly personality. However, they can be gassy, drool a lot, make a lot of snorting, snuffling, and wheezing noises, and may snore. They can become overweight easily if not exercised regularly and can be rambunctious and rowdy, especially as a puppy. They are sensitive, mature slowly, and can be possessive of toys and food, tending to show dominance."
+      },
+      {
+        "name": "Dental Disease",
+        "type": "Health Condition",
+        "description": "Dental disease is the most common chronic problem in pets, affecting 80% of all dogs by age two. It starts with tartar build-up on the teeth and progresses to infection of the gums and roots of the teeth. If not prevented or treated, it can lead to loss of teeth and damage to the kidneys, liver, heart, and joints."
+      },
+      {
+        "name": "Infections",
+        "type": "Health Condition",
+        "description": "Bulldogs are susceptible to bacterial and viral infections such as parvo, rabies, and distemper. Many of these infections are preventable through vaccination."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Condition",
+        "description": "Obesity can be a significant health problem in Bulldogs. It is a serious disease that may cause or worsen joint problems, metabolic and digestive disorders, back pain and heart disease."
+      },
+      {
+        "name": "Parasites",
+        "type": "Health Condition",
+        "description": "All kinds of worms and bugs can invade your English Bulldog\u2019s body, inside and out. Everything from fleas and ticks to ear mites can infest her skin and ears. Hookworms, roundworms, heartworms, and whipworms can get into her system in a number of ways: drinking unclean water, walking on contaminated soil, or being bitten by an infected mosquito."
+      },
+      {
+        "name": "Dental Disease",
+        "type": "Health Condition",
+        "description": "The most common chronic problem in pets, affecting 80% of all dogs by age two. Bulldogs are more likely than other dogs to have problems with their teeth. It starts with tartar build-up on the teeth and progresses to infection of the gums and roots of the teeth. If not prevented or treated, it can lead to loss of teeth and damage to kidneys, liver, heart, and joints, potentially shortening the Bulldog's life span by one to three years."
+      },
+      {
+        "name": "Infections",
+        "type": "Health Condition",
+        "description": "Bulldogs are susceptible to bacterial and viral infections such as parvo, rabies, and distemper. Many of these infections are preventable through vaccination."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Condition",
+        "description": "A significant health problem in Bulldogs. It may cause or worsen joint problems, metabolic and digestive disorders, back pain and heart disease. Overfeeding and lack of exercise can lead to obesity."
+      },
+      {
+        "name": "Parasites",
+        "type": "Health Condition",
+        "description": "Various types of worms and bugs can invade a Bulldog's body, inside and out. These parasites can cause pain, discomfort, and even death. Some of these parasites can be transmitted to humans and are a serious concern for everyone."
+      },
+      {
+        "name": "Bone and Joint Problems",
+        "type": "Health Condition",
+        "description": "A number of different musculoskeletal problems have been reported in Bulldogs. These include dysplasia in hips and elbows, osteochondritis dissecans (OCD), and torn cranial cruciate ligament."
+      },
+      {
+        "name": "Spinal Deformities",
+        "type": "Health Condition",
+        "description": "Bulldogs are more likely than other canines to be born with spinal deformities (a condition called hemivertebrae), which may lead to spinal cord damage, instability, or disability."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs can inherit or develop a number of different eye conditions, some of which may cause blindness if not treated right away, and most of which can be extremely painful. These include Distichiasis, Entropion, Dry eye (KCS), and Cherry eye."
+      },
+      {
+        "name": "Bladder or Kidney Stones",
+        "type": "Health Condition",
+        "description": "Bulldogs are more likely to develop kidney or bladder stones than other breeds. These stones are painful and can cause blood in urine, inability to urinate, or straining to urinate."
+      },
+      {
+        "name": "Respiratory Distress Syndrome",
+        "type": "Health Condition",
+        "description": "This disease, also known as brachycephalic syndrome, affects dogs with a short nose, like Bulldogs. It leads to a narrow and obstructed airway, causing breathing difficulties, exercise intolerance, loud breathing, coughing, bluish gums, or fainting."
+      },
+      {
+        "name": "Bleeding Disorders",
+        "type": "Health Condition",
+        "description": "Bulldogs are prone to bleeding disorders, which can cause serious health issues."
+      },
+      {
+        "name": "Von Willebrand\u2019s disease",
+        "type": "Disease",
+        "description": "A blood clotting disorder frequently found in Bulldogs. It can result in severe bleeding during serious injury or surgery."
+      },
+      {
+        "name": "Reproductive Difficulties",
+        "type": "Health Condition",
+        "description": "Breeds with a large head and small pelvis, like Bulldogs, are more prone to difficulties during the birthing process. A C-section is often required for the health of the mother and puppies."
+      },
+      {
+        "name": "Heart Disease",
+        "type": "Disease",
+        "description": "Bulldogs are prone to multiple types of heart disease, which can occur both early and later in life. Early detection often allows for treatment with medication that usually prolongs the pet\u2019s life for many years."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are susceptible to different kinds of skin infections and diseases, including yeast infections and seborrhea. These diseases can cause itching, discomfort, hair loss, and a characteristic odor."
+      },
+      {
+        "name": "Mange",
+        "type": "Disease",
+        "description": "Bulldogs can develop an overabundance of Demodex mites, leading to dry, irritated, hairless lesions. Secondary skin infections may occur."
+      },
+      {
+        "name": "Laryngeal Paralysis",
+        "type": "Disease",
+        "description": "Older Bulldogs may develop this disease, in which the vocal cords become paralyzed and hang down into the airway. This can cause noisy breathing, exercise intolerance, and in severe cases, difficulty breathing."
+      },
+      {
+        "name": "Cancer",
+        "type": "Disease",
+        "description": "Cancer is a leading cause of death in older dogs. Bulldogs are more prone to get cancer in their golden years. Many cancers are curable by surgical removal, and some types are treatable with chemotherapy."
+      },
+      {
+        "name": "Dental Abnormalities",
+        "type": "Health Condition",
+        "description": "Teeth abnormalities are often genetically induced and are relatively common in Bulldogs. These can include malocclusion (bad bite), oligodontia (few teeth present), and misaligned teeth."
+      },
+      {
+        "name": "Dental Disease",
+        "type": "Health Condition",
+        "description": "Dental disease is the most common chronic problem in pets, affecting 80% of all dogs by age two. Bulldogs are more likely than other dogs to have problems with their teeth. It starts with tartar build-up on the teeth and progresses to infection of the gums and roots of the teeth. If not prevented or treated, it can lead to loss of teeth and damage to kidneys, liver, heart, and joints, potentially shortening the Bulldog's lifespan by one to three years."
+      },
+      {
+        "name": "Infections",
+        "type": "Health Condition",
+        "description": "Bulldogs are susceptible to bacterial and viral infections such as parvo, rabies, and distemper. Many of these infections are preventable through vaccination."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Condition",
+        "description": "Obesity can be a significant health problem in Bulldogs. It is a serious disease that may cause or worsen joint problems, metabolic and digestive disorders, back pain and heart disease."
+      },
+      {
+        "name": "Parasites",
+        "type": "Health Condition",
+        "description": "Various types of worms and bugs can invade a Bulldog's body, inside and out. These parasites can cause pain, discomfort, and even death, so it\u2019s important to test for them on a regular basis and use preventive medication as necessary."
+      },
+      {
+        "name": "Bone and Joint Problems",
+        "type": "Health Condition",
+        "description": "A number of different musculoskeletal problems have been reported in Bulldogs. These include dysplasia in hips and elbows, osteochondritis dissecans (OCD), and torn cranial cruciate ligament."
+      },
+      {
+        "name": "Spinal Deformities",
+        "type": "Health Condition",
+        "description": "Bulldogs are more likely than other canines to be born with spinal deformities (a condition called hemivertebrae), which may lead to spinal cord damage, instability, or disability."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs can inherit or develop a number of different eye conditions, some of which may cause blindness if not treated right away, and most of which can be extremely painful. These include Distichiasis, Entropion, Dry eye (KCS), and Cherry eye."
+      },
+      {
+        "name": "Bladder or Kidney Stones",
+        "type": "Health Condition",
+        "description": "Bulldogs are more likely to develop kidney or bladder stones than other breeds. These stones are painful and can cause blood in urine, inability to urinate, or straining to urinate."
+      },
+      {
+        "name": "Respiratory Distress Syndrome",
+        "type": "Health Condition",
+        "description": "This disease, also known as brachycephalic syndrome, affects dogs with a short nose, like Bulldogs. It leads to a narrow and obstructed airway, causing breathing difficulties, exercise intolerance, loud breathing, coughing, bluish gums, or fainting."
+      },
+      {
+        "name": "Bleeding Disorders",
+        "type": "Health Condition",
+        "description": "Bulldogs can suffer from bleeding disorders, but the specific type of disorder is not mentioned in the content."
+      },
+      {
+        "name": "Von Willebrand\u2019s disease",
+        "type": "Disease",
+        "description": "A blood clotting disorder frequently found in Bulldogs. It can cause severe bleeding during serious injury or surgery."
+      },
+      {
+        "name": "Reproductive Difficulties",
+        "type": "Health Condition",
+        "description": "Breeds with a large head and small pelvis like Bulldogs are more prone to difficulties during the birthing process. A C-section is often required for the health of the mother and puppies."
+      },
+      {
+        "name": "Heart Disease",
+        "type": "Disease",
+        "description": "Bulldogs are prone to multiple types of heart disease, which can occur both early and later in life. Early detection often allows treatment with medication that usually prolongs the pet\u2019s life for many years."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are susceptible to different kinds of skin infections and diseases, including yeast infections and seborrhea. These diseases can cause itching, redness, hair loss, and a characteristic odor."
+      },
+      {
+        "name": "Mange",
+        "type": "Disease",
+        "description": "Bulldogs can develop an overabundance of microscopic mites that live in the hair follicles, causing dry, irritated, hairless lesions. This condition requires prompt veterinary care."
+      },
+      {
+        "name": "Laryngeal Paralysis",
+        "type": "Disease",
+        "description": "Older Bulldogs may develop this disease, in which the vocal cords become paralyzed and hang down into the airway. This can cause noisy breathing, exercise intolerance, and in severe cases, difficulty breathing."
+      },
+      {
+        "name": "Cancer",
+        "type": "Disease",
+        "description": "Cancer is a leading cause of death in older dogs. Bulldogs are more prone to get cancer in their golden years. Many cancers are curable by surgical removal, and some types are treatable with chemotherapy."
+      },
+      {
+        "name": "Dental Abnormalities",
+        "type": "Health Condition",
+        "description": "Teeth abnormalities are often genetically induced and are relatively common in Bulldogs. These can include malocclusion (bad bite), oligodontia (few teeth), and misaligned teeth."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Bulldog",
+        "target": "Spaying or Neutering",
+        "relation_type": "Recommended Procedure",
+        "description": "Spaying or neutering is recommended for Bulldogs to prevent certain types of cancers and unwanted pregnancies."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bone and Joint Problems",
+        "relation_type": "Predisposition",
+        "description": "Bulldogs are predisposed to various bone and joint problems."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Spinal Deformities",
+        "relation_type": "Predisposition",
+        "description": "Bulldogs are more likely to be born with spinal deformities."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Eye Problems",
+        "relation_type": "Predisposition",
+        "description": "Bulldogs can inherit or develop a number of different eye conditions."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bladder or Kidney Stones",
+        "relation_type": "Predisposition",
+        "description": "Bulldogs are more likely to develop kidney or bladder stones than other breeds."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Respiratory Distress Syndrome",
+        "relation_type": "Predisposition",
+        "description": "Bulldogs, due to their short nose, are more likely to develop Respiratory Distress Syndrome."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Bleeding Disorders",
+        "relation_type": "Predisposition",
+        "description": "Bulldogs are prone to bleeding disorders."
+      },
+      {
+        "source": "Von Willebrand\u2019s disease",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Von Willebrand\u2019s disease is a blood clotting disorder frequently found in Bulldogs."
+      },
+      {
+        "source": "Reproductive Difficulties",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Bulldogs are more prone to reproductive difficulties due to their large head and small pelvis."
+      },
+      {
+        "source": "Heart Disease",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Bulldogs are prone to multiple types of heart disease."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Bulldogs are susceptible to different kinds of skin infections and diseases."
+      },
+      {
+        "source": "Mange",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Bulldogs can develop an overabundance of microscopic mites that cause mange."
+      },
+      {
+        "source": "Laryngeal Paralysis",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Older Bulldogs may develop laryngeal paralysis."
+      },
+      {
+        "source": "Cancer",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Bulldogs are more prone to get cancer in their golden years."
+      },
+      {
+        "source": "Dental Abnormalities",
+        "target": "Bulldogs",
+        "relation_type": "common_in",
+        "description": "Teeth abnormalities are often genetically induced and are relatively common in Bulldogs."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Dental Disease",
+        "relation_type": "is susceptible to",
+        "description": "English Bulldogs are more likely than other dogs to have problems with their teeth, leading to dental disease."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Infections",
+        "relation_type": "is susceptible to",
+        "description": "English Bulldogs are susceptible to bacterial and viral infections such as parvo, rabies, and distemper."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Obesity",
+        "relation_type": "is susceptible to",
+        "description": "English Bulldogs can easily become overweight if not exercised regularly, leading to obesity."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Parasites",
+        "relation_type": "is susceptible to",
+        "description": "English Bulldogs can be invaded by all kinds of worms and bugs, leading to parasitic infections."
+      },
+      {
+        "source": "Dental Disease",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Dental disease is a common chronic problem in Bulldogs, potentially leading to loss of teeth and damage to various organs."
+      },
+      {
+        "source": "Infections",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Bulldogs are susceptible to various bacterial and viral infections, many of which are preventable through vaccination."
+      },
+      {
+        "source": "Obesity",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Obesity can be a significant health problem in Bulldogs, potentially causing or worsening various health conditions."
+      },
+      {
+        "source": "Parasites",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Various types of parasites can invade a Bulldog's body, causing pain, discomfort, and even death."
+      },
+      {
+        "source": "Bone and Joint Problems",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are prone to a number of different musculoskeletal problems."
+      },
+      {
+        "source": "Spinal Deformities",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are more likely than other canines to be born with spinal deformities."
+      },
+      {
+        "source": "Eye Problems",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs can inherit or develop a number of different eye conditions."
+      },
+      {
+        "source": "Bladder or Kidney Stones",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are more likely to develop kidney or bladder stones than other breeds."
+      },
+      {
+        "source": "Respiratory Distress Syndrome",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs, due to their short nose, are prone to Respiratory Distress Syndrome or brachycephalic syndrome."
+      },
+      {
+        "source": "Bleeding Disorders",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are prone to bleeding disorders."
+      },
+      {
+        "source": "Von Willebrand\u2019s disease",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Von Willebrand\u2019s disease is a blood clotting disorder frequently found in Bulldogs."
+      },
+      {
+        "source": "Reproductive Difficulties",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Bulldogs, due to their large head and small pelvis, are more prone to reproductive difficulties."
+      },
+      {
+        "source": "Heart Disease",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Bulldogs are prone to multiple types of heart disease."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Bulldogs are susceptible to different kinds of skin infections and diseases."
+      },
+      {
+        "source": "Mange",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Bulldogs can develop an overabundance of Demodex mites, leading to mange."
+      },
+      {
+        "source": "Laryngeal Paralysis",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Older Bulldogs may develop laryngeal paralysis."
+      },
+      {
+        "source": "Cancer",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Bulldogs are more prone to get cancer in their golden years."
+      },
+      {
+        "source": "Dental Abnormalities",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Teeth abnormalities are often genetically induced and are relatively common in Bulldogs."
+      },
+      {
+        "source": "Dental Disease",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Dental disease is a common problem in Bulldogs, potentially leading to serious health issues and shortened lifespan if not treated."
+      },
+      {
+        "source": "Infections",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Bulldogs are susceptible to various bacterial and viral infections, many of which are preventable through vaccination."
+      },
+      {
+        "source": "Obesity",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Obesity can be a significant health problem in Bulldogs, potentially causing or worsening various health issues."
+      },
+      {
+        "source": "Parasites",
+        "target": "Bulldog",
+        "relation_type": "affects",
+        "description": "Bulldogs can be affected by various types of parasites, which can cause pain, discomfort, and even death."
+      },
+      {
+        "source": "Bone and Joint Problems",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are prone to a number of different musculoskeletal problems."
+      },
+      {
+        "source": "Spinal Deformities",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are more likely than other canines to be born with spinal deformities."
+      },
+      {
+        "source": "Eye Problems",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs can inherit or develop a number of different eye conditions."
+      },
+      {
+        "source": "Bladder or Kidney Stones",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs are more likely to develop kidney or bladder stones than other breeds."
+      },
+      {
+        "source": "Respiratory Distress Syndrome",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "This disease, also known as brachycephalic syndrome, affects dogs with a short nose, like Bulldogs."
+      },
+      {
+        "source": "Bleeding Disorders",
+        "target": "Bulldogs",
+        "relation_type": "affects",
+        "description": "Bulldogs can suffer from bleeding disorders."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Von Willebrand\u2019s disease",
+        "relation_type": "prone to",
+        "description": "Bulldogs are prone to Von Willebrand\u2019s disease, a blood clotting disorder."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Reproductive Difficulties",
+        "relation_type": "prone to",
+        "description": "Bulldogs, due to their large head and small pelvis, are prone to reproductive difficulties."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Heart Disease",
+        "relation_type": "prone to",
+        "description": "Bulldogs are prone to multiple types of heart disease."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Skin Problems",
+        "relation_type": "prone to",
+        "description": "Bulldogs are susceptible to different kinds of skin infections and diseases."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Mange",
+        "relation_type": "prone to",
+        "description": "Bulldogs can develop an overabundance of microscopic mites that cause mange."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Laryngeal Paralysis",
+        "relation_type": "prone to",
+        "description": "Older Bulldogs may develop laryngeal paralysis."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Cancer",
+        "relation_type": "prone to",
+        "description": "Bulldogs are more prone to get cancer in their golden years."
+      },
+      {
+        "source": "Bulldog",
+        "target": "Dental Abnormalities",
+        "relation_type": "prone to",
+        "description": "Bulldogs are often genetically predisposed to dental abnormalities."
+      }
+    ],
+    "error": false
+  }
+]

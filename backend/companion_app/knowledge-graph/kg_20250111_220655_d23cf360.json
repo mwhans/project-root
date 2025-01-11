@@ -1,0 +1,167 @@
+[
+  {
+    "entities": [
+      {
+        "name": "English Bulldog",
+        "type": "Breed",
+        "description": "A breed of dog known for its distinctive physical features and health issues. Suitable for a lifestyle with 20-60min walks and indoor past times."
+      },
+      {
+        "name": "BOAS",
+        "type": "Health Issue",
+        "description": "Brachycephalic Obstructive Airway Syndrome, a common health issue in English Bulldogs."
+      },
+      {
+        "name": "Skin/Ear Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their skin and ears."
+      },
+      {
+        "name": "Eye Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their eyes."
+      },
+      {
+        "name": "Joint and Hip Issues",
+        "type": "Health Issue",
+        "description": "Potential health issues in English Bulldogs, particularly during their first year. Play and running should be minimal to avoid these issues."
+      },
+      {
+        "name": "Brachycephalic Syndrome",
+        "type": "Health Issue",
+        "description": "A health issue common in English Bulldogs due to their short snouts. Owners should be cautious about the dog's eating speed, overheating, and panting."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "A breed of dog known for its distinctive physical features and health issues. They are known for their energy requirements and gentle nature."
+      },
+      {
+        "name": "BOAS",
+        "type": "Health Issue",
+        "description": "Brachycephalic Obstructive Airway Syndrome, a common health issue in English Bulldogs due to their short snouts."
+      },
+      {
+        "name": "Skin/Ear Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their skin folds and ear shape."
+      },
+      {
+        "name": "Eye Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their distinctive eye shape and positioning."
+      },
+      {
+        "name": "Joint and Hip Issues",
+        "type": "Health Issue",
+        "description": "Common in English Bulldogs, especially during their first year. Similar to issues found in Dane breeds."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Breed",
+        "description": "A breed of dog known for its distinctive physical features and health issues. The breed is known for its low energy requirements and gentle nature."
+      },
+      {
+        "name": "BOAS",
+        "type": "Health Issue",
+        "description": "Brachycephalic Obstructive Airway Syndrome, a common health issue in English Bulldogs due to their short snouts."
+      },
+      {
+        "name": "Skin/Ear Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their skin folds and ear shape."
+      },
+      {
+        "name": "Eye Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their distinctive eye shape and positioning."
+      },
+      {
+        "name": "Joint and Hip Issues",
+        "type": "Health Issue",
+        "description": "Common health issues in English Bulldogs, often related to their unique body structure. It is recommended to limit play and running for the first year to prevent these issues."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "English Bulldog",
+        "target": "BOAS",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to Brachycephalic Obstructive Airway Syndrome."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin/Ear Issues",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to skin and ear issues."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Eye Issues",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to eye issues."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Joint and Hip Issues",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to joint and hip issues, especially in their first year."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Brachycephalic Syndrome",
+        "relation_type": "prone to",
+        "description": "English Bulldogs are prone to Brachycephalic Syndrome due to their short snouts."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "BOAS",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to Brachycephalic Obstructive Airway Syndrome due to their short snouts."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin/Ear Issues",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to skin and ear issues due to their skin folds and ear shape."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Eye Issues",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to eye issues due to their distinctive eye shape and positioning."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Joint and Hip Issues",
+        "relation_type": "Prone To",
+        "description": "English Bulldogs are prone to joint and hip issues, especially during their first year. This is similar to issues found in Dane breeds."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "BOAS",
+        "relation_type": "Prone to",
+        "description": "English Bulldogs are prone to Brachycephalic Obstructive Airway Syndrome due to their short snouts."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Skin/Ear Issues",
+        "relation_type": "Prone to",
+        "description": "English Bulldogs are prone to skin and ear issues due to their skin folds and ear shape."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Eye Issues",
+        "relation_type": "Prone to",
+        "description": "English Bulldogs are prone to eye issues due to their distinctive eye shape and positioning."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Joint and Hip Issues",
+        "relation_type": "Prone to",
+        "description": "English Bulldogs are prone to joint and hip issues due to their unique body structure. It is recommended to limit play and running for the first year to prevent these issues."
+      }
+    ],
+    "error": false
+  }
+]

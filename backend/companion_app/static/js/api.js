@@ -1,14 +1,14 @@
 class CompanionAPI {
-    constructor(baseUrl = '/api') {
-        this.baseUrl = baseUrl;
+    constructor() {
+        this.baseUrl = '/api';
     }
 
     async request(endpoint, method = 'GET', data = null) {
         const options = {
             method,
             headers: {
-                'Content-Type': 'application/json',
-            },
+                'Content-Type': 'application/json'
+            }
         };
 
         if (data) {
@@ -18,36 +18,24 @@ class CompanionAPI {
         const response = await fetch(`${this.baseUrl}${endpoint}`, options);
         
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.detail || 'API request failed');
+            const error = await response.text();
+            throw new Error(`API request failed: ${error}`);
         }
 
         return response.json();
     }
 
-    // API Key management
-    async updateApiKey(apiKey) {
-        return this.request('/update-api-key', 'POST', { api_key: apiKey });
-    }
-
-    async checkApiKey() {
-        return this.request('/check-api-key');
-    }
-
-    // Knowledge Graph endpoints
     async getLatestGraph(domainType) {
-        return this.request(`/latest-graph?domain_type=${encodeURIComponent(domainType)}`);
+        return this.request(`/latest-graph/${domainType}`);
     }
 
-    // Search endpoints
     async search(domainType, query, config) {
-        return this.request(`/search/${encodeURIComponent(domainType)}`, 'POST', {
+        return this.request(`/search/${domainType}`, 'POST', {
             query,
             config
         });
     }
 
-    // Crawler endpoints
     async startCrawl(urls, extractionStrategy) {
         return this.request('/scrape', 'POST', {
             urls,
@@ -55,7 +43,6 @@ class CompanionAPI {
         });
     }
 
-    // Configuration endpoints
     async saveConfig(config) {
         return this.request('/config', 'POST', config);
     }
@@ -64,8 +51,15 @@ class CompanionAPI {
         return this.request('/config');
     }
 
-    // System status
     async getStatus() {
         return this.request('/status');
+    }
+
+    async updateApiKey(apiKey) {
+        return this.request('/update-api-key', 'POST', { api_key: apiKey });
+    }
+
+    async checkApiKey() {
+        return this.request('/check-api-key');
     }
 } 

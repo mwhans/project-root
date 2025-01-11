@@ -14,9 +14,6 @@ from typing import List, Dict, Optional
 import json
 from datetime import datetime
 from googlesearch import search as google_search
-from duckduckgo_search import DDGS
-import aiohttp
-from bs4 import BeautifulSoup
 from pydantic import BaseModel
 import logging
 import traceback
@@ -39,7 +36,7 @@ class SearchResult(BaseModel):
     url: str
     title: Optional[str] = None
     snippet: Optional[str] = None
-    engine: str
+    engine: str  # Adding back engine field
     query: str
     rank: int
     category: str
@@ -58,67 +55,49 @@ class SearchResult(BaseModel):
         )
 
 class TopicSearcher:
-    """Class to handle searching across multiple engines for any topic"""
+    """Class to handle searching using Google for any topic"""
     
-    def __init__(self, search_config: Dict[str, List[str]]):
+    def __init__(self, search_config: Dict[str, List[str]], num_results: int = 10, delay: float = 2.0):
         """
         Initialize with a search configuration dictionary
         Args:
             search_config: Dictionary mapping categories to lists of search queries
-            Example:
-            {
-                'technology': ['latest AI developments', 'machine learning trends'],
-                'science': ['recent space discoveries', 'quantum computing advances']
-            }
+            num_results: Number of results to fetch per query
+            delay: Delay between searches to avoid rate limiting
         """
         self.search_queries = search_config
+        self.num_results = num_results
+        self.delay = delay
         logger.info(f"Initializing TopicSearcher with {len(search_config)} categories")
 
-    def extract_urls_from_html(self, html_content: str) -> List[str]:
-        """Extract URLs from HTML content"""
-        soup = BeautifulSoup(html_content, 'html.parser')
-        return [a.get('href') for a in soup.find_all('a', href=True)]
-
-    async def verify_connection(self, engine: str) -> bool:
-        """Verify connection to search engine"""
-        try:
-            if engine == 'google':
-                # Test Google search with a simple query
-                next(google_search('test', num=1))
-                logger.info("Successfully connected to Google Search")
-                return True
-            elif engine == 'duckduckgo':
-                # Test DuckDuckGo connection
-                with DDGS() as ddgs:
-                    ddgs.text('test', max_results=1)
-                logger.info("Successfully connected to DuckDuckGo")
-                return True
-        except Exception as e:
-            logger.error(f"Failed to connect to {engine}: {str(e)}")
-            logger.error(traceback.format_exc())
-            return False
-
-    async def search_google(self, query: str, category: str, num_results: int = 10) -> List[SearchResult]:
+    async def search_google(self, query: str, category: str) -> List[SearchResult]:
         """Search using Google"""
         logger.info(f"Starting Google search for query: {query}")
         
-        if not await self.verify_connection('google'):
-            logger.error("Google Search connection failed")
-            return []
-            
         try:
             results = []
-            search_results = list(google_search(query, num=num_results))
+            search_results = list(google_search(
+                query, 
+                num=self.num_results,
+                stop=self.num_results,
+                pause=self.delay
+            ))
             logger.info(f"Found {len(search_results)} Google results")
             
-            for i, result in enumerate(search_results):
+            for i, url in enumerate(search_results):
                 try:
-                    url = str(result)
-                    if not url.startswith(('http://', 'https://')):
+                    if not isinstance(url, str) or not url.startswith(('http://', 'https://')):
                         continue
                         
-                    results.append(SearchResult(
-                        url=url,
+                    # Create result with more structured data
+                    result_data = {
+                        'url': url,
+                        'title': f"Result {i+1} from {url}",  # Placeholder title
+                        'snippet': ''  # Google search doesn't provide snippets directly
+                    }
+                    
+                    results.append(SearchResult.from_json(
+                        data=result_data,
                         engine='google',
                         query=query,
                         rank=i + 1,
@@ -129,84 +108,24 @@ class TopicSearcher:
                     continue
 
             logger.info(f"Successfully processed {len(results)} Google results")
+            await asyncio.sleep(self.delay)  # Additional delay between queries
             return results
+            
         except Exception as e:
             logger.error(f"Error in Google search: {str(e)}")
             logger.error(traceback.format_exc())
             return []
 
-    async def search_duckduckgo(self, query: str, category: str, num_results: int = 10) -> List[SearchResult]:
-        """Search using DuckDuckGo"""
-        logger.info(f"Starting DuckDuckGo search for query: {query}")
-        
-        if not await self.verify_connection('duckduckgo'):
-            logger.error("DuckDuckGo connection failed")
-            return []
-            
-        try:
-            results = []
-            with DDGS() as ddgs:
-                search_results = ddgs.text(query, max_results=num_results)
-                logger.info(f"Found DuckDuckGo results")
-                
-                for i, result in enumerate(search_results):
-                    try:
-                        if not isinstance(result, dict):
-                            logger.warning(f"Unexpected result type: {type(result)}")
-                            continue
-                            
-                        url = result.get('link')
-                        if not url or not url.startswith(('http://', 'https://')):
-                            continue
-                            
-                        results.append(SearchResult(
-                            url=url,
-                            title=result.get('title', ''),
-                            snippet=result.get('body', ''),
-                            engine='duckduckgo',
-                            query=query,
-                            rank=i + 1,
-                            category=category
-                        ))
-                    except Exception as e:
-                        logger.error(f"Error processing DuckDuckGo result {i}: {str(e)}")
-                        continue
-
-            logger.info(f"Successfully processed {len(results)} DuckDuckGo results")
-            return results
-        except Exception as e:
-            logger.error(f"Error in DuckDuckGo search: {str(e)}")
-            logger.error(traceback.format_exc())
-            return []
-
-    async def search_all_engines(self, query: str, category: str, num_results: int = 10) -> Dict[str, List[SearchResult]]:
-        """Search across all engines for a single query"""
-        tasks = [
-            self.search_google(query, category, num_results),
-            self.search_duckduckgo(query, category, num_results)
-        ]
-        
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-        
-        processed_results = {
-            'google': results[0] if not isinstance(results[0], Exception) and results[0] else [],
-            'duckduckgo': results[1] if not isinstance(results[1], Exception) and results[1] else []
-        }
-        
-        for engine, engine_results in processed_results.items():
-            logger.info(f"Found {len(engine_results)} results from {engine} for query: {query}")
-        
-        return processed_results
-
     async def run_all_searches(self) -> Dict[str, Dict[str, List[SearchResult]]]:
-        """Run searches for all queries across all engines"""
+        """Run searches for all queries"""
         all_results = {}
         
         for category, queries in self.search_queries.items():
             category_results = {}
             for query in queries:
-                results = await self.search_all_engines(query, category)
+                results = await self.search_google(query, category)
                 category_results[query] = results
+                logger.info(f"Found {len(results)} results for {category}/{query}")
             all_results[category] = category_results
             
         return all_results
@@ -220,15 +139,14 @@ class TopicSearcher:
         filename = f'search_results_{timestamp}.json'
         filepath = os.path.join(results_dir, filename)
         
+        # Structure the output to match the expected format
         output = {}
         for category, category_results in results.items():
             output[category] = {}
-            for query, engine_results in category_results.items():
-                output[category][query] = {}
-                for engine, results_list in engine_results.items():
-                    output[category][query][engine] = [
-                        result.dict() for result in results_list
-                    ]
+            for query, results_list in category_results.items():
+                output[category][query] = {
+                    'google': [result.dict() for result in results_list]
+                }
         
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
@@ -254,25 +172,58 @@ class TopicSearcher:
         urls = set()
         for category in data.values():
             for query in category.values():
-                for engine in query.values():
-                    for result in engine:
+                for engine_results in query.values():  # Handle nested engine results
+                    for result in engine_results:
                         if result.get('url'):
                             urls.add(result['url'])
         
         logger.info(f"Found {len(urls)} unique URLs to process")
         
         # Process each URL
+        successful = 0
+        failed = 0
+        
         for url in urls:
             try:
                 logger.info(f"Processing URL: {url}")
-                url_id = await scrape_and_extract(url)
-                if url_id:
-                    logger.info(f"Successfully processed {url} with ID {url_id}")
+                content = await scrape_and_extract(
+                    url=url,
+                    extraction_config={
+                        "schema": {
+                            "name": "WebContent",
+                            "fields": [
+                                {"name": "title", "type": "string"},
+                                {"name": "summary", "type": "string"},
+                                {"name": "entities", "type": "array"}
+                            ]
+                        },
+                        "semantic_filter": "Focus on main content and key concepts",
+                        "llm_config": {
+                            "entity_types": ["concept", "technology", "term"],
+                            "guidelines": "Extract key concepts and their relationships",
+                            "max_chunk_size": 32000,
+                            "chunk_token_threshold": 2000
+                        }
+                    },
+                    use_jsoncss=True,
+                    use_llm=True,
+                    use_cosine=True
+                )
+                
+                if content:
+                    successful += 1
+                    logger.info(f"Successfully processed {url}")
                 else:
-                    logger.error(f"Failed to process {url}")
+                    failed += 1
+                    logger.warning(f"No content extracted from {url}")
+                    
             except Exception as e:
+                failed += 1
                 logger.error(f"Error processing {url}: {str(e)}")
                 continue
+                
+        logger.info(f"Processing completed. Successful: {successful}, Failed: {failed}")
+        return successful, failed
 
 async def main():
     """Example usage of the TopicSearcher"""

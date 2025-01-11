@@ -1,0 +1,146 @@
+[
+  {
+    "entities": [
+      {
+        "name": "Breathing Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are a brachycephalic breed, meaning they have a shortened snout and a flat face, which can cause breathing difficulties. This can result in snoring, snorting, and labored breathing, especially during exercise or hot weather."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs have sensitive skin, which makes them prone to allergies and skin infections. They also have skin folds that can become irritated and infected if not cleaned and dried regularly."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs have large, round eyes that are prone to infections and injuries. They are also at risk of developing \u201ccherry eye\u201d, a condition where the third eyelid gland can prolapse, causing a pinkish lump in the corner of the eye."
+      },
+      {
+        "name": "Joint Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are a heavy breed and can experience joint problems such as hip dysplasia, spinal or knee problems, and arthritis. These conditions can cause pain and mobility issues, and may require medical intervention."
+      },
+      {
+        "name": "Breathing Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are a brachycephalic breed, meaning they have a shortened snout and a flat face, which can cause breathing difficulties. This can result in snoring, snorting, and labored breathing, especially during exercise or hot weather."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs have sensitive skin, which makes them prone to allergies and skin infections. They also have skin folds that can become irritated and infected if not cleaned and dried regularly."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs have large, round eyes that are prone to infections and injuries. They are also at risk of developing \u201ccherry eye\u201d, a condition where the third eyelid gland can prolapse, causing a pinkish lump in the corner of the eye."
+      },
+      {
+        "name": "Joint Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are a heavy breed and can experience joint problems such as hip dysplasia, spinal or knee problems, and arthritis. These conditions can cause pain and mobility issues, and may require medical intervention."
+      },
+      {
+        "name": "Breathing Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are a brachycephalic breed, meaning they have a shortened snout and a flat face, which can cause breathing difficulties. This can result in snoring, snorting, and labored breathing, especially during exercise or hot weather."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs have sensitive skin, which makes them prone to allergies and skin infections. They also have skin folds that can become irritated and infected if not cleaned and dried regularly."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs have large, round eyes that are prone to infections and injuries. They are also at risk of developing \u201ccherry eye\u201d, a condition where the third eyelid gland can prolapse, causing a pinkish lump in the corner of the eye."
+      },
+      {
+        "name": "Joint Problems",
+        "type": "Health Condition",
+        "description": "Bulldogs are a heavy breed and can experience joint problems such as hip dysplasia, spinal or knee problems, and arthritis. These conditions can cause pain and mobility issues, and may require medical intervention."
+      },
+      {
+        "name": "Sleepy Hollow Animal Hospital",
+        "type": "Veterinary Facility",
+        "description": "Sleepy Hollow Animal Hospital provides comprehensive veterinary care for bulldogs and other pets. They offer services such as wellness exams, vaccinations, parasite prevention, diagnostic testing, surgery, and more."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Breathing Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Breathing problems are common in Bulldogs due to their brachycephalic breed characteristics."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Skin problems are common in Bulldogs due to their sensitive skin and skin folds."
+      },
+      {
+        "source": "Eye Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Eye problems are common in Bulldogs due to their large, round eyes."
+      },
+      {
+        "source": "Joint Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Joint problems are common in Bulldogs due to their heavy breed characteristics."
+      },
+      {
+        "source": "Breathing Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Breathing problems are common in Bulldogs due to their brachycephalic breed characteristics."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Skin problems, including allergies and skin infections, are common in Bulldogs due to their sensitive skin and skin folds."
+      },
+      {
+        "source": "Eye Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Eye problems, including infections, injuries, and 'cherry eye', are common in Bulldogs due to their large, round eyes."
+      },
+      {
+        "source": "Joint Problems",
+        "target": "Bulldogs",
+        "relation_type": "Common in",
+        "description": "Joint problems, including hip dysplasia, spinal or knee problems, and arthritis, are common in Bulldogs due to their heavy breed characteristics."
+      },
+      {
+        "source": "Breathing Problems",
+        "target": "Sleepy Hollow Animal Hospital",
+        "relation_type": "treated_by",
+        "description": "Breathing problems in bulldogs can be treated by Sleepy Hollow Animal Hospital."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Sleepy Hollow Animal Hospital",
+        "relation_type": "treated_by",
+        "description": "Skin problems in bulldogs can be treated by Sleepy Hollow Animal Hospital."
+      },
+      {
+        "source": "Eye Problems",
+        "target": "Sleepy Hollow Animal Hospital",
+        "relation_type": "treated_by",
+        "description": "Eye problems in bulldogs can be treated by Sleepy Hollow Animal Hospital."
+      },
+      {
+        "source": "Joint Problems",
+        "target": "Sleepy Hollow Animal Hospital",
+        "relation_type": "treated_by",
+        "description": "Joint problems in bulldogs can be treated by Sleepy Hollow Animal Hospital."
+      }
+    ],
+    "error": false
+  }
+]

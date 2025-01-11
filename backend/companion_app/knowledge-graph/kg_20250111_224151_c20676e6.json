@@ -1,0 +1,491 @@
+[
+  {
+    "entities": [
+      {
+        "name": "Selective Breeding",
+        "type": "Process",
+        "description": "Selective breeding is when breeders choose which dogs reproduce based on specific traits. This process has led to the distinct features that English Bulldogs are known for, but has also made them susceptible to illness."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "English Bulldogs are a breed of dog known for their distinct features, such as a pushed-in nose and a low, sturdy body. These features, while endearing, can unfortunately lead to a variety of health issues."
+      },
+      {
+        "name": "Brachycephalic Airway Syndrome",
+        "type": "Health Condition",
+        "description": "Brachycephalic Airway Syndrome (BAS) is a condition common in animals with shortened facial features, like English Bulldogs. This condition can lead to breathing problems, chronic discomfort, exercise intolerance, and difficulty eating."
+      },
+      {
+        "name": "Difficulty Breathing",
+        "type": "Symptom",
+        "description": "Difficulty breathing is a common issue in English Bulldogs, largely due to genetic abnormalities caused by selective breeding. This can manifest as gasping, snoring, or heavy panting."
+      },
+      {
+        "name": "Elongated soft palate",
+        "type": "Health Issue",
+        "description": "Occurs in Brachycephalic dogs where the soft palate extends into the airway, making it harder to breathe. This creates more resistance in the airway and can lead to edema, or inflation of the palate, causing the airways to narrow."
+      },
+      {
+        "name": "Stenotic Nares",
+        "type": "Health Issue",
+        "description": "Condition where the dog has pinched or narrow nostrils that struggle to take in air. This condition is known from the signature Bully snore and snort. If it becomes a health hazard, surgery may be recommended to widen the nostrils."
+      },
+      {
+        "name": "Pneumonia",
+        "type": "Health Issue",
+        "description": "Occurs when the lower respiratory tracts become irritated, usually when the dog inhales vomit or regurgitation. This can cause severe damage to the lungs and surrounding tissue."
+      },
+      {
+        "name": "Temperature Regulation",
+        "type": "Health Issue",
+        "description": "Brachycephalic dogs have trouble panting effectively, which is what regulates their body heat. Signs of overheating include excessive panting, heaving while panting, discolored flappy tongue, exhaustion while trying to breathe, odd throat noises, and foaming of the mouth."
+      },
+      {
+        "name": "Overheating Prevention and Treatment",
+        "type": "Health Issue",
+        "description": "To prevent overheating, ensure a ventilated place for the dog to sleep and monitor their behavior in weather above 80 degrees. If symptoms of overheating are observed, cool down the dog with a cold-water bath or a hose, give them plenty of cold water to drink, bring them inside and put them in front of a fan, and increase airflow by spreading their fur."
+      },
+      {
+        "name": "Allergies",
+        "type": "Health Issue",
+        "description": "Bulldogs have the most allergies of any breed due to their genetic makeup abnormalities."
+      },
+      {
+        "name": "Food allergies",
+        "type": "Health Issue",
+        "description": "Food is a sensitive point for bulldogs. Generic food brands with low-quality ingredients often trigger allergies in English Bulldogs. Symptoms include itchy skin, fecal issues, excessive shedding, and ear infections."
+      },
+      {
+        "name": "Skin allergies",
+        "type": "Health Issue",
+        "description": "One cause of skin infection in English Bulldogs is allergic dermatitis. Dogs may be sensitive to flea bites or environmental allergens like pollen and mold."
+      },
+      {
+        "name": "Thyroid and Heart Disease",
+        "type": "Health Issue",
+        "description": "Health issues from selective breeding have also caused problems in the internal organs."
+      },
+      {
+        "name": "Hyperthyroidism",
+        "type": "Health Issue",
+        "description": "Hyperthyroidism is when the thyroid slows down, which causes decreased production of thyroxine, the hormone responsible for regulating the metabolism."
+      },
+      {
+        "name": "Pulmonary Stenosis",
+        "type": "Health Issue",
+        "description": "Pulmonary Stenosis is a heart deformity most often found in English Bulldogs. It blocks blood flow and can lead to heart failure or even death."
+      },
+      {
+        "name": "Cancer",
+        "type": "Health Issue",
+        "description": "Bulldogs are especially susceptible to cancers like lymphoma and mast cell tumors."
+      },
+      {
+        "name": "Lymphoma",
+        "type": "Health Issue",
+        "description": "Lymphoma is a blood-borne cancer of lymphocytes, which are a specific type of white blood cell."
+      },
+      {
+        "name": "Mast cell tumors",
+        "type": "Health Issue",
+        "description": "Mast cell tumors, or MCT, are involved in your dog\u2019s response to allergens and inflammation."
+      },
+      {
+        "name": "Brachycephalic Airway Syndrome",
+        "type": "Health Condition",
+        "description": "A common condition in animals with shortened facial features, causing breathing problems, chronic discomfort, exercise intolerance, and difficulty eating. It worsens with obesity."
+      },
+      {
+        "name": "Difficulty Breathing",
+        "type": "Symptom",
+        "description": "A common health risk in bulldogs due to upper airway defects caused by Brachycephalic Airway Syndrome."
+      },
+      {
+        "name": "Temperature Regulation",
+        "type": "Health Condition",
+        "description": "Brachycephalic dogs have trouble panting effectively, which regulates their body heat. Overheating can occur in hot weather."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Condition",
+        "description": "Common in bulldogs due to their skin folds. Includes eczema, bacterial infections, hot spots, and interdigital cysts."
+      },
+      {
+        "name": "Bone and Joint Disease",
+        "type": "Health Condition",
+        "description": "Common in bulldogs due to a structural defect called chondrodysplasia. Includes canine hip dysplasia, joint and ligament injuries, and arthritis."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Condition",
+        "description": "Common in older bulldogs. Includes cherry eye, brachycephalic ocular disease, and dry eye."
+      },
+      {
+        "name": "Head Shakes",
+        "type": "Symptom",
+        "description": "Not described in the content."
+      },
+      {
+        "name": "Selective Breeding",
+        "type": "Process",
+        "description": "Selective breeding is when breeders choose which dogs reproduce based on specific traits. Some select for abilities, others for physical characteristics. This process was used in the 17th century for bull-baiting, a cruel sport where dogs would be sent in one at a time to take down a bull. Breeders needed a dog that was low to the ground, could bite with immense force and was stubborn enough never to let go. Thus, breeders selected the Old English Bulldog for this sport. This narrow selective process caused the Old English Bulldog health problems that continue to affect bulldogs today."
+      },
+      {
+        "name": "English Bulldog",
+        "type": "Dog Breed",
+        "description": "English Bulldogs are wrinkly, adorable dogs full of personality. Their pressed noses make them look eternally grumpy, which only makes them more endearing. Yet, the problem with this distinct look is that it\u2019s the result of selective breeding, which can, unfortunately, put them at risk for serious health complications."
+      },
+      {
+        "name": "Health Issues",
+        "type": "Health Condition",
+        "description": "English Bulldogs are prone to health issues due to selective breeding. These health issues may include everything from difficulty breathing to bone defects."
+      },
+      {
+        "name": "Head Shakes",
+        "type": "Health Condition",
+        "description": "A condition where the dog's head starts vibrating uncontrollably, sometimes violently enough to be mistaken for a canine seizure. This condition usually results from low blood sugar and stress, but sometimes there can be more pressing medical issues that require immediate attention."
+      },
+      {
+        "name": "Allergies",
+        "type": "Health Condition",
+        "description": "Bulldogs have the most allergies of any breed due to their genetic makeup abnormalities. These can be food allergies or skin allergies."
+      },
+      {
+        "name": "Thyroid and Heart Disease",
+        "type": "Health Condition",
+        "description": "Health issues from selective breeding have also caused problems in the internal organs. Hyperthyroidism is when the thyroid slows down, which causes decreased production of thyroxine, the hormone responsible for regulating the metabolism. Pulmonary Stenosis is a heart deformity most often found in English Bulldogs."
+      },
+      {
+        "name": "Cancer",
+        "type": "Health Condition",
+        "description": "Bulldogs are especially susceptible to cancers like lymphoma and mast cell tumors."
+      },
+      {
+        "name": "Selective Breeding",
+        "type": "Process",
+        "description": "Selective breeding is when breeders choose which dogs reproduce based on specific traits. This process has led to the distinct features that English Bulldogs are known for, but has also made them susceptible to illness."
+      },
+      {
+        "name": "Brachycephalic Airway Syndrome (BAS)",
+        "type": "Health Condition",
+        "description": "A condition common in animals that have shortened facial features that give them the pushed-in nose. Bulldogs have been bred to have relatively short muzzles and noses and, because of this, the throat and breathing passages in these dogs are frequently undersized or flattened. This causes breathing problems, chronic discomfort, exercise intolerance, and difficulty eating."
+      },
+      {
+        "name": "Difficulty Breathing",
+        "type": "Symptom",
+        "description": "A common health issue in English Bulldogs due to upper airway defects caused by Brachycephalic Airway Syndrome. Genetic abnormalities caused by selective breeding significantly impact the dog's airways."
+      },
+      {
+        "name": "Elongated soft palate",
+        "type": "Health Issue",
+        "description": "A condition in Brachycephalic dogs where the soft palate extends into the airway, making it harder to breathe. This can lead to edema, or inflation of the palate, causing the airways to narrow."
+      },
+      {
+        "name": "Stenotic Nares",
+        "type": "Health Issue",
+        "description": "A condition where the dog has pinched or narrow nostrils that struggle to take in air. This can lead to the signature Bully snore and snort. If it becomes a health hazard, surgery may be recommended to widen the nostrils."
+      },
+      {
+        "name": "Pneumonia",
+        "type": "Health Issue",
+        "description": "A condition that occurs when the lower respiratory tracts become irritated, usually when the dog inhales vomit or regurgitation. This can cause severe damage to the lungs and surrounding tissue."
+      },
+      {
+        "name": "Temperature Regulation",
+        "type": "Health Issue",
+        "description": "Brachycephalic dogs have trouble panting effectively, which is what regulates their body heat. Signs of overheating include excessive panting, heaving while panting, discolored flappy tongue, exhaustion while trying to breathe, odd throat noises, and foaming of the mouth."
+      },
+      {
+        "name": "Skin Problems",
+        "type": "Health Issue",
+        "description": "English Bulldog health problems symptoms include skin infections and irritation. These can include eczema, bacterial infections, hot spots, acne, and interdigital cysts."
+      },
+      {
+        "name": "Bone and Joint Disease",
+        "type": "Health Issue",
+        "description": "English Bulldogs have a unique build due to a structural defect called chondrodysplasia. This increases the likelihood of having bone and joint problems such as canine hip dysplasia, joint and ligament injuries, and arthritis."
+      },
+      {
+        "name": "Eye Problems",
+        "type": "Health Issue",
+        "description": "Old English Bulldog health problems include vision issues such as Cherry Eye, Brachycephalic ocular disease, and Dry eye."
+      },
+      {
+        "name": "Head shakes",
+        "type": "Health Issue",
+        "description": "A condition where the dog's head starts vibrating uncontrollably, sometimes violently enough to be mistaken for a canine seizure."
+      },
+      {
+        "name": "Allergies",
+        "type": "Health Issue",
+        "description": "Bulldogs have the most allergies of any breed due to their genetic makeup abnormalities. These can be food allergies or skin allergies."
+      },
+      {
+        "name": "Food allergies",
+        "type": "Health Issue",
+        "description": "Food is a sensitive point for bulldogs. Generic food brands with low-quality ingredients often trigger allergies in English Bulldogs. Symptoms include itchy skin, fecal issues, excessive shedding, and ear infections."
+      },
+      {
+        "name": "Skin allergies",
+        "type": "Health Issue",
+        "description": "One cause of skin infection in English Bulldogs is allergic dermatitis. Dogs may be sensitive to flea bites or environmental allergens like pollen and mold."
+      },
+      {
+        "name": "Thyroid and Heart Disease",
+        "type": "Health Issue",
+        "description": "Health issues from selective breeding have also caused problems in the internal organs. These can be thyroid or heart diseases."
+      },
+      {
+        "name": "Hyperthyroidism",
+        "type": "Health Issue",
+        "description": "Hyperthyroidism is when the thyroid slows down, which causes decreased production of thyroxine, the hormone responsible for regulating the metabolism."
+      },
+      {
+        "name": "Pulmonary Stenosis",
+        "type": "Health Issue",
+        "description": "Pulmonary Stenosis is a heart deformity most often found in English Bulldogs. It blocks blood flow and can lead to heart failure or even death."
+      },
+      {
+        "name": "Cancer",
+        "type": "Health Issue",
+        "description": "Bulldogs are especially susceptible to cancers like lymphoma and mast cell tumors."
+      },
+      {
+        "name": "Lymphoma",
+        "type": "Health Issue",
+        "description": "Lymphoma is a blood-borne cancer of lymphocytes, which are a specific type of white blood cell."
+      },
+      {
+        "name": "Mast cell tumors",
+        "type": "Health Issue",
+        "description": "Mast cell tumors, or MCT, are involved in your dog\u2019s response to allergens and inflammation."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Selective Breeding",
+        "target": "English Bulldog",
+        "relation_type": "Causes",
+        "description": "Selective breeding has led to the distinct features of the English Bulldog, but has also made them susceptible to various health issues."
+      },
+      {
+        "source": "Brachycephalic Airway Syndrome",
+        "target": "English Bulldog",
+        "relation_type": "Affects",
+        "description": "Brachycephalic Airway Syndrome is a common health condition in English Bulldogs, leading to a variety of symptoms including difficulty breathing."
+      },
+      {
+        "source": "Difficulty Breathing",
+        "target": "English Bulldog",
+        "relation_type": "Affects",
+        "description": "Difficulty breathing is a common symptom in English Bulldogs, largely due to Brachycephalic Airway Syndrome."
+      },
+      {
+        "source": "Elongated soft palate",
+        "target": "Stenotic Nares",
+        "relation_type": "Related",
+        "description": "Both are respiratory issues common in Brachycephalic dogs."
+      },
+      {
+        "source": "Elongated soft palate",
+        "target": "Pneumonia",
+        "relation_type": "Related",
+        "description": "Both are respiratory issues that can cause breathing difficulties."
+      },
+      {
+        "source": "Stenotic Nares",
+        "target": "Pneumonia",
+        "relation_type": "Related",
+        "description": "Both are respiratory issues that can cause breathing difficulties."
+      },
+      {
+        "source": "Temperature Regulation",
+        "target": "Overheating Prevention and Treatment",
+        "relation_type": "Related",
+        "description": "Overheating Prevention and Treatment is a solution to the Temperature Regulation issue in Brachycephalic dogs."
+      },
+      {
+        "source": "Allergies",
+        "target": "Food allergies",
+        "relation_type": "is_a",
+        "description": "Food allergies are a type of allergies that Bulldogs are prone to."
+      },
+      {
+        "source": "Allergies",
+        "target": "Skin allergies",
+        "relation_type": "is_a",
+        "description": "Skin allergies are a type of allergies that Bulldogs are prone to."
+      },
+      {
+        "source": "Thyroid and Heart Disease",
+        "target": "Hyperthyroidism",
+        "relation_type": "is_a",
+        "description": "Hyperthyroidism is a type of thyroid and heart disease that Bulldogs are prone to."
+      },
+      {
+        "source": "Thyroid and Heart Disease",
+        "target": "Pulmonary Stenosis",
+        "relation_type": "is_a",
+        "description": "Pulmonary Stenosis is a type of thyroid and heart disease that Bulldogs are prone to."
+      },
+      {
+        "source": "Cancer",
+        "target": "Lymphoma",
+        "relation_type": "is_a",
+        "description": "Lymphoma is a type of cancer that Bulldogs are prone to."
+      },
+      {
+        "source": "Cancer",
+        "target": "Mast cell tumors",
+        "relation_type": "is_a",
+        "description": "Mast cell tumors are a type of cancer that Bulldogs are prone to."
+      },
+      {
+        "source": "Brachycephalic Airway Syndrome",
+        "target": "Difficulty Breathing",
+        "relation_type": "causes",
+        "description": "Brachycephalic Airway Syndrome causes difficulty in breathing in bulldogs."
+      },
+      {
+        "source": "Brachycephalic Airway Syndrome",
+        "target": "Temperature Regulation",
+        "relation_type": "affects",
+        "description": "Brachycephalic Airway Syndrome affects the ability of bulldogs to regulate their body temperature."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Bone and Joint Disease",
+        "relation_type": "unrelated",
+        "description": "Skin problems and bone and joint diseases are separate health conditions in bulldogs."
+      },
+      {
+        "source": "Bone and Joint Disease",
+        "target": "Eye Problems",
+        "relation_type": "unrelated",
+        "description": "Bone and joint diseases and eye problems are separate health conditions in bulldogs."
+      },
+      {
+        "source": "Selective Breeding",
+        "target": "English Bulldog",
+        "relation_type": "causes",
+        "description": "Selective breeding has led to the distinct features of the English Bulldog, but it has also made them susceptible to various health issues."
+      },
+      {
+        "source": "English Bulldog",
+        "target": "Health Issues",
+        "relation_type": "has",
+        "description": "English Bulldogs are prone to various health issues due to the selective breeding process."
+      },
+      {
+        "source": "Allergies",
+        "target": "Food allergies",
+        "relation_type": "is_a",
+        "description": "Food allergies are a type of allergies that Bulldogs can have. Symptoms include itchy skin, fecal issues, excessive shedding, and ear infections."
+      },
+      {
+        "source": "Allergies",
+        "target": "Skin allergies",
+        "relation_type": "is_a",
+        "description": "Skin allergies are a type of allergies that Bulldogs can have. One cause of skin infection in English Bulldogs is allergic dermatitis."
+      },
+      {
+        "source": "Thyroid and Heart Disease",
+        "target": "Hyperthyroidism",
+        "relation_type": "is_a",
+        "description": "Hyperthyroidism is a type of thyroid disease where the thyroid slows down, which causes decreased production of thyroxine, the hormone responsible for regulating the metabolism."
+      },
+      {
+        "source": "Thyroid and Heart Disease",
+        "target": "Pulmonary Stenosis",
+        "relation_type": "is_a",
+        "description": "Pulmonary Stenosis is a heart deformity most often found in English Bulldogs. It blocks blood flow and can lead to heart failure or even death."
+      },
+      {
+        "source": "Cancer",
+        "target": "Lymphoma",
+        "relation_type": "is_a",
+        "description": "Lymphoma is a type of cancer that Bulldogs are susceptible to. It is a blood-borne cancer of lymphocytes, which are a specific type of white blood cell."
+      },
+      {
+        "source": "Cancer",
+        "target": "Mast cell tumors",
+        "relation_type": "is_a",
+        "description": "Mast cell tumors, or MCT, are a type of cancer that Bulldogs are susceptible to. They are involved in your dog\u2019s response to allergens and inflammation."
+      },
+      {
+        "source": "Selective Breeding",
+        "target": "Brachycephalic Airway Syndrome (BAS)",
+        "relation_type": "causes",
+        "description": "Selective breeding in English Bulldogs has led to the development of Brachycephalic Airway Syndrome."
+      },
+      {
+        "source": "Brachycephalic Airway Syndrome (BAS)",
+        "target": "Difficulty Breathing",
+        "relation_type": "causes",
+        "description": "Brachycephalic Airway Syndrome in English Bulldogs causes difficulty in breathing."
+      },
+      {
+        "source": "Elongated soft palate",
+        "target": "Stenotic Nares",
+        "relation_type": "related",
+        "description": "Both are conditions that can make it harder for the dog to breathe."
+      },
+      {
+        "source": "Pneumonia",
+        "target": "Temperature Regulation",
+        "relation_type": "related",
+        "description": "Both can be caused by issues with the dog's respiratory system."
+      },
+      {
+        "source": "Skin Problems",
+        "target": "Bone and Joint Disease",
+        "relation_type": "related",
+        "description": "Both can be caused by the unique build and skin folds of English Bulldogs."
+      },
+      {
+        "source": "Eye Problems",
+        "target": "Head shakes",
+        "relation_type": "related",
+        "description": "Both can be alarming symptoms that require immediate attention."
+      },
+      {
+        "source": "Allergies",
+        "target": "Food allergies",
+        "relation_type": "includes",
+        "description": "Allergies in Bulldogs can include food allergies."
+      },
+      {
+        "source": "Allergies",
+        "target": "Skin allergies",
+        "relation_type": "includes",
+        "description": "Allergies in Bulldogs can include skin allergies."
+      },
+      {
+        "source": "Thyroid and Heart Disease",
+        "target": "Hyperthyroidism",
+        "relation_type": "includes",
+        "description": "Thyroid and Heart Disease in Bulldogs can include Hyperthyroidism."
+      },
+      {
+        "source": "Thyroid and Heart Disease",
+        "target": "Pulmonary Stenosis",
+        "relation_type": "includes",
+        "description": "Thyroid and Heart Disease in Bulldogs can include Pulmonary Stenosis."
+      },
+      {
+        "source": "Cancer",
+        "target": "Lymphoma",
+        "relation_type": "includes",
+        "description": "Cancer in Bulldogs can include Lymphoma."
+      },
+      {
+        "source": "Cancer",
+        "target": "Mast cell tumors",
+        "relation_type": "includes",
+        "description": "Cancer in Bulldogs can include Mast cell tumors."
+      }
+    ],
+    "error": false
+  }
+]

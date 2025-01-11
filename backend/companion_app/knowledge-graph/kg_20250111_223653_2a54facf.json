@@ -1,0 +1,156 @@
+[
+  {
+    "entities": [
+      {
+        "name": "British bulldog",
+        "type": "Dog Breed",
+        "description": "An iconic British breed that has seen a doubling in ownership. However, the breed is prone to several health issues including ear infections, skin infections, and obesity."
+      },
+      {
+        "name": "Ear infections",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 12.7% of the breed suffering from it."
+      },
+      {
+        "name": "Skin infections",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 8.8% of the breed suffering from it."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 8.7% of the breed suffering from it."
+      },
+      {
+        "name": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "type": "Health Issue",
+        "description": "A health issue in British bulldogs that is often overlooked by owners, with only 3.5% of the breed being diagnosed with it."
+      },
+      {
+        "name": "British bulldog",
+        "type": "Dog Breed",
+        "description": "An iconic British breed that has seen a doubling in ownership but is prone to certain health issues."
+      },
+      {
+        "name": "Ear infections",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 12.7% of the breed suffering from it."
+      },
+      {
+        "name": "Skin infections",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 8.8% of the breed suffering from it."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 8.7% of the breed suffering from it."
+      },
+      {
+        "name": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "type": "Health Issue",
+        "description": "A health issue in British bulldogs that is often overlooked by owners, with only 3.5% of the breed being diagnosed with it."
+      },
+      {
+        "name": "British bulldog",
+        "type": "Dog Breed",
+        "description": "An iconic British breed that has seen a doubling in ownership. However, the breed is prone to several health issues including ear infections, skin infections, and obesity."
+      },
+      {
+        "name": "Ear infections",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 12.7% of the breed suffering from it."
+      },
+      {
+        "name": "Skin infections",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 8.8% of the breed suffering from it."
+      },
+      {
+        "name": "Obesity",
+        "type": "Health Issue",
+        "description": "A common health issue in British bulldogs, with 8.7% of the breed suffering from it."
+      },
+      {
+        "name": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "type": "Health Issue",
+        "description": "A health issue in British bulldogs, with only 3.5% of the breed diagnosed with it. This suggests owners consider breathing problems such as snoring as normal for this short-muzzled breed and therefore not taking the dogs for needed check-ups with their vet."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "British bulldog",
+        "target": "Ear infections",
+        "relation_type": "Prone to",
+        "description": "British bulldogs are prone to ear infections, with 12.7% of the breed suffering from it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Skin infections",
+        "relation_type": "Prone to",
+        "description": "British bulldogs are prone to skin infections, with 8.8% of the breed suffering from it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Obesity",
+        "relation_type": "Prone to",
+        "description": "British bulldogs are prone to obesity, with 8.7% of the breed suffering from it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "relation_type": "Prone to",
+        "description": "British bulldogs are prone to Brachycephalic Obstructive Airway Syndrome (BOAS), but it is often overlooked by owners, with only 3.5% of the breed being diagnosed with it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Ear infections",
+        "relation_type": "prone_to",
+        "description": "British bulldogs are prone to ear infections."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Skin infections",
+        "relation_type": "prone_to",
+        "description": "British bulldogs are prone to skin infections."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Obesity",
+        "relation_type": "prone_to",
+        "description": "British bulldogs are prone to obesity."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "relation_type": "prone_to",
+        "description": "British bulldogs are prone to Brachycephalic Obstructive Airway Syndrome (BOAS), but this is often overlooked by owners."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Ear infections",
+        "relation_type": "prone to",
+        "description": "British bulldogs are prone to ear infections, with 12.7% of the breed suffering from it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Skin infections",
+        "relation_type": "prone to",
+        "description": "British bulldogs are prone to skin infections, with 8.8% of the breed suffering from it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Obesity",
+        "relation_type": "prone to",
+        "description": "British bulldogs are prone to obesity, with 8.7% of the breed suffering from it."
+      },
+      {
+        "source": "British bulldog",
+        "target": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "relation_type": "prone to",
+        "description": "British bulldogs are prone to Brachycephalic Obstructive Airway Syndrome (BOAS), but only 3.5% of the breed are diagnosed with it. This suggests owners consider breathing problems such as snoring as normal for this short-muzzled breed and therefore not taking the dogs for needed check-ups with their vet."
+      }
+    ],
+    "error": false
+  }
+]

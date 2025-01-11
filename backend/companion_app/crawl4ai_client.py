@@ -6,7 +6,7 @@ from typing import Optional, List, Dict
 import json
 from datetime import datetime
 import os
-from crawl4ai import AsyncWebCrawler, CacheMode
+from crawl4ai import AsyncWebCrawler, CacheMode, CrawlerRunConfig
 from crawl4ai.extraction_strategy import (
     JsonCssExtractionStrategy,
     LLMExtractionStrategy,
@@ -23,6 +23,7 @@ import traceback
 from pprint import pprint
 import re
 import hashlib
+import logging
 
 # Initialize the database when the module is imported
 init_db()
@@ -46,6 +47,9 @@ class Relationship(BaseModel):
 class KnowledgeGraph(BaseModel):
     entities: List[Entity] = Field(default_factory=list)
     relationships: List[Relationship] = Field(default_factory=list)
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 def get_base_schema(config: dict) -> dict:
     """
@@ -84,6 +88,8 @@ async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str, semantic_fi
         url: URL to process
         semantic_filter: Space-separated keywords for content filtering
     """
+    logger.debug(f"[COSINE] Starting cos. preprocess for URL: {url}")
+    logger.debug(f"[COSINE] Using filter: '{semantic_filter}'")
     print("\nStarting Cosine preprocessing...")
     
     try:
@@ -99,34 +105,39 @@ async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str, semantic_fi
             verbose=True
         )
         
+        # Create crawler config
+        cosine_config = CrawlerRunConfig(
+            extraction_strategy=cosine_strategy,
+            cache_mode=CacheMode.BYPASS
+        )
+        
         # First get raw content
         base_result = await crawler.arun(url=url, cache_mode=CacheMode.BYPASS)
         if not base_result.success:
-            print(f"Failed to fetch base content: {base_result.error_message}")
+            logger.error(f"[COSINE] Failed to fetch base content: {base_result.error_message}")
             return None
             
         # Prepare content for processing
         content_to_process = base_result.markdown or base_result.cleaned_html
         if not content_to_process:
-            print("No content available for processing")
+            logger.warning("[COSINE] No content available for processing")
             return None
             
         # Run cosine strategy
         result = await crawler.arun(
             url=url,
             content=content_to_process,
-            extraction_strategy=cosine_strategy,
-            cache_mode=CacheMode.BYPASS
+            config=cosine_config
         )
         
         if not result.success:
-            print(f"Cosine extraction failed: {result.error_message}")
+            logger.error(f"[COSINE] Extraction failed: {result.error_message}")
             return None
             
         # Process the extracted clusters
         content = result.extracted_content
         if not content:
-            print("No content extracted by Cosine strategy")
+            logger.warning("[COSINE] No content extracted by Cosine strategy")
             return None
             
         # Convert content to list if it's a string or dict
@@ -165,45 +176,73 @@ async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str, semantic_fi
                 "metadata": {
                     "has_numbers": bool(re.search(r'\d', cluster_text)),
                     "has_urls": bool(urls),
-                    "url_count": len(urls),
-                    "sentence_count": len(re.split(r'[.!?]+', cluster_text))
+                    "url_count": len(urls)
                 }
             }
             
             processed_content["content_clusters"].append(processed_cluster)
             processed_content["metadata"]["total_words"] += processed_cluster["word_count"]
         
-        print("\nCosine Preprocessing Results:")
-        print(f"Total clusters found: {len(processed_content['content_clusters'])}")
-        print(f"Total words processed: {processed_content['metadata']['total_words']}")
+        logger.info(f"[COSINE] Preprocessing complete. Found {len(processed_content['content_clusters'])} clusters")
+        logger.debug(f"[COSINE] Total words processed: {processed_content['metadata']['total_words']}")
+        
+        if not processed_content["content_clusters"]:
+            logger.warning("[COSINE] No meaningful clusters found")
+            print("[Cosine] No meaningful content from {}, continuing...".format(url))
+            return None
         
         return processed_content
         
     except Exception as e:
-        print(f"Error in Cosine preprocessing: {str(e)}")
+        logger.error(f"[COSINE] Error in preprocessing: {str(e)}")
         traceback.print_exc()
         return None
 
-async def create_llm_extraction_strategy(chunk_info: str, config: dict) -> LLMExtractionStrategy:
+def create_llm_extraction_strategy(chunk_info: str, config: dict) -> LLMExtractionStrategy:
     """
-    Create an LLM extraction strategy with configurable parameters
-    Args:
-        chunk_info: Information about the current chunk being processed
-        config: Dictionary containing extraction configuration
+    Create an LLM extraction strategy with the relevant prompt instructions & schema.
     """
-    return LLMExtractionStrategy(
-        provider=config.get("provider", "openai/gpt-4"),
+    logger.debug("Creating LLMExtractionStrategy with config:")
+    logger.debug(f"chunk_info: {chunk_info}, raw config: {config}")
+
+    # Create a more specific instruction template
+    instruction = f"""
+    Analyze the following content about dog health and care. Extract structured information into entities and relationships.
+    
+    Entity Types to Extract:
+    - BreedSpecific: Breed-specific traits, conditions, or requirements
+    - Care: General care instructions and requirements
+    - Prevention: Preventive measures and recommendations
+    - Symptom: Health symptoms and warning signs
+    - Treatment: Treatment methods and medications
+    - Lifestyle: Daily care and lifestyle requirements
+
+    Guidelines:
+    1. Create detailed entities with clear names and descriptions
+    2. Establish meaningful relationships between entities
+    3. Focus on actionable health and care information
+    4. Be specific about breed-related health concerns
+    5. Include preventive care measures
+
+    Format the output as a JSON object with 'entities' and 'relationships' arrays.
+    Each entity must have: name, type, description
+    Each relationship must have: source, target, relation_type, description
+    """
+
+    # Create the strategy with explicit configuration
+    strategy = LLMExtractionStrategy(
+        provider="openai/gpt-4",
         api_token=OPENAI_API_KEY,
         schema=KnowledgeGraph.schema(),
         extraction_type="schema",
-        instruction=config.get("instruction_template", "").format(
-            chunk_info=chunk_info,
-            entity_types=config.get("entity_types", []),
-            guidelines=config.get("guidelines", [])
-        ),
-        chunk_token_threshold=config.get("chunk_token_threshold", 2000),
+        instruction=instruction,
+        chunk_token_threshold=1500,  # Reduced for better reliability
+        temperature=0.3,  # Added for more focused extraction
+        max_tokens=1000,  # Added explicit token limit
         verbose=True
     )
+    
+    return strategy
 
 async def scrape_url(url: str, verbose: bool = True) -> dict:
     """
@@ -240,209 +279,241 @@ async def scrape_and_extract(
     use_jsoncss: bool = True,
     use_llm: bool = True,
     use_cosine: bool = True
-) -> int:
+) -> dict:
     """
-    Performs a multi-step extraction flow for the given URL.
-    Args:
-        url: URL to process
-        extraction_config: Configuration dictionary containing:
-            - schema: Schema configuration for JsonCssExtraction
-            - semantic_filter: Keywords for semantic filtering
-            - llm_config: Configuration for LLM extraction
-        use_jsoncss: Whether to use JsonCss extraction
-        use_llm: Whether to use LLM extraction
-        use_cosine: Whether to use Cosine preprocessing
+    Main multi-step crawl & extraction pipeline. 
+    Returns { "entities": [...], "relationships": [...] } or an empty dict if fails.
     """
-    print(f"\n{'='*50}")
-    print(f"Starting extraction pipeline for URL: {url}")
-    print(f"{'='*50}\n")
-    
-    url_id = get_or_create_url(url)
-    preprocessed_content = None
-    raw_content = None
-    
-    async with AsyncWebCrawler() as crawler:
-        # First get raw content for fallback
-        try:
+    logger.debug(f"[Pipeline] scrape_and_extract starting for {url}")
+    logger.debug(f"[Pipeline] extraction_config: {extraction_config}")
+    logger.debug(f"[Pipeline] use_jsoncss={use_jsoncss}, use_llm={use_llm}, use_cosine={use_cosine}")
+
+    combined_results = {"entities": [], "relationships": []}
+    try:
+        # 1) Initialize crawler with async context management
+        logger.debug("[Pipeline] Initializing crawler (AsyncWebCrawler)...")
+        async with AsyncWebCrawler(verbose=True) as crawler:
+            # First get the raw HTML content
             base_result = await crawler.arun(url=url, cache_mode=CacheMode.BYPASS)
-            if base_result.success:
-                raw_content = base_result.markdown or base_result.cleaned_html
-                print("Successfully retrieved raw content as fallback")
-        except Exception as e:
-            print(f"Warning: Failed to get raw content: {str(e)}")
-        
-        # Step 1: JSON CSS Extraction
-        if use_jsoncss:
-            print("\n=== Step 1: JSON CSS Extraction ===")
-            try:
-                jsoncss_strategy = JsonCssExtractionStrategy(
-                    schema=get_base_schema(extraction_config.get("schema", {})),
-                    extraction_type="schema"
-                )
-                
-                jsoncss_res = await crawler.arun(
-                    url=url,
-                    extraction_strategy=jsoncss_strategy,
-                    cache_mode=CacheMode.BYPASS
-                )
-                
-                if jsoncss_res.extracted_content:
-                    metadata = {
-                        "extraction_timestamp": datetime.now().isoformat(),
-                        "content_length": len(str(jsoncss_res.extracted_content)),
-                        "schema_version": "1.0",
-                        "source_authority": calculate_source_authority(url)
-                    }
-                    
-                    print("\nJSON CSS Extraction Results:")
-                    print("-" * 30)
-                    pprint(jsoncss_res.extracted_content)
-                    print("\nMetadata:")
-                    pprint(metadata)
-                    
-                    store_extraction(
-                        url_id=url_id,
-                        extraction_type='json',
-                        content=jsoncss_res.extracted_content,
-                        metadata=metadata,
-                        config=jsoncss_strategy.__dict__
+            if not base_result.success:
+                logger.error(f"[Pipeline] Failed to fetch base content: {base_result.error_message}")
+                return combined_results
+
+            # Extract the content from HTML
+            raw_content = base_result.markdown or base_result.cleaned_html
+            if not raw_content:
+                logger.error("[Pipeline] No content extracted from HTML")
+                return combined_results
+
+            # 2) JSON/CSS extraction if enabled
+            base_content = raw_content
+            if use_jsoncss:
+                logger.debug("[Pipeline] Starting JSON/CSS extraction...")
+                try:
+                    jsoncss_strategy = JsonCssExtractionStrategy(
+                        schema=get_base_schema(extraction_config)
                     )
-            except Exception as e:
-                print(f"JSON extraction failed: {str(e)}")
-        
-        # Step 2: Cosine Preprocessing
-        if use_cosine:
-            print("\n=== Step 2: Cosine Preprocessing ===")
-            try:
-                preprocessed_content = await preprocess_with_cosine(
-                    crawler, 
-                    url, 
-                    extraction_config.get("semantic_filter", "")
-                )
-                if not preprocessed_content:
-                    print("Warning: Cosine preprocessing failed or returned no content")
-                    print("Proceeding with raw content for LLM extraction")
-            except Exception as e:
-                print(f"Cosine preprocessing failed: {str(e)}")
-                print("Proceeding with raw content for LLM extraction")
-        
-        # Step 3: LLM Extraction
-        if use_llm:
-            print("\n=== Step 3: LLM Extraction ===")
-            try:
-                # Prepare content for LLM
-                content_for_llm = ""
-                if preprocessed_content and preprocessed_content.get("content_clusters"):
-                    sections = []
-                    for cluster in preprocessed_content["content_clusters"]:
-                        section = f"""
-SECTION: {', '.join(cluster.get('categories', ['general']))}
-CONTENT: {cluster['text']}
-URLS: {', '.join(cluster.get('urls', []))}
----"""
-                        sections.append(section)
-                    content_for_llm = "\n\n".join(sections)
-                elif raw_content:
-                    print("Using raw content for LLM extraction")
-                    content_for_llm = f"CONTENT: {raw_content}"
+                    result = await crawler.arun(
+                        url=url,
+                        content=raw_content,
+                        extraction_strategy=jsoncss_strategy,
+                        cache_mode=CacheMode.BYPASS
+                    )
+                    if result.success and hasattr(result, 'extracted_content'):
+                        base_content = result.extracted_content
+                        logger.debug("[Pipeline] JSON/CSS extraction successful")
+                except Exception as e:
+                    logger.error(f"[Pipeline] JSON/CSS extraction failed: {str(e)}")
 
-                if not content_for_llm:
-                    print("No content available for LLM extraction")
-                    return url_id
+            # 3) Cosine preprocessing if enabled
+            if use_cosine:
+                logger.debug("[Pipeline] Starting Cosine preprocessing...")
+                try:
+                    cosine_result = await preprocess_with_cosine(
+                        crawler=crawler,
+                        url=url,
+                        semantic_filter=extraction_config.get("semantic_filter", "dog health care breed condition symptoms treatment prevention")
+                    )
+                    if cosine_result and cosine_result.get("content_clusters"):
+                        # Combine all relevant content clusters
+                        base_content = "\n\n".join([
+                            cluster["text"] for cluster in cosine_result["content_clusters"]
+                            if cluster.get("text")
+                        ])
+                        logger.debug("[Pipeline] Cosine preprocessing successful")
+                    else:
+                        logger.warning("[Pipeline] No content from Cosine preprocessing, using base content")
+                except Exception as e:
+                    logger.error(f"[Pipeline] Cosine preprocessing failed: {str(e)}")
 
-                # Chunk the content if it's too long
-                max_chunk_size = extraction_config.get("llm_config", {}).get("max_chunk_size", 32000)
-                content_chunks = [content_for_llm[i:i + max_chunk_size] 
-                                for i in range(0, len(content_for_llm), max_chunk_size)]
-
-                print(f"Processing {len(content_chunks)} content chunks...")
-
-                # Process each chunk and combine results
-                combined_graph = KnowledgeGraph()
-                
-                for i, chunk in enumerate(content_chunks):
-                    print(f"\nProcessing chunk {i+1}/{len(content_chunks)}")
-                    
+            # 4) LLM extraction if enabled
+            if use_llm and base_content:
+                logger.debug("[Pipeline] Starting LLM extraction...")
+                try:
+                    # Create LLM strategy with specific instructions
                     llm_strategy = create_llm_extraction_strategy(
-                        chunk_info=f"chunk {i+1}/{len(content_chunks)}",
-                        config=extraction_config.get("llm_config", {})
+                        chunk_info="Extract structured knowledge about dog health and care",
+                        config={
+                            "provider": "openai/gpt-4",
+                            "instruction_template": (
+                                "Extract structured knowledge about dog health and care from the following content. "
+                                "Focus on breed-specific conditions, care routines, and best practices. "
+                                "Entity types: {entity_types}. Guidelines: {guidelines}"
+                            ),
+                            "entity_types": [
+                                "BreedSpecific", "Care", "Prevention", "Symptom", "Treatment", "Lifestyle"
+                            ],
+                            "guidelines": [
+                                "Extract specific, actionable information",
+                                "Include relationships between entities",
+                                "Focus on health and care-related content"
+                            ],
+                            "chunk_token_threshold": 2000
+                        }
                     )
 
-                    try:
-                        llm_res = await crawler.arun(
-                            url=url,
-                            content=chunk,
-                            extraction_strategy=llm_strategy,
-                            cache_mode=CacheMode.BYPASS
-                        )
+                    # Run LLM extraction
+                    llm_result = await _run_llm_extraction(crawler, url, base_content, llm_strategy)
+                    if llm_result and (llm_result.get("entities") or llm_result.get("relationships")):
+                        combined_results = llm_result
+                        logger.debug("[Pipeline] LLM extraction successful")
+                    else:
+                        logger.warning("[Pipeline] LLM extraction returned no results")
+                except Exception as e:
+                    logger.error(f"[Pipeline] LLM extraction failed: {str(e)}")
+                    traceback.print_exc()
 
-                        if llm_res.extracted_content:
-                            try:
-                                # Process the content
-                                if isinstance(llm_res.extracted_content, dict) and 'choices' in llm_res.extracted_content:
-                                    content = llm_res.extracted_content['choices'][0]['message']['content']
-                                else:
-                                    content = llm_res.extracted_content
+        return combined_results
 
-                                # Store as JSON file
-                                file_path = store_knowledge_graph_as_json(
-                                    graph_data=content,
-                                    url=url,
-                                    source_metadata=metadata
-                                )
-                                print(f"\nKnowledge graph stored successfully at: {file_path}")
+    except Exception as e:
+        logger.error(f"[Pipeline] Unhandled error in scrape_and_extract: {str(e)}")
+        traceback.print_exc()
+        return combined_results
 
-                            except Exception as storage_error:
-                                print(f"Error storing knowledge graph: {str(storage_error)}")
-                                traceback.print_exc()
+async def _run_llm_extraction(crawler, url: str, content: str, strategy) -> dict:
+    """
+    Splits text into chunks, calls LLM extraction, merges results.
+    """
+    logger.debug(f"[LLM] _run_llm_extraction started for {url}")
+    logger.debug(f"[LLM] Length of content for LLM extraction: {len(content)} chars")
 
-                    except Exception as e:
-                        print(f"Error processing chunk {i+1}: {str(e)}")
-                        continue
+    combined = {"entities": [], "relationships": [], "error": False}
+    try:
+        # Configure chunk size and overlap
+        CHUNK_SIZE = 1500  # Further reduced for better processing
+        OVERLAP = 100
+        MAX_CHUNKS = 3  # Reduced to ensure completion
+        
+        # Split content into overlapping chunks
+        chunks = []
+        start = 0
+        while start < len(content) and len(chunks) < MAX_CHUNKS:
+            end = start + CHUNK_SIZE
+            if end > len(content):
+                end = len(content)
+            chunk = content[start:end]
+            chunks.append(chunk)
+            start = end - OVERLAP
+            if start >= len(content):
+                break
 
-                # Store the combined results
-                if combined_graph.entities or combined_graph.relationships:
-                    graph_metrics = analyze_graph_structure(combined_graph.dict())
-                    context_embeddings = generate_embeddings(json.dumps(combined_graph.dict()))
+        logger.debug(f"[LLM] Split content into {len(chunks)} chunks (max {MAX_CHUNKS})")
+
+        # Process each chunk with retries
+        for index, chunk in enumerate(chunks, 1):
+            max_retries = 2
+            retry_delay = 3
+
+            for attempt in range(max_retries):
+                try:
+                    logger.debug(f"[LLM] Processing chunk {index}/{len(chunks)} (attempt {attempt + 1})")
                     
-                    metadata = {
-                        "model_version": extraction_config.get("llm_config", {}).get("provider", "gpt-4"),
-                        "content_source": "preprocessed" if preprocessed_content else "raw",
-                        "chunks_processed": len(content_chunks),
-                        "total_entities": len(combined_graph.entities),
-                        "total_relationships": len(combined_graph.relationships),
-                        "graph_metrics": graph_metrics,
-                        "source_quality": calculate_source_reliability(url),
-                        "context_embeddings": context_embeddings,
-                        "entity_types": list(set(e.type for e in combined_graph.entities)),
-                        "relationship_types": list(set(r.relation_type for r in combined_graph.relationships)),
-                        "extraction_timestamp": datetime.now().isoformat()
-                    }
+                    # Create chunk-specific instruction
+                    chunk_instruction = f"""
+                    Extract structured knowledge from content chunk {index}/{len(chunks)}:
 
-                    try:
-                        file_path = store_knowledge_graph_as_json(
-                            graph_data=combined_graph.dict(),
-                            url=url,
-                            source_metadata=metadata
-                        )
-                        print(f"\nKnowledge graph stored successfully at: {file_path}")
-                    except Exception as storage_error:
-                        print(f"Error storing knowledge graph: {str(storage_error)}")
+                    Rules:
+                    1. Create entities for each distinct health concept
+                    2. Link entities with meaningful relationships
+                    3. Be specific and detailed in descriptions
+                    4. Focus on actionable information
+                    5. Include any relevant health warnings
 
-                    store_extraction(
-                        url_id=url_id,
-                        extraction_type='knowledge_graph',
-                        content=combined_graph.dict(),
-                        metadata=metadata,
-                        config=llm_strategy.__dict__
+                    Required format:
+                    {{
+                        "entities": [
+                            {{"name": "string", "type": "string", "description": "string"}},
+                            ...
+                        ],
+                        "relationships": [
+                            {{"source": "string", "target": "string", "relation_type": "string", "description": "string"}},
+                            ...
+                        ]
+                    }}
+                    """
+                    
+                    # Update strategy for this chunk
+                    strategy.instruction = chunk_instruction
+                    strategy.chunk_token_threshold = 1500
+                    strategy.temperature = 0.3
+                    strategy.max_tokens = 1000
+
+                    # Run extraction
+                    result = await crawler.arun(
+                        url=url,
+                        content=chunk,
+                        extraction_strategy=strategy,
+                        cache_mode=CacheMode.BYPASS
                     )
 
-            except Exception as e:
-                print(f"LLM extraction failed: {str(e)}")
-                traceback.print_exc()
+                    if result.success and hasattr(result, 'extracted_content'):
+                        extracted = result.extracted_content
+                        logger.debug(f"[LLM] Raw extraction result: {extracted}")
+                        
+                        if isinstance(extracted, str):
+                            try:
+                                extracted = json.loads(extracted)
+                            except json.JSONDecodeError:
+                                logger.error("[LLM] Failed to parse extracted content as JSON")
+                                continue
 
-        print("\n=== Extraction Pipeline Complete ===")
-        return url_id
+                        # Merge new entities and relationships
+                        if isinstance(extracted, list):
+                            # Handle list of results
+                            for item in extracted:
+                                if isinstance(item, dict):
+                                    combined["entities"].extend(item.get("entities", []))
+                                    combined["relationships"].extend(item.get("relationships", []))
+                        elif isinstance(extracted, dict):
+                            # Handle single result
+                            combined["entities"].extend(extracted.get("entities", []))
+                            combined["relationships"].extend(extracted.get("relationships", []))
+
+                        logger.debug(f"[LLM] Successfully processed chunk {index}")
+                        break  # Success, move to next chunk
+
+                    else:
+                        logger.warning(f"[LLM] No valid extraction for chunk {index}")
+
+                except Exception as e:
+                    logger.error(f"[LLM] Error processing chunk {index}: {str(e)}")
+                    if "rate_limit_exceeded" in str(e) and attempt < max_retries - 1:
+                        logger.info(f"[LLM] Rate limit hit, waiting {retry_delay}s before retry")
+                        await asyncio.sleep(retry_delay)
+                        retry_delay *= 2
+                    else:
+                        break
+
+            # Increased delay between chunks to avoid rate limits
+            await asyncio.sleep(2)
+
+        logger.info(f"[LLM] Extraction complete. Found {len(combined['entities'])} entities and {len(combined['relationships'])} relationships")
+        return combined
+
+    except Exception as e:
+        logger.error(f"[LLM] Error in _run_llm_extraction: {str(e)}")
+        traceback.print_exc()
+        return combined
 
 def store_knowledge_graph_as_json(graph_data: dict, url: str, source_metadata: dict = None) -> str:
     """
@@ -454,53 +525,44 @@ def store_knowledge_graph_as_json(graph_data: dict, url: str, source_metadata: d
         kg_dir = os.path.join(current_dir, 'knowledge-graph')
         os.makedirs(kg_dir, exist_ok=True)
         
-        print("\nDebug - Processing raw response...")
+        logger.debug("Processing knowledge graph data...")
         
-        # Handle the raw GPT response
-        if isinstance(graph_data, str):
-            try:
-                # First try to parse as JSON
-                data = json.loads(graph_data)
-                
-                # If this is a GPT response, extract the content
-                if isinstance(data, dict) and 'choices' in data:
-                    content = data['choices'][0]['message']['content']
-                    
-                    # Extract JSON between <blocks> tags
-                    import re
-                    blocks_match = re.search(r'<blocks>\n(.*?)\n</blocks>', content, re.DOTALL)
-                    if blocks_match:
-                        graph_data = json.loads(blocks_match.group(1))
-                    else:
-                        graph_data = json.loads(content)
-                else:
-                    graph_data = data
-                    
-            except json.JSONDecodeError:
-                # If initial JSON parse fails, try to extract JSON between <blocks> tags
-                import re
-                blocks_match = re.search(r'<blocks>\n(.*?)\n</blocks>', graph_data, re.DOTALL)
-                if blocks_match:
-                    graph_data = json.loads(blocks_match.group(1))
-                else:
-                    raise ValueError("Could not extract valid JSON from response")
-
+        # Ensure we have a valid data structure
+        if not isinstance(graph_data, (dict, list)):
+            logger.error(f"Invalid graph_data type: {type(graph_data)}")
+            graph_data = {"entities": [], "relationships": [], "error": True}
+        
+        # If it's a dict, wrap it in a list for consistency
+        if isinstance(graph_data, dict):
+            graph_data = [graph_data]
+            
+        # Ensure each item in the list has the required structure
+        formatted_data = []
+        for item in graph_data:
+            if isinstance(item, dict):
+                formatted_item = {
+                    "entities": item.get("entities", []),
+                    "relationships": item.get("relationships", []),
+                    "error": item.get("error", False)
+                }
+                formatted_data.append(formatted_item)
+        
         # Generate filename
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        url_hash = hashlib.md5(url.encode()).hexdigest()[:10]
+        url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
         filename = f"kg_{timestamp}_{url_hash}.json"
         file_path = os.path.join(kg_dir, filename)
         
         # Write to file with pretty printing
         with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(graph_data, f, indent=2, ensure_ascii=False)
+            json.dump(formatted_data, f, indent=2, ensure_ascii=False)
         
-        print(f"\nKnowledge graph successfully stored at: {file_path}")
+        logger.info(f"Knowledge graph successfully stored at: {file_path}")
         return file_path
         
     except Exception as e:
-        print(f"Error storing knowledge graph as JSON: {str(e)}")
-        print("Debug - Full error:")
+        logger.error(f"Error storing knowledge graph as JSON: {str(e)}")
+        logger.error("Debug - Full error:")
         traceback.print_exc()
         raise e
 

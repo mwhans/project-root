@@ -32,11 +32,11 @@
                 <h2>Knowledge Graph</h2>
                 <div class="form-group">
                     <label for="kg-directory">Knowledge Graph Directory:</label>
-                    <input type="text" id="kg-directory" name="kg-directory">
+                    <input type="text" id="kg-directory" name="kg-directory" placeholder="Path to store knowledge graphs">
                 </div>
                 <div class="form-group">
                     <label for="domain-type">Domain Type:</label>
-                    <input type="text" id="domain-type" name="domain-type">
+                    <input type="text" id="domain-type" name="domain-type" placeholder="e.g., technology, health, science">
                 </div>
             </section>
 
@@ -44,12 +44,24 @@
             <section id="search-config" class="config-section">
                 <h2>Search Configuration</h2>
                 <div class="form-group">
-                    <label for="strategy-type">Strategy Type:</label>
-                    <input type="text" id="strategy-type" name="strategy-type">
+                    <label for="search-categories">Search Categories:</label>
+                    <input type="text" id="search-categories" name="search-categories" placeholder="e.g., AI, Machine Learning, Neural Networks">
+                    <small class="help-text">Comma-separated categories. Each category will generate multiple search queries.</small>
                 </div>
                 <div class="form-group">
-                    <label for="search-categories">Search Categories:</label>
-                    <input type="text" id="search-categories" name="search-categories" placeholder="Comma-separated categories">
+                    <label for="semantic-filter">Semantic Filter:</label>
+                    <textarea id="semantic-filter" name="semantic-filter" placeholder="Enter semantic filter criteria"></textarea>
+                    <small class="help-text">Filter to ensure content relevance (e.g., 'Must be about technical concepts and implementations')</small>
+                </div>
+                <div class="form-group">
+                    <label for="entity-types">Entity Types:</label>
+                    <input type="text" id="entity-types" name="entity-types" placeholder="e.g., concept, technology, person">
+                    <small class="help-text">Comma-separated entity types to extract from content</small>
+                </div>
+                <div class="form-group">
+                    <label for="extraction-instructions">Extraction Instructions:</label>
+                    <textarea id="extraction-instructions" name="extraction-instructions" placeholder="Enter specific instructions for content extraction"></textarea>
+                    <small class="help-text">Guidelines for extracting knowledge from content</small>
                 </div>
             </section>
 
@@ -58,11 +70,13 @@
                 <h2>Crawler Configuration</h2>
                 <div class="form-group">
                     <label for="extraction-strategy">Extraction Strategy:</label>
-                    <input type="text" id="extraction-strategy" name="extraction-strategy">
+                    <input type="text" id="extraction-strategy" name="extraction-strategy" placeholder="e.g., knowledge_graph, content_summary">
+                    <small class="help-text">Strategy for extracting information from crawled pages</small>
                 </div>
                 <div class="form-group">
                     <label for="start-urls">Start URLs:</label>
-                    <textarea id="start-urls" name="start-urls" placeholder="One URL per line"></textarea>
+                    <textarea id="start-urls" name="start-urls" placeholder="Enter URLs to crawl (one per line)"></textarea>
+                    <small class="help-text">URLs to start crawling from</small>
                 </div>
             </section>
 
