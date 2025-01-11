@@ -1,5 +1,5 @@
 """
-Search engine module for querying multiple search engines for dog and bulldog health/lifestyle information.
+General purpose content extraction and knowledge graph generation module.
 """
 import asyncio
 from typing import Optional, List, Dict
@@ -18,7 +18,6 @@ from companion_app.db_utils import (
     init_db
 )
 from companion_app.config import OPENAI_API_KEY
-from companion_app.models import KnowledgeGraph
 from pydantic import BaseModel, Field
 import traceback
 from pprint import pprint
@@ -28,7 +27,7 @@ import hashlib
 # Initialize the database when the module is imported
 init_db()
 
-# Define the schema using Pydantic models as shown in documentation
+# Define the schema using Pydantic models
 class Entity(BaseModel):
     name: str
     type: str
@@ -48,143 +47,54 @@ class KnowledgeGraph(BaseModel):
     entities: List[Entity] = Field(default_factory=list)
     relationships: List[Relationship] = Field(default_factory=list)
 
-# Update the dog health schema to include fields
-dog_health_schema = {
-    "baseSelector": "body",
-    "type": "object",
-    "fields": [
-        {
-            "name": "entities",
-            "type": "array",
-            "selector": ".health-content, .article-content, .blog-post",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "selector": "h1, h2, h3, .condition-name"
-                    },
-                    {
-                        "name": "description",
-                        "type": "string",
-                        "selector": "p, .description, .content"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "relationships",
-            "type": "array",
-            "selector": ".health-relationships, .condition-details",
-            "items": {
-                "type": "object",
-                "fields": [
-                    {
-                        "name": "entity1",
-                        "type": "object",
-                        "selector": ".condition, .symptom",
-                        "fields": [
-                            {
-                                "name": "name",
-                                "type": "string",
-                                "selector": "h3, .name"
-                            },
-                            {
-                                "name": "description",
-                                "type": "string",
-                                "selector": "p, .description"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "entity2",
-                        "type": "object",
-                        "selector": ".related-condition, .treatment",
-                        "fields": [
-                            {
-                                "name": "name",
-                                "type": "string",
-                                "selector": "h3, .name"
-                            },
-                            {
-                                "name": "description",
-                                "type": "string",
-                                "selector": "p, .description"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "description",
-                        "type": "string",
-                        "selector": ".relationship-description, .connection"
-                    },
-                    {
-                        "name": "relation_type",
-                        "type": "string",
-                        "selector": ".relationship-type, .connection-type"
-                    }
-                ]
-            }
-        }
-    ],
-    "required": ["entities", "relationships"]
-}
-
-async def scrape_url(url: str, verbose: bool = True) -> dict:
+def get_base_schema(config: dict) -> dict:
     """
-    Asynchronously scrape the given URL using Crawl4AI and return relevant data.
-    """
-    async with AsyncWebCrawler(verbose=verbose) as crawler:
-        # For demonstration, we bypass the cache each time.
-        result = await crawler.arun(url=url, cache_mode=CacheMode.BYPASS)
-
-        # Build a small dict with relevant info
-        return {
-            "success": result.success,
-            "status_code": result.status_code,
-            "error_message": result.error_message,
-            "html": result.html if result.success else None,
-            "markdown": result.markdown if result.success else None,
-            "cleaned_html": result.cleaned_html if result.success else None,
-            "links": result.links if result.success else {},
-            "media": result.media if result.success else {}
-        }
-
-def run_scrape_sync(url: str, is_internal: bool = False) -> dict:
-    """
-    Synchronous wrapper for quick testing or non-async contexts.
+    Returns a configurable base schema for content extraction
     Args:
-        url: The URL to scrape
-        is_internal: Flag to determine if data should be stored in internal tables only
+        config: Dictionary containing schema configuration including selectors and fields
     """
-    return asyncio.run(scrape_url(url, is_internal=is_internal))
+    return {
+        "name": config.get("name", "ContentData"),
+        "baseSelector": config.get("baseSelector", "article, div.content, div.main-content"),
+        "type": "object",
+        "fields": config.get("fields", [
+            {
+                "name": "title",
+                "type": "string",
+                "selector": "h1, h2.article-title"
+            },
+            {
+                "name": "content",
+                "type": "string",
+                "selector": "p, .content, .main-content"
+            },
+            {
+                "name": "last_updated",
+                "type": "string",
+                "selector": ".article-date, .last-updated"
+            }
+        ])
+    }
 
-async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str) -> Optional[Dict]:
+async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str, semantic_filter: str) -> Optional[Dict]:
     """
-    Preprocess the content using Cosine Strategy with broader content capture.
-    Aims to gather all potentially relevant content for LLM processing.
+    Preprocess the content using Cosine Strategy with configurable content capture.
+    Args:
+        crawler: AsyncWebCrawler instance
+        url: URL to process
+        semantic_filter: Space-separated keywords for content filtering
     """
     print("\nStarting Cosine preprocessing...")
     
     try:
-        # Broader semantic filter to capture more content
-        semantic_filter = (
-            "dog pet animal health medical veterinary care treatment condition disease "
-            "symptom diagnosis prevention medicine therapy surgery recovery wellness "
-            "breed specific genetic inheritance trait characteristic behavior diet "
-            "nutrition exercise lifestyle development growth aging senior care "
-            "emergency first aid medication vaccination immunization preventive care"
-        )
-        
         # Configure cosine strategy with more permissive parameters
         cosine_strategy = CosineStrategy(
             semantic_filter=semantic_filter,
-            word_count_threshold=10,         # Lower threshold to catch shorter content
-            sim_threshold=0.2,               # More permissive similarity threshold
-            max_dist=0.8,                    # Increased to allow more diverse content
-            linkage_method='complete',       # Changed to complete for better cluster separation
-            top_k=20,                        # Increased number of clusters
+            word_count_threshold=10,
+            sim_threshold=0.2,
+            max_dist=0.8,
+            linkage_method='complete',
+            top_k=20,
             model_name='sentence-transformers/all-MiniLM-L6-v2',
             verbose=True
         )
@@ -227,28 +137,13 @@ async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str) -> Optional
             
         # Process and enhance clusters
         processed_content = {
-            "health_clusters": [],
+            "content_clusters": [],
             "metadata": {
                 "total_clusters": len(content),
                 "categories": {},
                 "total_words": 0,
                 "content_types": set()
             }
-        }
-        
-        # Broader categories for content classification
-        content_categories = {
-            "health": "health condition disease illness injury symptom diagnosis",
-            "care": "care treatment therapy medication surgery rehabilitation",
-            "prevention": "prevention vaccination immunization wellness checkup",
-            "breed_info": "breed characteristic trait genetic hereditary",
-            "lifestyle": "diet nutrition exercise activity training",
-            "general": "information guide advice recommendation tip",
-            "resources": "link url website resource reference learn more details additional information",
-            "community": "forum group community discussion board social media facebook instagram twitter",
-            "services": "vet veterinarian clinic hospital emergency care center specialist consultation",
-            "products": "shop store buy purchase product medication supplement food toy equipment",
-            "education": "training class course workshop seminar webinar education program certification"
         }
         
         # Process each cluster
@@ -262,49 +157,24 @@ async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str) -> Optional
             urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', 
                             cluster_text)
             
-            # Determine content categories (can belong to multiple)
-            cluster_categories = []
-            for category, keywords in content_categories.items():
-                if any(keyword in cluster_text.lower() for keyword in keywords.split()):
-                    cluster_categories.append(category)
-            
-            if not cluster_categories:
-                cluster_categories = ["general"]
-            
             # Create enhanced cluster
             processed_cluster = {
                 "text": cluster_text,
-                "categories": cluster_categories,
                 "word_count": len(cluster_text.split()),
-                "urls": urls,  # Add extracted URLs
+                "urls": urls,
                 "metadata": {
                     "has_numbers": bool(re.search(r'\d', cluster_text)),
-                    "has_medical_terms": bool(re.search(r'(treatment|diagnosis|symptom|condition)', 
-                                                      cluster_text, re.I)),
-                    "has_urls": bool(urls),  # Flag if URLs are present
-                    "url_count": len(urls),  # Count of URLs
+                    "has_urls": bool(urls),
+                    "url_count": len(urls),
                     "sentence_count": len(re.split(r'[.!?]+', cluster_text))
                 }
             }
             
-            processed_content["health_clusters"].append(processed_cluster)
+            processed_content["content_clusters"].append(processed_cluster)
             processed_content["metadata"]["total_words"] += processed_cluster["word_count"]
-            
-            # Update category counts
-            for category in cluster_categories:
-                processed_content["metadata"]["categories"][category] = \
-                    processed_content["metadata"]["categories"].get(category, 0) + 1
-                    
-            # Track content types
-            processed_content["metadata"]["content_types"].update(cluster_categories)
-        
-        # Convert set to list for JSON serialization
-        processed_content["metadata"]["content_types"] = \
-            list(processed_content["metadata"]["content_types"])
         
         print("\nCosine Preprocessing Results:")
-        print(f"Total clusters found: {len(processed_content['health_clusters'])}")
-        print("Category distribution:", processed_content["metadata"]["categories"])
+        print(f"Total clusters found: {len(processed_content['content_clusters'])}")
         print(f"Total words processed: {processed_content['metadata']['total_words']}")
         
         return processed_content
@@ -314,10 +184,75 @@ async def preprocess_with_cosine(crawler: AsyncWebCrawler, url: str) -> Optional
         traceback.print_exc()
         return None
 
-async def scrape_and_extract(url: str, use_jsoncss: bool = True,
-                           use_llm: bool = True, use_cosine: bool = True) -> int:
-    """Performs a multi-step extraction flow for the given URL."""
-    
+async def create_llm_extraction_strategy(chunk_info: str, config: dict) -> LLMExtractionStrategy:
+    """
+    Create an LLM extraction strategy with configurable parameters
+    Args:
+        chunk_info: Information about the current chunk being processed
+        config: Dictionary containing extraction configuration
+    """
+    return LLMExtractionStrategy(
+        provider=config.get("provider", "openai/gpt-4"),
+        api_token=OPENAI_API_KEY,
+        schema=KnowledgeGraph.schema(),
+        extraction_type="schema",
+        instruction=config.get("instruction_template", "").format(
+            chunk_info=chunk_info,
+            entity_types=config.get("entity_types", []),
+            guidelines=config.get("guidelines", [])
+        ),
+        chunk_token_threshold=config.get("chunk_token_threshold", 2000),
+        verbose=True
+    )
+
+async def scrape_url(url: str, verbose: bool = True) -> dict:
+    """
+    Asynchronously scrape the given URL using Crawl4AI and return relevant data.
+    """
+    async with AsyncWebCrawler(verbose=verbose) as crawler:
+        # For demonstration, we bypass the cache each time.
+        result = await crawler.arun(url=url, cache_mode=CacheMode.BYPASS)
+
+        # Build a small dict with relevant info
+        return {
+            "success": result.success,
+            "status_code": result.status_code,
+            "error_message": result.error_message,
+            "html": result.html if result.success else None,
+            "markdown": result.markdown if result.success else None,
+            "cleaned_html": result.cleaned_html if result.success else None,
+            "links": result.links if result.success else {},
+            "media": result.media if result.success else {}
+        }
+
+def run_scrape_sync(url: str, is_internal: bool = False) -> dict:
+    """
+    Synchronous wrapper for quick testing or non-async contexts.
+    Args:
+        url: The URL to scrape
+        is_internal: Flag to determine if data should be stored in internal tables only
+    """
+    return asyncio.run(scrape_url(url, is_internal=is_internal))
+
+async def scrape_and_extract(
+    url: str,
+    extraction_config: dict,
+    use_jsoncss: bool = True,
+    use_llm: bool = True,
+    use_cosine: bool = True
+) -> int:
+    """
+    Performs a multi-step extraction flow for the given URL.
+    Args:
+        url: URL to process
+        extraction_config: Configuration dictionary containing:
+            - schema: Schema configuration for JsonCssExtraction
+            - semantic_filter: Keywords for semantic filtering
+            - llm_config: Configuration for LLM extraction
+        use_jsoncss: Whether to use JsonCss extraction
+        use_llm: Whether to use LLM extraction
+        use_cosine: Whether to use Cosine preprocessing
+    """
     print(f"\n{'='*50}")
     print(f"Starting extraction pipeline for URL: {url}")
     print(f"{'='*50}\n")
@@ -341,7 +276,7 @@ async def scrape_and_extract(url: str, use_jsoncss: bool = True,
             print("\n=== Step 1: JSON CSS Extraction ===")
             try:
                 jsoncss_strategy = JsonCssExtractionStrategy(
-                    schema=dog_health_schema,
+                    schema=get_base_schema(extraction_config.get("schema", {})),
                     extraction_type="schema"
                 )
                 
@@ -365,8 +300,6 @@ async def scrape_and_extract(url: str, use_jsoncss: bool = True,
                     print("\nMetadata:")
                     pprint(metadata)
                     
-                    input("\nPress Enter to store JSON CSS extraction and continue...")
-                    
                     store_extraction(
                         url_id=url_id,
                         extraction_type='json',
@@ -381,7 +314,11 @@ async def scrape_and_extract(url: str, use_jsoncss: bool = True,
         if use_cosine:
             print("\n=== Step 2: Cosine Preprocessing ===")
             try:
-                preprocessed_content = await preprocess_with_cosine(crawler, url)
+                preprocessed_content = await preprocess_with_cosine(
+                    crawler, 
+                    url, 
+                    extraction_config.get("semantic_filter", "")
+                )
                 if not preprocessed_content:
                     print("Warning: Cosine preprocessing failed or returned no content")
                     print("Proceeding with raw content for LLM extraction")
@@ -395,10 +332,9 @@ async def scrape_and_extract(url: str, use_jsoncss: bool = True,
             try:
                 # Prepare content for LLM
                 content_for_llm = ""
-                if preprocessed_content and preprocessed_content.get("health_clusters"):
-                    # Format content with clear section markers
+                if preprocessed_content and preprocessed_content.get("content_clusters"):
                     sections = []
-                    for cluster in preprocessed_content["health_clusters"]:
+                    for cluster in preprocessed_content["content_clusters"]:
                         section = f"""
 SECTION: {', '.join(cluster.get('categories', ['general']))}
 CONTENT: {cluster['text']}
@@ -414,8 +350,8 @@ URLS: {', '.join(cluster.get('urls', []))}
                     print("No content available for LLM extraction")
                     return url_id
 
-                # Chunk the content if it's too long (8000 tokens is about 32000 chars)
-                max_chunk_size = 32000
+                # Chunk the content if it's too long
+                max_chunk_size = extraction_config.get("llm_config", {}).get("max_chunk_size", 32000)
                 content_chunks = [content_for_llm[i:i + max_chunk_size] 
                                 for i in range(0, len(content_for_llm), max_chunk_size)]
 
@@ -427,42 +363,9 @@ URLS: {', '.join(cluster.get('urls', []))}
                 for i, chunk in enumerate(content_chunks):
                     print(f"\nProcessing chunk {i+1}/{len(content_chunks)}")
                     
-                    llm_strategy = LLMExtractionStrategy(
-                        provider="openai/gpt-4o",
-                        api_token=OPENAI_API_KEY,
-                        schema=KnowledgeGraph.schema(),  # Use the proper schema method
-                        extraction_type="schema",
-                        instruction=f"""
-                        Extract dog health information from chunk {i+1}/{len(content_chunks)} into a knowledge graph.
-                        
-                        Guidelines:
-                        1. Create entities for health conditions, symptoms, treatments, and characteristics. As well as lifestyle, care, and prevention.
-                        2. Include any URLs mentioned in the content
-                        3. Create relationships between related entities
-                        4. Preserve all important details from the source
-                        5. Include breed-specific information
-                        6. Note any preventive care recommendations
-                        
-                        Format:
-                        - Each entity should have a name, type, and description
-                        - Include URLs in the urls field when available
-                        - Create meaningful relationships between entities
-                        - Use clear, specific relation_types
-                        
-                        Entity types to consider:
-                        - HealthCondition
-                        - Symptom
-                        - Treatment
-                        - Prevention
-                        - BreedCharacteristic
-                        - Resource
-                        - Lifestyle
-                        - Care
-                        - Prevention
-                        - BreedSpecific
-                        """,
-                        chunk_token_threshold=2000,
-                        verbose=True
+                    llm_strategy = create_llm_extraction_strategy(
+                        chunk_info=f"chunk {i+1}/{len(content_chunks)}",
+                        config=extraction_config.get("llm_config", {})
                     )
 
                     try:
@@ -474,18 +377,12 @@ URLS: {', '.join(cluster.get('urls', []))}
                         )
 
                         if llm_res.extracted_content:
-                            print("\nDebug - LLM Response Type:", type(llm_res.extracted_content))
-                            print("Debug - LLM Response Preview:", str(llm_res.extracted_content)[:200])
-                            
                             try:
-                                # The response might be in the content field of the message
+                                # Process the content
                                 if isinstance(llm_res.extracted_content, dict) and 'choices' in llm_res.extracted_content:
                                     content = llm_res.extracted_content['choices'][0]['message']['content']
                                 else:
                                     content = llm_res.extracted_content
-
-                                print("\nDebug - Processed Content Type:", type(content))
-                                print("Debug - Processed Content Preview:", str(content)[:200])
 
                                 # Store as JSON file
                                 file_path = store_knowledge_graph_as_json(
@@ -505,15 +402,11 @@ URLS: {', '.join(cluster.get('urls', []))}
 
                 # Store the combined results
                 if combined_graph.entities or combined_graph.relationships:
-                    # Generate graph metrics
                     graph_metrics = analyze_graph_structure(combined_graph.dict())
-                    
-                    # Calculate embeddings for semantic search
                     context_embeddings = generate_embeddings(json.dumps(combined_graph.dict()))
                     
-                    # Prepare metadata
                     metadata = {
-                        "model_version": "gpt-4",
+                        "model_version": extraction_config.get("llm_config", {}).get("provider", "gpt-4"),
                         "content_source": "preprocessed" if preprocessed_content else "raw",
                         "chunks_processed": len(content_chunks),
                         "total_entities": len(combined_graph.entities),
@@ -526,13 +419,6 @@ URLS: {', '.join(cluster.get('urls', []))}
                         "extraction_timestamp": datetime.now().isoformat()
                     }
 
-                    print("\nExtraction Results:")
-                    print("-" * 30)
-                    pprint(combined_graph.dict())
-                    print("\nMetadata:")
-                    pprint(metadata)
-
-                    # Store as JSON file
                     try:
                         file_path = store_knowledge_graph_as_json(
                             graph_data=combined_graph.dict(),
@@ -543,7 +429,6 @@ URLS: {', '.join(cluster.get('urls', []))}
                     except Exception as storage_error:
                         print(f"Error storing knowledge graph: {str(storage_error)}")
 
-                    # Also store in database if needed
                     store_extraction(
                         url_id=url_id,
                         extraction_type='knowledge_graph',
@@ -747,118 +632,92 @@ def calculate_cosine_confidence(result) -> float:
     # Implement confidence calculation logic
     return 1.0  # Placeholder
 
-def get_dog_health_schema(breed=None):
-    base_schema = {
-        "name": "DogHealthData",
-        "baseSelector": "article.health-content, div.health-article, div.vet-advice",
-        "fields": [
-            {
-                "name": "title",
-                "selector": "h1, h2.article-title",
-                "type": "text"
-            },
-            {
-                "name": "condition_name",
-                "selector": ".condition-name, .health-condition",
-                "type": "text"
-            },
-            {
-                "name": "symptoms",
-                "selector": ".symptom-list li, .symptoms-section p",
-                "type": "text_array"
-            },
-            {
-                "name": "treatment_options",
-                "selector": ".treatment-options li, .treatments p",
-                "type": "text_array"
-            },
-            {
-                "name": "prevention_tips",
-                "selector": ".prevention-tips li, .prevention p",
-                "type": "text_array"
-            },
-            {
-                "name": "vet_recommendations",
-                "selector": ".vet-advice p, .expert-tips",
-                "type": "text"
-            },
-            {
-                "name": "breed_specific_notes",
-                "selector": ".breed-specific, .breed-notes",
-                "type": "text"
-            },
-            {
-                "name": "last_updated",
-                "selector": ".article-date, .last-updated",
-                "type": "text"
+def calculate_source_authority(url: str, domain_weights: Dict[str, float] = None) -> float:
+    """
+    Calculate the authority score of the source URL.
+    Args:
+        url: The URL to analyze
+        domain_weights: Dictionary mapping domain types to their authority weights
+    """
+    try:
+        if domain_weights is None:
+            domain_weights = {
+                'edu': 0.85,
+                'gov': 0.9,
+                'org': 0.7,
+                'com': 0.5
             }
+            
+        score = 0.5  # Base score
+        
+        # Check TLD
+        for domain, weight in domain_weights.items():
+            if url.lower().endswith(f'.{domain}'):
+                score = weight
+                break
+        
+        # HTTPS security
+        if url.startswith('https://'):
+            score += 0.1
+            
+        # Normalize final score
+        return min(max(score, 0.0), 1.0)
+        
+    except Exception as e:
+        print(f"Error calculating source authority: {str(e)}")
+        return 0.5
+
+def check_for_citations(content: str, citation_patterns: List[str] = None) -> bool:
+    """
+    Check if the content contains citations based on provided patterns.
+    Args:
+        content: The content to check
+        citation_patterns: List of regex patterns to identify citations
+    """
+    if citation_patterns is None:
+        citation_patterns = [
+            r'\[\d+\]',  # [1], [2], etc.
+            r'\(\d{4}\)',  # (2023), (2024), etc.
+            r'cited in',
+            r'according to',
+            r'et al\.',
+            r'reference[s]?:',
+            r'source[s]?:'
         ]
-    }
+    
+    try:
+        return any(re.search(pattern, content, re.I) for pattern in citation_patterns)
+    except Exception as e:
+        print(f"Error checking citations: {str(e)}")
+        return False
 
-    if breed and breed.lower() == "bulldog":
-        base_schema["fields"].extend([
-            {
-                "name": "breathing_considerations",
-                "selector": ".breathing-issues, .respiratory-care",
-                "type": "text"
-            },
-            {
-                "name": "temperature_sensitivity",
-                "selector": ".temperature-management, .heat-sensitivity",
-                "type": "text"
-            },
-            {
-                "name": "skin_fold_care",
-                "selector": ".skin-care, .wrinkle-care",
-                "type": "text"
-            }
-        ])
-
-    return base_schema
-
-async def extract_dog_health_data(url, breed=None):
-    health_schema = get_dog_health_schema(breed)
-    jsoncss_strategy = JsonCssExtractionStrategy(health_schema)
-
-    async with AsyncWebCrawler(verbose=True) as crawler:
-        jsoncss_res = await crawler.arun(
-            url=url,
-            extraction_strategy=jsoncss_strategy,
-            cache_mode=CacheMode.BYPASS
-        )
-
-        if jsoncss_res.extracted_content:
-            confidence_score = calculate_jsoncss_confidence(jsoncss_res)
-            metadata = json.dumps({
-                "extraction_timestamp": datetime.now().isoformat(),
-                "content_length": len(jsoncss_res.extracted_content),
-                "schema_version": "1.0",
-                "breed": breed,
-                "source_authority": calculate_source_authority(url),
-                "additional_metrics": {
-                    "has_vet_citations": check_for_vet_citations(jsoncss_res.extracted_content),
-                    "content_completeness": calculate_content_completeness(jsoncss_res.extracted_content)
-                }
-            })
-
-            return jsoncss_res.extracted_content, confidence_score, metadata
-
-        return None, 0, None
-
-def calculate_source_authority(url: str) -> float:
-    """Calculate the authority score of the source URL."""
-    # Placeholder implementation - you can enhance this based on your needs
-    return 0.7
-
-def check_for_vet_citations(content: str) -> bool:
-    """Check if the content contains veterinary citations."""
-    # Placeholder implementation
-    return False
-
-def calculate_content_completeness(content: str) -> float:
-    """Calculate how complete the extracted content is."""
-    # Placeholder implementation
-    return 1.0
+def calculate_content_completeness(content: str, required_fields: List[str] = None) -> float:
+    """
+    Calculate how complete the extracted content is based on required fields.
+    Args:
+        content: The content to analyze
+        required_fields: List of field names that should be present
+    """
+    if required_fields is None:
+        required_fields = ['title', 'description', 'content']
+    
+    try:
+        if isinstance(content, str):
+            # For string content, check if it's JSON
+            try:
+                content_dict = json.loads(content)
+            except json.JSONDecodeError:
+                # If not JSON, check for basic content presence
+                return 1.0 if len(content.strip()) > 0 else 0.0
+        else:
+            content_dict = content
+            
+        # Check for required fields
+        fields_present = sum(1 for field in required_fields if field in content_dict)
+        return fields_present / len(required_fields)
+    except Exception as e:
+        print(f"Error calculating content completeness: {str(e)}")
+        return 0.0
 
 def generate_embeddings(text: str) -> List[float]:
     """

@@ -1,5 +1,5 @@
 """
-Search engine module for querying multiple search engines for dog and bulldog health/lifestyle information.
+General purpose search engine module for querying multiple search engines.
 """
 import sys
 import os
@@ -42,9 +42,10 @@ class SearchResult(BaseModel):
     engine: str
     query: str
     rank: int
+    category: str
 
     @classmethod
-    def from_json(cls, data: dict, engine: str, query: str, rank: int) -> 'SearchResult':
+    def from_json(cls, data: dict, engine: str, query: str, rank: int, category: str) -> 'SearchResult':
         """Create SearchResult from JSON data"""
         return cls(
             url=data.get('url') or data.get('link', ''),
@@ -52,41 +53,27 @@ class SearchResult(BaseModel):
             snippet=data.get('snippet') or data.get('body') or data.get('description', ''),
             engine=engine,
             query=query,
-            rank=rank
+            rank=rank,
+            category=category
         )
 
-class DogHealthSearcher:
-    """Class to handle searching across multiple engines for dog health information"""
+class TopicSearcher:
+    """Class to handle searching across multiple engines for any topic"""
     
-    def __init__(self):
-        self.search_queries = {
-            'bulldog_health': [
-                'bulldog health tips',
-                'bulldog common health issues',
-                'bulldog care guide',
-                'english bulldog health maintenance'
-            ],
-            'dog_health': [
-                'dog health tips',
-                'dog preventive care',
-                'dog wellness guide',
-                'canine health essentials'
-            ],
-            'bulldog_lifestyle': [
-                'bulldog lifestyle tips',
-                'bulldog exercise needs',
-                'bulldog diet recommendations',
-                'bulldog daily routine'
-            ],
-            'dog_lifestyle': [
-                'dog lifestyle best practices',
-                'dog exercise requirements',
-                'dog nutrition guide',
-                'dog daily care routine'
-            ]
-        }
-        logger.info("Initializing DogHealthSearcher")
-        
+    def __init__(self, search_config: Dict[str, List[str]]):
+        """
+        Initialize with a search configuration dictionary
+        Args:
+            search_config: Dictionary mapping categories to lists of search queries
+            Example:
+            {
+                'technology': ['latest AI developments', 'machine learning trends'],
+                'science': ['recent space discoveries', 'quantum computing advances']
+            }
+        """
+        self.search_queries = search_config
+        logger.info(f"Initializing TopicSearcher with {len(search_config)} categories")
+
     def extract_urls_from_html(self, html_content: str) -> List[str]:
         """Extract URLs from HTML content"""
         soup = BeautifulSoup(html_content, 'html.parser')
@@ -111,7 +98,7 @@ class DogHealthSearcher:
             logger.error(traceback.format_exc())
             return False
 
-    async def search_google(self, query: str, num_results: int = 10) -> List[SearchResult]:
+    async def search_google(self, query: str, category: str, num_results: int = 10) -> List[SearchResult]:
         """Search using Google"""
         logger.info(f"Starting Google search for query: {query}")
         
@@ -134,7 +121,8 @@ class DogHealthSearcher:
                         url=url,
                         engine='google',
                         query=query,
-                        rank=i + 1
+                        rank=i + 1,
+                        category=category
                     ))
                 except Exception as e:
                     logger.error(f"Error processing Google result {i}: {str(e)}")
@@ -147,7 +135,7 @@ class DogHealthSearcher:
             logger.error(traceback.format_exc())
             return []
 
-    async def search_duckduckgo(self, query: str, num_results: int = 10) -> List[SearchResult]:
+    async def search_duckduckgo(self, query: str, category: str, num_results: int = 10) -> List[SearchResult]:
         """Search using DuckDuckGo"""
         logger.info(f"Starting DuckDuckGo search for query: {query}")
         
@@ -177,7 +165,8 @@ class DogHealthSearcher:
                             snippet=result.get('body', ''),
                             engine='duckduckgo',
                             query=query,
-                            rank=i + 1
+                            rank=i + 1,
+                            category=category
                         ))
                     except Exception as e:
                         logger.error(f"Error processing DuckDuckGo result {i}: {str(e)}")
@@ -190,22 +179,20 @@ class DogHealthSearcher:
             logger.error(traceback.format_exc())
             return []
 
-    async def search_all_engines(self, query: str, num_results: int = 10) -> Dict[str, List[SearchResult]]:
+    async def search_all_engines(self, query: str, category: str, num_results: int = 10) -> Dict[str, List[SearchResult]]:
         """Search across all engines for a single query"""
         tasks = [
-            self.search_google(query, num_results),
-            self.search_duckduckgo(query, num_results)
+            self.search_google(query, category, num_results),
+            self.search_duckduckgo(query, category, num_results)
         ]
         
         results = await asyncio.gather(*tasks, return_exceptions=True)
         
-        # Filter out empty results and exceptions
         processed_results = {
             'google': results[0] if not isinstance(results[0], Exception) and results[0] else [],
             'duckduckgo': results[1] if not isinstance(results[1], Exception) and results[1] else []
         }
         
-        # Log the number of results found
         for engine, engine_results in processed_results.items():
             logger.info(f"Found {len(engine_results)} results from {engine} for query: {query}")
         
@@ -218,7 +205,7 @@ class DogHealthSearcher:
         for category, queries in self.search_queries.items():
             category_results = {}
             for query in queries:
-                results = await self.search_all_engines(query)
+                results = await self.search_all_engines(query, category)
                 category_results[query] = results
             all_results[category] = category_results
             
@@ -226,16 +213,13 @@ class DogHealthSearcher:
 
     def save_results_to_file(self, results: Dict[str, Dict[str, List[SearchResult]]]) -> str:
         """Save search results to a file"""
-        # Create results directory if it doesn't exist
         results_dir = os.path.join(os.path.dirname(__file__), 'search_results')
         os.makedirs(results_dir, exist_ok=True)
         
-        # Generate filename with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        filename = f'dog_health_search_results_{timestamp}.json'
+        filename = f'search_results_{timestamp}.json'
         filepath = os.path.join(results_dir, filename)
         
-        # Convert results to dictionary format
         output = {}
         for category, category_results in results.items():
             output[category] = {}
@@ -246,7 +230,6 @@ class DogHealthSearcher:
                         result.dict() for result in results_list
                     ]
         
-        # Write to file
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
         
@@ -292,13 +275,24 @@ class DogHealthSearcher:
                 continue
 
 async def main():
-    """Main function to run searches and save results"""
-    searcher = DogHealthSearcher()
+    """Example usage of the TopicSearcher"""
+    # Example search configuration
+    search_config = {
+        'technology': [
+            'latest AI developments',
+            'machine learning trends'
+        ],
+        'science': [
+            'recent space discoveries',
+            'quantum computing advances'
+        ]
+    }
+    
+    searcher = TopicSearcher(search_config)
     results = await searcher.run_all_searches()
     filepath = searcher.save_results_to_file(results)
     logger.info(f"Search results saved to: {filepath}")
     
-    # Process results to create knowledge graphs
     await searcher.process_latest_results()
 
 if __name__ == "__main__":
