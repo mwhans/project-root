@@ -1,20 +1,21 @@
 # server.py
-import uvicorn
-from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
+from contextlib import asynccontextmanager
 from pydantic import BaseModel
-from companion_app.crawl4ai_client import scrape_and_extract
-from .db_utils import init_db
+import uvicorn
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 import litellm
 
+from .api_endpoints import app as api_router
+from .db_utils import init_db
+from .crawl4ai_client import scrape_and_extract
+
 # Load environment variables at startup
 load_dotenv()
-
-# Verify OPENAI_API_KEY is available
-if not os.getenv("OPENAI_API_KEY"):
-    raise EnvironmentError("OPENAI_API_KEY not found in environment variables")
 
 # Enable LiteLLM debugging
 litellm.set_verbose = True
@@ -29,20 +30,47 @@ async def lifespan(app: FastAPI):
     print("Shutting down...")
 
 app = FastAPI(
-    title="Local Companion App",
+    title="Companion App",
+    description="Configurable Knowledge Graph and Search System",
     version="1.0.0",
     lifespan=lifespan
 )
 
-def run():
-    """Run the FastAPI server"""
-    uvicorn.run(
-        "companion_app.api_endpoints:app",
-        host="127.0.0.1",
-        port=5000,
-        reload=True,
-        reload_dirs=["backend/companion_app"]
-    )
+# Mount static files
+static_path = Path(__file__).parent / "static"
+app.mount("/static", StaticFiles(directory=str(static_path)), name="static")
+
+# Mount API routes
+app.include_router(api_router, prefix="/api")
+
+class APIKeyUpdate(BaseModel):
+    api_key: str
+
+@app.post("/api/update-api-key")
+async def update_api_key(key_data: APIKeyUpdate):
+    """Update the OpenAI API key"""
+    try:
+        os.environ["OPENAI_API_KEY"] = key_data.api_key
+        litellm.api_key = key_data.api_key
+        return {"status": "success", "message": "API key updated"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/check-api-key")
+async def check_api_key():
+    """Check if OpenAI API key is configured"""
+    return {
+        "configured": bool(os.getenv("OPENAI_API_KEY")),
+        "status": "active" if os.getenv("OPENAI_API_KEY") else "not_configured"
+    }
+
+@app.get("/", response_class=HTMLResponse)
+async def get_ui():
+    html_path = static_path / "index.html"
+    if not html_path.exists():
+        raise HTTPException(status_code=404, detail="UI not found")
+    return HTMLResponse(content=html_path.read_text(), status_code=200)
+
 if __name__ == "__main__":
-    run()
+    uvicorn.run("companion_app.server:app", host="0.0.0.0", port=8000, reload=True)
 

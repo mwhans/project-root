@@ -7,10 +7,19 @@ from datetime import datetime
 import sys
 import os
 from .crawl4ai_client import scrape_and_extract, AsyncWebCrawler
-from .search_engines import DogHealthSearcher
+from .search_engines import TopicSearcher
 import asyncio
 from fastapi.middleware.cors import CORSMiddleware
 import re
+import logging
+from pathlib import Path
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 # Add the project root to Python path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +31,7 @@ from companion_app.models import KnowledgeGraph, Entity, Relationship
 
 app = FastAPI(
     title="Knowledge Graph API",
-    description="API endpoints for retrieving knowledge graphs from the database",
+    description="API endpoints for retrieving and generating knowledge graphs",
     version="1.0.0"
 )
 
@@ -58,8 +67,68 @@ async def root():
         }
     }
 
+class SearchConfig(BaseModel):
+    """Configuration for topic search and extraction"""
+    domain_type: str
+    categories: Dict[str, List[str]]
+    semantic_filter: str
+    entity_types: List[str]
+    extraction_instructions: str
+    schema_fields: List[Dict]
+
+class CrawlerConfig(BaseModel):
+    extraction_strategy: str
+    start_urls: List[str]
+
+class KnowledgeGraphConfig(BaseModel):
+    directory: str
+    domain_type: str
+
+class SystemConfig(BaseModel):
+    knowledgeGraph: KnowledgeGraphConfig
+    search: SearchConfig
+    crawler: CrawlerConfig
+
+CONFIG_FILE = Path(__file__).parent / "config" / "system_config.json"
+
+@app.post("/config")
+async def save_config(config: SystemConfig):
+    try:
+        CONFIG_FILE.parent.mkdir(exist_ok=True)
+        with open(CONFIG_FILE, "w") as f:
+            json.dump(config.dict(), f, indent=2)
+        return {"status": "success"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/config")
+async def get_config() -> SystemConfig:
+    try:
+        if not CONFIG_FILE.exists():
+            return SystemConfig(
+                knowledgeGraph=KnowledgeGraphConfig(directory="", domain_type=""),
+                search=SearchConfig(strategy_type="", categories=[]),
+                crawler=CrawlerConfig(extraction_strategy="", start_urls=[])
+            )
+        
+        with open(CONFIG_FILE) as f:
+            return SystemConfig(**json.load(f))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/status")
+async def get_status():
+    return {
+        "status": "running",
+        "components": {
+            "knowledge_graph": True,
+            "search": True,
+            "crawler": True
+        }
+    }
+
 @app.get("/latest-graph")
-async def get_latest_knowledge_graph():
+async def get_latest_knowledge_graph(domain_type: str = None):
     """Get the most recent knowledge graph from the extractions_llm table"""
     try:
         conn = get_connection()
@@ -68,21 +137,25 @@ async def get_latest_knowledge_graph():
         # Debug: Print available tables
         cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
         tables = cur.fetchall()
-        print("\nAvailable tables:", tables)
+        logger.info(f"Available tables: {tables}")
         
         # Get the latest knowledge graph extraction with raw content
-        cur.execute("""
+        query = """
             SELECT e.extracted_content, e.raw_content, e.created_at, p.url
             FROM extractions_llm e
             JOIN pages p ON e.page_id = p.id
-            WHERE e.strategy_type = 'dog_health_knowledge_graph'
+            WHERE e.strategy_type = ?
             ORDER BY e.created_at DESC
             LIMIT 1
-        """)
+        """
+        
+        strategy_type = f"{domain_type}_knowledge_graph" if domain_type else "knowledge_graph"
+        logger.info(f"Querying for strategy type: {strategy_type}")
+        cur.execute(query, (strategy_type,))
         
         result = cur.fetchone()
         if not result:
-            print("\nNo results found in database")
+            logger.info("No results found in database, returning test response")
             test_response = await get_test_knowledge_graph()
             return test_response
             
@@ -90,18 +163,16 @@ async def get_latest_knowledge_graph():
         
         try:
             # Debug prints
-            print("\nExtracted content:", extracted_content)
-            print("\nRaw content:", raw_content)
+            logger.debug(f"Extracted content length: {len(str(extracted_content))}")
+            logger.debug(f"Raw content length: {len(str(raw_content)) if raw_content else 0}")
             
-            # Parse the knowledge graph content
             if isinstance(extracted_content, str):
                 kg_data = json.loads(extracted_content)
             else:
                 kg_data = extracted_content
                 
-            print("\nParsed knowledge graph data:", json.dumps(kg_data, indent=2))
+            logger.debug(f"Parsed knowledge graph data: {json.dumps(kg_data, indent=2)}")
             
-            # Create knowledge graph instance
             knowledge_graph = KnowledgeGraph(
                 entities=[Entity(**e) for e in kg_data.get("entities", [])],
                 relationships=[Relationship(**r) for r in kg_data.get("relationships", [])]
@@ -110,31 +181,32 @@ async def get_latest_knowledge_graph():
             response = KnowledgeGraphResponse(
                 url=url,
                 knowledge_graph=knowledge_graph,
-                raw_content=raw_content or "No raw content available",  # Ensure raw_content is never None
-                metadata={"source": "database"},
+                raw_content=raw_content or "No raw content available",
+                metadata={"source": "database", "domain_type": domain_type},
                 extraction_timestamp=created_at,
                 source_authority=1.0,
                 context={
                     "source": "extractions_llm",
-                    "extraction_type": "dog_health_knowledge_graph",
+                    "extraction_type": strategy_type,
                     "url": url
                 }
             )
             
-            print("\nFinal response:", response)
+            logger.info(f"Successfully built response for URL: {url}")
+            logger.debug(f"Response metadata: {response.metadata}")
             return response
             
         except json.JSONDecodeError as e:
-            print(f"\nJSON Decode Error: {e}")
-            print(f"Content: {extracted_content}")
+            logger.error(f"JSON Decode Error: {e}")
+            logger.error(f"Content that failed to parse: {extracted_content[:500]}...")
             raise HTTPException(
                 status_code=500,
                 detail=f"Error parsing knowledge graph data: {str(e)}"
             )
             
     except Exception as e:
-        print(f"\nError in get_latest_knowledge_graph: {e}")
-        print(f"Tables in database: {tables}")
+        logger.error(f"Error in get_latest_knowledge_graph: {e}")
+        logger.error(f"Tables in database: {tables}")
         raise HTTPException(
             status_code=500,
             detail=f"Error retrieving latest knowledge graph: {str(e)}"
@@ -147,37 +219,34 @@ async def health_check():
     """Basic health check endpoint"""
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
 
-# Keep the test endpoint for fallback
 @app.get("/test-knowledge-graph")
 async def get_test_knowledge_graph():
     """Test endpoint that returns a sample knowledge graph"""
     test_graph = KnowledgeGraph(
         entities=[
             Entity(
-                name="Dog",
-                type="animal",
-                description="A domesticated carnivorous mammal",
-                urls=["https://example.com/dogs"],
-                metadata={"category": "pets"}
+                name="Topic",
+                type="concept",
+                description="A general topic or concept",
+                urls=["https://example.com/topic"],
+                metadata={"category": "general"}
             ),
             Entity(
-                name="Veterinarian",
-                type="profession",
-                description="A medical professional who treats animals",
-                urls=["https://example.com/vets"],
-                metadata={"category": "healthcare"}
+                name="Expert",
+                type="person",
+                description="A subject matter expert",
+                urls=["https://example.com/expert"],
+                metadata={"category": "person"}
             )
         ],
         relationships=[
             Relationship(
-                source="Dog",
-                target="Veterinarian",
-                relation_type="receives_care_from",
-                description="Dogs receive medical care from veterinarians",
-                urls=["https://example.com/vet-care"],
-                metadata={"importance": "high"},
-                entity1="Dog",
-                entity2="Veterinarian"
+                source="Topic",
+                target="Expert",
+                relation_type="explained_by",
+                description="Topics are explained by experts",
+                urls=["https://example.com/expertise"],
+                metadata={"importance": "high"}
             )
         ]
     )
@@ -185,7 +254,7 @@ async def get_test_knowledge_graph():
     return KnowledgeGraphResponse(
         url="https://example.com/test",
         knowledge_graph=test_graph,
-        raw_content="This is a test knowledge graph about dogs and veterinarians.",  # Added raw_content
+        raw_content="This is a test knowledge graph showing relationships between topics and experts.",
         metadata={"test": True},
         extraction_timestamp=datetime.now().isoformat(),
         source_authority=1.0,
@@ -214,20 +283,42 @@ class ScrapeRequest(BaseModel):
     url: str
 
 @app.post("/scrape")
-async def scrape_url(request: ScrapeRequest):
-    """Scrape and extract knowledge graph from a URL"""
+async def scrape_url(request: ScrapeRequest, config: Optional[SearchConfig] = None):
+    """
+    Scrape and extract knowledge graph from a URL
+    Args:
+        request: ScrapeRequest containing the URL
+        config: Optional search configuration for domain-specific extraction
+    """
     try:
-        print(f"\nReceived scrape request for URL: {request.url}")
+        logger.info(f"Received scrape request for URL: {request.url}")
+        logger.info(f"Configuration: {config.dict() if config else 'No config provided'}")
         
-        # Initialize crawler and process URL
+        extraction_config = {
+            "schema": {
+                "name": config.domain_type if config else "ContentData",
+                "fields": config.schema_fields if config else []
+            },
+            "semantic_filter": config.semantic_filter if config else "",
+            "llm_config": {
+                "entity_types": config.entity_types if config else [],
+                "guidelines": config.extraction_instructions if config else "",
+                "max_chunk_size": 32000,
+                "chunk_token_threshold": 2000
+            }
+        } if config else {}
+        
+        logger.debug(f"Extraction config: {json.dumps(extraction_config, indent=2)}")
+        
         url_id = await scrape_and_extract(
             url=request.url,
+            extraction_config=extraction_config,
             use_jsoncss=True,
             use_llm=True,
             use_cosine=True
         )
         
-        print(f"Scraping completed. URL ID: {url_id}")
+        logger.info(f"Scraping completed successfully. URL ID: {url_id}")
         
         return {
             "status": "success",
@@ -236,7 +327,7 @@ async def scrape_url(request: ScrapeRequest):
         }
         
     except Exception as e:
-        print(f"Error in scrape_url endpoint: {str(e)}")
+        logger.error(f"Error in scrape_url endpoint: {str(e)}")
         raise HTTPException(
             status_code=500,
             detail=f"Error scraping URL: {str(e)}"
@@ -249,32 +340,39 @@ class SearchResponse(BaseModel):
     categories: List[str]
     total_results: int
 
-@app.post("/search/dog-health")
-async def search_dog_health() -> SearchResponse:
+@app.post("/search/{domain_type}")
+async def search_topic(domain_type: str, config: SearchConfig) -> SearchResponse:
     """
-    Run searches across multiple engines for dog and bulldog health/lifestyle information.
-    Returns the path to the JSON file containing results.
+    Search for content based on domain type and configuration
+    Args:
+        domain_type: Type of domain to search (e.g., 'tech', 'health', 'science')
+        config: Search configuration including categories and filters
     """
     try:
-        searcher = DogHealthSearcher()
+        logger.info(f"Starting search for domain: {domain_type}")
+        logger.debug(f"Search configuration: {config.dict()}")
+        
+        searcher = TopicSearcher(config.categories)
         results = await searcher.run_all_searches()
         filepath = searcher.save_results_to_file(results)
         
-        # Count total results
-        total_results = 0
-        for category in results.values():
-            for query in category.values():
-                for engine_results in query.values():
-                    total_results += len(engine_results)
+        total_results = sum(len(cat) for cat in results.values())
+        logger.info(f"Search completed. Found {total_results} results across {len(config.categories)} categories")
+        logger.debug(f"Results saved to: {filepath}")
         
         return SearchResponse(
             filepath=filepath,
             timestamp=datetime.now().isoformat(),
-            categories=list(results.keys()),
+            categories=list(config.categories.keys()),
             total_results=total_results
         )
+        
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
+        logger.error(f"Error performing search: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error performing search: {str(e)}"
+        )
 
 @app.get("/search/results/{filename}")
 async def get_search_results(filename: str):

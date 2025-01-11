@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companion App Configuration</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Companion App Configuration</h1>
+        </header>
+
+        <main>
+            <!-- API Key Configuration -->
+            <section id="api-key-config" class="config-section">
+                <h2>API Configuration</h2>
+                <div class="form-group">
+                    <label for="openai-key">OpenAI API Key:</label>
+                    <div class="api-key-input">
+                        <input type="password" id="openai-key" name="openai-key" placeholder="sk-...">
+                        <button id="toggle-key" class="icon-button" title="Toggle visibility">👁️</button>
+                    </div>
+                    <div class="api-key-status" id="api-key-status">Status: Not configured</div>
+                </div>
+                <button id="save-api-key" class="secondary">Save API Key</button>
+            </section>
+
+            <!-- Knowledge Graph Configuration -->
+            <section id="knowledge-graph-config" class="config-section">
+                <h2>Knowledge Graph</h2>
+                <div class="form-group">
+                    <label for="kg-directory">Knowledge Graph Directory:</label>
+                    <input type="text" id="kg-directory" name="kg-directory">
+                </div>
+                <div class="form-group">
+                    <label for="domain-type">Domain Type:</label>
+                    <input type="text" id="domain-type" name="domain-type">
+                </div>
+            </section>
+
+            <!-- Search Configuration -->
+            <section id="search-config" class="config-section">
+                <h2>Search Configuration</h2>
+                <div class="form-group">
+                    <label for="strategy-type">Strategy Type:</label>
+                    <input type="text" id="strategy-type" name="strategy-type">
+                </div>
+                <div class="form-group">
+                    <label for="search-categories">Search Categories:</label>
+                    <input type="text" id="search-categories" name="search-categories" placeholder="Comma-separated categories">
+                </div>
+            </section>
+
+            <!-- Crawler Configuration -->
+            <section id="crawler-config" class="config-section">
+                <h2>Crawler Configuration</h2>
+                <div class="form-group">
+                    <label for="extraction-strategy">Extraction Strategy:</label>
+                    <input type="text" id="extraction-strategy" name="extraction-strategy">
+                </div>
+                <div class="form-group">
+                    <label for="start-urls">Start URLs:</label>
+                    <textarea id="start-urls" name="start-urls" placeholder="One URL per line"></textarea>
+                </div>
+            </section>
+
+            <div class="actions">
+                <button id="save-config" class="primary">Save Configuration</button>
+                <button id="start-system" class="secondary">Start System</button>
+            </div>
+        </main>
+
+        <!-- Status Display -->
+        <footer>
+            <div id="status-display">System Status: Idle</div>
+        </footer>
+    </div>
+
+    <script src="/static/js/config.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html> 
