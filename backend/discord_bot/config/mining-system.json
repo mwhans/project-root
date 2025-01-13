@@ -1,0 +1,243 @@
+{
+    "name": "Mining & Quarrying Hub",
+    "categories": [
+      {
+        "name": "WELCOME & COMMUNITY",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the mining and quarrying community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to mining and quarrying"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the mining and quarrying industry"
+          }
+        ]
+      },
+      {
+        "name": "EXPLORATION & GEOLOGY",
+        "channels": [
+          {
+            "name": "mineral-exploration",
+            "type": "text",
+            "description": "Discussions about mineral exploration techniques, prospecting, and resource estimation"
+          },
+          {
+            "name": "geological-mapping",
+            "type": "text",
+            "description": "Share and discuss information about geological mapping, stratigraphy, and structural geology"
+          },
+          {
+            "name": "geophysics-and-remote-sensing",
+            "type": "text",
+            "description": "Discussions about geophysical methods, remote sensing, and data interpretation in mining exploration"
+          },
+          {
+            "name": "resource-evaluation",
+            "type": "text",
+            "description": "Share and discuss techniques for resource evaluation, ore reserve estimation, and economic assessment"
+          }
+        ]
+      },
+      {
+        "name": "MINING OPERATIONS",
+        "channels": [
+          {
+            "name": "surface-mining",
+            "type": "text",
+            "description": "Discussions about surface mining methods, equipment, and best practices"
+          },
+          {
+            "name": "underground-mining",
+            "type": "text",
+            "description": "Share and discuss information about underground mining techniques, mine design, and ground control"
+          },
+          {
+            "name": "drilling-and-blasting",
+            "type": "text",
+            "description": "Discussions about drilling and blasting techniques, explosives, and fragmentation optimization"
+          },
+          {
+            "name": "mine-planning-and-design",
+            "type": "text",
+            "description": "Share and discuss strategies for mine planning, design, and scheduling"
+          },
+          {
+            "name": "mine-automation-and-technology",
+            "type": "text",
+            "description": "Discussions about mine automation, robotics, and advanced mining technologies"
+          }
+        ]
+      },
+      {
+        "name": "MINERAL PROCESSING",
+        "channels": [
+          {
+            "name": "comminution-and-sizing",
+            "type": "text",
+            "description": "Share and discuss information about crushing, grinding, and size reduction techniques"
+          },
+          {
+            "name": "separation-and-concentration",
+            "type": "text",
+            "description": "Discussions about mineral separation methods, such as flotation, gravity separation, and magnetic separation"
+          },
+          {
+            "name": "hydrometallurgy",
+            "type": "text",
+            "description": "Share and discuss information about hydrometallurgical processes, leaching, and solution purification"
+          },
+          {
+            "name": "pyrometallurgy",
+            "type": "text",
+            "description": "Discussions about pyrometallurgical processes, smelting, and refining"
+          },
+          {
+            "name": "process-optimization",
+            "type": "text",
+            "description": "Share and discuss strategies for optimizing mineral processing circuits and improving recovery"
+          }
+        ]
+      },
+      {
+        "name": "HEALTH, SAFETY & ENVIRONMENT",
+        "channels": [
+          {
+            "name": "occupational-health-and-safety",
+            "type": "text",
+            "description": "Discussions about occupational health and safety practices, risk assessment, and incident prevention"
+          },
+          {
+            "name": "mine-rescue-and-emergency-response",
+            "type": "text",
+            "description": "Share and discuss information about mine rescue operations, emergency preparedness, and crisis management"
+          },
+          {
+            "name": "environmental-management",
+            "type": "text",
+            "description": "Discussions about environmental management, impact assessment, and pollution control in mining"
+          },
+          {
+            "name": "mine-closure-and-reclamation",
+            "type": "text",
+            "description": "Share and discuss strategies for mine closure, land reclamation, and post-mining land use"
+          }
+        ]
+      },
+      {
+        "name": "MINING BUSINESS & ECONOMICS",
+        "channels": [
+          {
+            "name": "mineral-markets-and-trade",
+            "type": "text",
+            "description": "Discussions about mineral commodity markets, supply and demand, and international trade"
+          },
+          {
+            "name": "mining-finance-and-investment",
+            "type": "text",
+            "description": "Share and discuss information about mining project finance, investment analysis, and risk management"
+          },
+          {
+            "name": "mining-law-and-regulations",
+            "type": "text",
+            "description": "Discussions about mining laws, regulations, permitting, and compliance"
+          },
+          {
+            "name": "sustainable-mining-practices",
+            "type": "text",
+            "description": "Share and discuss strategies for promoting sustainable mining, social responsibility, and community engagement"
+          }
+        ]
+      },
+      {
+        "name": "MINING EDUCATION & CAREERS",
+        "channels": [
+          {
+            "name": "mining-engineering-programs",
+            "type": "text",
+            "description": "Discussions about mining engineering education, curricula, and university programs"
+          },
+          {
+            "name": "professional-development",
+            "type": "text",
+            "description": "Share and discuss opportunities for professional development, training, and certification in mining"
+          },
+          {
+            "name": "job-opportunities",
+            "type": "text",
+            "description": "Post and discuss job openings, internships, and career opportunities in the mining industry"
+          },
+          {
+            "name": "mentorship-and-networking",
+            "type": "text",
+            "description": "Connect with mentors, share experiences, and build professional networks in the mining community"
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY ENGAGEMENT",
+        "channels": [
+          {
+            "name": "general-chat",
+            "type": "text",
+            "description": "Casual conversations and off-topic discussions for the mining and quarrying community"
+          },
+          {
+            "name": "events-and-conferences",
+            "type": "text",
+            "description": "Share and discuss information about mining industry events, conferences, and exhibitions"
+          },
+          {
+            "name": "mining-projects-showcase",
+            "type": "text",
+            "description": "Showcase and discuss interesting mining projects, case studies, and success stories"
+          },
+          {
+            "name": "server-feedback",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the Mining & Quarrying Hub server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or specialization"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

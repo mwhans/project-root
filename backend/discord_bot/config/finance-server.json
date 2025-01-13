@@ -1,0 +1,277 @@
+{
+    "categories": [
+        {
+            "name": "CENTRAL LOBBY & ANNOUNCEMENTS",
+            "channels": [
+                {
+                    "name": "official-bulletins",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true,
+                        "admin_only": true
+                    },
+                    "description": "Server-wide announcements about new features, rule changes, or major industry news"
+                },
+                {
+                    "name": "lobby-and-introductions",
+                    "type": "text",
+                    "description": "A casual gathering space for newcomers to introduce themselves, ask where to go for specific finance topics"
+                },
+                {
+                    "name": "general-finance-discussion",
+                    "type": "text",
+                    "description": "Open talks about anything finance-related that doesn't fit into specialized channels"
+                },
+                {
+                    "name": "support-and-faq",
+                    "type": "text",
+                    "description": "Basic help for server navigation, FAQ about finance resources or AI usage"
+                },
+                {
+                    "name": "historical-records",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Archive of important past announcements, official policy changes, or major events"
+                }
+            ]
+        },
+        {
+            "name": "BANKING & DEPOSITORY INSTITUTIONS",
+            "channels": [
+                {
+                    "name": "retail-banking-hub",
+                    "type": "text",
+                    "description": "Discussions around savings accounts, checking accounts, consumer lending, microfinance"
+                },
+                {
+                    "name": "commercial-banking-floor",
+                    "type": "text",
+                    "description": "Topics including business loans, corporate checking, treasury management, factoring, trade finance"
+                },
+                {
+                    "name": "payment-and-remittances",
+                    "type": "text",
+                    "description": "Focus on payment processing, money transfer, mobile payments, cross-border remittances"
+                },
+                {
+                    "name": "ai-risk-analyst",
+                    "type": "text",
+                    "description": "Automated credit scoring or default risk analysis. AI Agent can deliver quick risk profiles or lending criteria"
+                }
+            ]
+        },
+        {
+            "name": "CAPITAL MARKETS & INVESTMENTS",
+            "channels": [
+                {
+                    "name": "stock-market-court",
+                    "type": "text",
+                    "description": "Equity discussions, stock picks, portfolio strategies, fundamental/technical analysis"
+                },
+                {
+                    "name": "bond-and-fixed-income",
+                    "type": "text",
+                    "description": "Bonds, treasuries, municipal debt, yield curve insights, rating changes"
+                },
+                {
+                    "name": "commodities-and-derivatives",
+                    "type": "text",
+                    "description": "Futures, options, commodity trading, hedging strategies, margin calls"
+                },
+                {
+                    "name": "ai-market-analyst",
+                    "type": "text",
+                    "description": "Real-time market scanning and alerts from an AI agent; price analysis, chart patterns, sentiment"
+                },
+                {
+                    "name": "portfolio-management",
+                    "type": "text",
+                    "description": "Asset allocation strategies, rebalancing, risk-return optimization, personal or institutional"
+                }
+            ]
+        },
+        {
+            "name": "INVESTMENT BANKING & CORPORATE FINANCE",
+            "channels": [
+                {
+                    "name": "m-and-a-lounge",
+                    "type": "text",
+                    "description": "Discussions on mergers, acquisitions, leveraged buyouts, corporate restructuring"
+                },
+                {
+                    "name": "ipo-and-underwriting",
+                    "type": "text",
+                    "description": "Planning and pricing Initial Public Offerings, SPACs, or secondary offerings"
+                },
+                {
+                    "name": "corporate-governance",
+                    "type": "text",
+                    "description": "Board-level and C-suite issues—executive pay, stakeholder rights, shareholder activism"
+                },
+                {
+                    "name": "ai-deal-structuring",
+                    "type": "text",
+                    "description": "AI agent that helps simulate various deal structures, forecast synergy, or evaluate risk"
+                }
+            ]
+        },
+        {
+            "name": "PERSONAL FINANCE & WEALTH MANAGEMENT",
+            "channels": [
+                {
+                    "name": "personal-finance-101",
+                    "type": "text",
+                    "description": "Budgeting, debt consolidation, saving strategies, personal credit management"
+                },
+                {
+                    "name": "wealth-and-retirement-planning",
+                    "type": "text",
+                    "description": "IRAs, 401(k)s, estate planning, tax strategies for wealth accumulation"
+                },
+                {
+                    "name": "financial-advisor-ai",
+                    "type": "text",
+                    "description": "Automated suggestions on portfolio allocations, tax efficiency, personalized strategies"
+                },
+                {
+                    "name": "insurance-and-risk",
+                    "type": "text",
+                    "description": "Discussions on life insurance, property & casualty, annuities, risk coverage"
+                }
+            ]
+        },
+        {
+            "name": "REGULATORY & COMPLIANCE COMMISSION",
+            "channels": [
+                {
+                    "name": "global-finance-regulations",
+                    "type": "text",
+                    "description": "A general forum to monitor changes in SEC, FCA, ESMA, MAS, etc"
+                },
+                {
+                    "name": "aml-and-kyc-office",
+                    "type": "text",
+                    "description": "Anti-money laundering discussions, best practices for KYC, suspicious activity reporting"
+                },
+                {
+                    "name": "compliance-watch",
+                    "type": "text",
+                    "description": "Real-time monitoring channel for new rule proposals, internal compliance alerts, or fines/sanctions"
+                },
+                {
+                    "name": "ai-compliance-officer",
+                    "type": "text",
+                    "description": "An AI agent that scans for compliance red flags, potential insider trading, or suspicious patterns"
+                }
+            ]
+        },
+        {
+            "name": "INSURANCE & RISK MANAGEMENT",
+            "channels": [
+                {
+                    "name": "underwriting-and-actuarial",
+                    "type": "text",
+                    "description": "Discussion on underwriting policies, premium calculations, risk pooling, and actuarial science"
+                },
+                {
+                    "name": "claims-processing",
+                    "type": "text",
+                    "description": "Handling policyholder claims, dispute resolutions, or best practices for fraud detection"
+                },
+                {
+                    "name": "reinsurance-and-catastrophe-bonds",
+                    "type": "text",
+                    "description": "Special topics dealing with large-scale risk, reinsurance treaties, or cat bonds"
+                },
+                {
+                    "name": "risk-analytics-ai",
+                    "type": "text",
+                    "description": "AI-driven modeling of insurance risk, predictive analytics, and portfolio risk balancing"
+                }
+            ]
+        },
+        {
+            "name": "FINTECH & CRYPTO OPERATIONS",
+            "channels": [
+                {
+                    "name": "blockchain-finance",
+                    "type": "text",
+                    "description": "Blockchain-based banking, DeFi protocols, stablecoins, cross-chain finance solutions"
+                },
+                {
+                    "name": "payment-apps-and-neobanks",
+                    "type": "text",
+                    "description": "Discussions on challenger banks, mobile payment apps, BNPL solutions"
+                },
+                {
+                    "name": "crypto-trading-floor",
+                    "type": "text",
+                    "description": "Trading cryptocurrencies, altcoins, on-chain analytics, NFT finances, yield farming"
+                },
+                {
+                    "name": "fintech-regulatory-watch",
+                    "type": "text",
+                    "description": "Tracking emerging regulations affecting fintech and crypto, possible compliance challenges"
+                }
+            ]
+        },
+        {
+            "name": "INTERNATIONAL FINANCE & FOREX",
+            "channels": [
+                {
+                    "name": "forex-market-court",
+                    "type": "text",
+                    "description": "Discussions on currency pairs, exchange rates, trading signals, macroeconomic influences"
+                },
+                {
+                    "name": "cross-border-payments",
+                    "type": "text",
+                    "description": "Focus on international remittances, SWIFT, alternative payment rails, transfer pricing"
+                },
+                {
+                    "name": "emerging-markets",
+                    "type": "text",
+                    "description": "Risk and opportunity analysis in developing economies, currency volatility, capital controls"
+                },
+                {
+                    "name": "geopolitical-and-macro-analysis",
+                    "type": "text",
+                    "description": "Discussions on macroeconomic policies, central bank announcements, global risk events"
+                }
+            ]
+        },
+        {
+            "name": "ADMINISTRATIVE & OPERATIONS",
+            "channels": [
+                {
+                    "name": "mod-and-admin-council",
+                    "type": "text",
+                    "permissions": {
+                        "admin_only": true
+                    },
+                    "description": "Coordination for server moderators, admins, AI agent developers, and internal decisions"
+                },
+                {
+                    "name": "audit-and-logs",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Automated logging of system or AI activities; key server changes, suspicious events, or big announcements"
+                },
+                {
+                    "name": "server-improvements",
+                    "type": "text",
+                    "description": "Public channel for members to suggest new channels, features, or improvements to the finance system's structure"
+                },
+                {
+                    "name": "bot-commands-and-utilities",
+                    "type": "text",
+                    "description": "A dedicated channel to call AI bots or run slash commands for finance data, or to fetch market quotes"
+                }
+            ]
+        }
+    ]
+}

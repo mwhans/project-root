@@ -1,0 +1,233 @@
+{
+    "name": "Hospitality & Tourism Hub",
+    "categories": [
+      {
+        "name": "WELCOME & GENERAL",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the hospitality and tourism community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to hospitality and tourism"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the hospitality and tourism industry"
+          }
+        ]
+      },
+      {
+        "name": "HOTELS & ACCOMMODATIONS",
+        "channels": [
+          {
+            "name": "hotel-recommendations",
+            "type": "text",
+            "description": "Share and discuss hotel recommendations, reviews, and experiences"
+          },
+          {
+            "name": "hotel-operations",
+            "type": "text",
+            "description": "Discussions about hotel management, front desk, housekeeping, and other operational aspects"
+          },
+          {
+            "name": "alternative-accommodations",
+            "type": "text",
+            "description": "Discuss and share information about vacation rentals, hostels, camping, and other alternative accommodations"
+          },
+          {
+            "name": "hotel-technology",
+            "type": "text",
+            "description": "Discussions about hotel technology, property management systems, and guest experience solutions"
+          }
+        ]
+      },
+      {
+        "name": "RESTAURANTS & DINING",
+        "channels": [
+          {
+            "name": "restaurant-recommendations",
+            "type": "text",
+            "description": "Share and discuss restaurant recommendations, reviews, and dining experiences"
+          },
+          {
+            "name": "food-and-beverage",
+            "type": "text",
+            "description": "Discussions about food and beverage trends, menu design, and culinary innovations"
+          },
+          {
+            "name": "restaurant-operations",
+            "type": "text",
+            "description": "Discussions about restaurant management, kitchen operations, and service standards"
+          },
+          {
+            "name": "food-tourism",
+            "type": "text",
+            "description": "Share and discuss food tourism experiences, culinary tours, and local cuisine"
+          }
+        ]
+      },
+      {
+        "name": "TRAVEL & TOURISM",
+        "channels": [
+          {
+            "name": "destination-recommendations",
+            "type": "text",
+            "description": "Share and discuss travel destination recommendations, itineraries, and experiences"
+          },
+          {
+            "name": "transportation",
+            "type": "text",
+            "description": "Discussions about air travel, ground transportation, and cruise ships"
+          },
+          {
+            "name": "tour-operators",
+            "type": "text",
+            "description": "Share and discuss information about tour operators, guided tours, and travel packages"
+          },
+          {
+            "name": "sustainable-tourism",
+            "type": "text",
+            "description": "Discussions about sustainable tourism practices, eco-friendly travel, and responsible tourism"
+          },
+          {
+            "name": "travel-technology",
+            "type": "text",
+            "description": "Discussions about travel technology, booking systems, and travel apps"
+          }
+        ]
+      },
+      {
+        "name": "EVENTS & CONFERENCES",
+        "channels": [
+          {
+            "name": "industry-events",
+            "type": "text",
+            "description": "Share and discuss upcoming hospitality and tourism industry events, trade shows, and conferences"
+          },
+          {
+            "name": "event-planning",
+            "type": "text",
+            "description": "Discussions about event planning, venue selection, and event management"
+          },
+          {
+            "name": "meetings-and-conventions",
+            "type": "text",
+            "description": "Share and discuss information about meetings, conventions, and business travel"
+          },
+          {
+            "name": "event-technology",
+            "type": "text",
+            "description": "Discussions about event technology, registration systems, and virtual/hybrid events"
+          }
+        ]
+      },
+      {
+        "name": "HOSPITALITY EDUCATION & CAREERS",
+        "channels": [
+          {
+            "name": "hospitality-programs",
+            "type": "text",
+            "description": "Discuss and share information about hospitality education programs, degrees, and certifications"
+          },
+          {
+            "name": "career-advice",
+            "type": "text",
+            "description": "Share and discuss career advice, job search strategies, and professional development in the hospitality industry"
+          },
+          {
+            "name": "job-postings",
+            "type": "text",
+            "description": "Share and discuss job postings, internships, and employment opportunities in the hospitality and tourism industry"
+          },
+          {
+            "name": "networking",
+            "type": "text",
+            "description": "Connect with other professionals, share experiences, and expand your network in the hospitality and tourism industry"
+          }
+        ]
+      },
+      {
+        "name": "INDUSTRY TRENDS & INSIGHTS",
+        "channels": [
+          {
+            "name": "market-research",
+            "type": "text",
+            "description": "Share and discuss market research, industry reports, and data-driven insights"
+          },
+          {
+            "name": "customer-experience",
+            "type": "text",
+            "description": "Discussions about customer experience, guest satisfaction, and loyalty programs"
+          },
+          {
+            "name": "marketing-and-branding",
+            "type": "text",
+            "description": "Share and discuss marketing strategies, branding initiatives, and social media campaigns in the hospitality and tourism industry"
+          },
+          {
+            "name": "innovation-and-trends",
+            "type": "text",
+            "description": "Discussions about emerging trends, innovations, and disruptive technologies in the hospitality and tourism industry"
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY & SUPPORT",
+        "channels": [
+          {
+            "name": "general-chat",
+            "type": "text",
+            "description": "Casual conversations and off-topic discussions for the hospitality and tourism community"
+          },
+          {
+            "name": "feedback-and-suggestions",
+            "type": "text",
+            "description": "Share your feedback, suggestions, and ideas for improving the server and the hospitality and tourism community"
+          },
+          {
+            "name": "help-and-support",
+            "type": "text",
+            "description": "Ask for help, guidance, or support related to the hospitality and tourism industry or the server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or industry segment"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

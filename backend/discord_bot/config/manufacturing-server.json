@@ -1,0 +1,152 @@
+{
+    "name": "Manufacturing Hub",
+    "categories": [
+      {
+        "name": "WELCOME & COMMUNITY",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the manufacturing community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to manufacturing"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the manufacturing industry"
+          }
+        ]
+      },
+      {
+        "name": "PRODUCTION PROCESSES",
+        "channels": [
+          {
+            "name": "machining",
+            "type": "text",
+            "description": "Discussions about machining processes, such as turning, milling, drilling, and grinding"
+          },
+          {
+            "name": "forming",
+            "type": "text",
+            "description": "Share and discuss information about forming processes, like forging, stamping, and bending"
+          },
+          {
+            "name": "casting",
+            "type": "text",
+            "description": "Discussions about casting processes, including sand casting, die casting, and investment casting"
+          },
+          {
+            "name": "welding",
+            "type": "text",
+            "description": "Share and discuss strategies, techniques, and best practices for welding processes"
+          },
+          {
+            "name": "additive-manufacturing",
+            "type": "text",
+            "description": "Discussions about additive manufacturing technologies, such as 3D printing and rapid prototyping"
+          },
+          {
+            "name": "assembly",
+            "type": "text",
+            "description": "Share and discuss information about assembly processes, tools, and strategies"
+          }
+        ]
+      },
+      {
+        "name": "MANUFACTURING SYSTEMS",
+        "channels": [
+          {
+            "name": "lean-manufacturing",
+            "type": "text",
+            "description": "Discussions about lean manufacturing principles, tools, and implementation strategies"
+          },
+          {
+            "name": "six-sigma",
+            "type": "text",
+            "description": "Share and discuss information about Six Sigma methodologies and projects"
+          },
+          {
+            "name": "quality-management",
+            "type": "text",
+            "description": "Discussions about quality management systems, tools, and best practices"
+          },
+          {
+            "name": "supply-chain-management",
+            "type": "text",
+            "description": "Share and discuss strategies for managing supply chains, logistics, and inventory"
+          },
+          {
+            "name": "automation-and-robotics",
+            "type": "text",
+            "description": "Discussions about automation technologies, robotics, and their applications in manufacturing"
+          },
+          {
+            "name": "industry-4.0",
+            "type": "text",
+            "description": "Share and discuss information about Industry 4.0 technologies, such as IoT, AI, and cloud computing"
+          }
+        ]
+      },
+      {
+        "name": "PRODUCT DEVELOPMENT",
+        "channels": [
+          {
+            "name": "design-for-manufacturing",
+            "type": "text",
+            "description": "Discussions about design principles and strategies for manufacturability and assembly"
+          },
+          {
+            "name": "prototyping",
+  ...(about 80 lines omitted)...
+          },
+          {
+            "name": "manufacturing-marketplace",
+            "type": "text",
+            "description": "Buy, sell, or trade manufacturing equipment, tools, and materials"
+          },
+          {
+            "name": "server-feedback",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the Manufacturing Hub server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or specialization"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

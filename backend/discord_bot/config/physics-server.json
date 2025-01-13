@@ -1,0 +1,315 @@
+{
+    "name": "Physics Community",
+    "categories": [
+      {
+        "name": "GENERAL & COMMUNITY",
+        "channels": [
+          {
+            "name": "announcements",
+            "type": "text",
+            "description": "Important server-wide announcements and updates"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "General discussions about physics and related topics"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the physics community!"
+          },
+          {
+            "name": "physics-news",
+            "type": "text",
+            "description": "Latest news and discoveries in the world of physics"
+          },
+          {
+            "name": "collaborative-projects",
+            "type": "text",
+            "description": "Discuss and collaborate on physics projects and research"
+          },
+          {
+            "name": "memes-and-humor",
+            "type": "text",
+            "description": "Share physics memes, jokes, and humorous content"
+          }
+        ]
+      },
+      {
+        "name": "CORE PHYSICS BRANCHES",
+        "channels": [
+          {
+            "name": "classical-mechanics",
+            "type": "text",
+            "description": "Discussions related to classical mechanics"
+          },
+          {
+            "name": "thermodynamics-statistical-mechanics",
+            "type": "text",
+            "description": "Discussions related to thermodynamics and statistical mechanics"
+          },
+          {
+            "name": "electromagnetism",
+            "type": "text",
+            "description": "Discussions related to electromagnetism"
+          },
+          {
+            "name": "quantum-mechanics",
+            "type": "text",
+            "description": "Discussions related to quantum mechanics"
+          },
+          {
+            "name": "relativity",
+            "type": "text",
+            "description": "Discussions related to special and general relativity"
+          },
+          {
+            "name": "particle-physics",
+            "type": "text",
+            "description": "Discussions related to particle physics"
+          },
+          {
+            "name": "condensed-matter-physics",
+            "type": "text",
+            "description": "Discussions related to condensed matter physics"
+          },
+          {
+            "name": "astrophysics-cosmology",
+            "type": "text",
+            "description": "Discussions related to astrophysics and cosmology"
+          },
+          {
+            "name": "atomic-molecular-optical-physics",
+            "type": "text",
+            "description": "Discussions related to atomic, molecular, and optical physics"
+          },
+          {
+            "name": "biophysics-medical-physics",
+            "type": "text",
+            "description": "Discussions related to biophysics and medical physics applications"
+          }
+        ]
+      },
+      {
+        "name": "MATHEMATICAL & COMPUTATIONAL PHYSICS",
+        "channels": [
+          {
+            "name": "mathematical-physics",
+            "type": "text",
+            "description": "Discussions related to mathematical methods in physics"
+          },
+          {
+            "name": "computational-physics",
+            "type": "text",
+            "description": "Discussions related to computational physics and simulations"
+          },
+          {
+            "name": "numerical-methods",
+            "type": "text",
+            "description": "Discussions related to numerical methods and algorithms"
+          },
+          {
+            "name": "data-analysis-visualization",
+            "type": "text",
+            "description": "Discussions related to data analysis and visualization techniques"
+          }
+        ]
+      },
+      {
+        "name": "EXPERIMENTAL & APPLIED PHYSICS",
+        "channels": [
+          {
+            "name": "experimental-techniques",
+            "type": "text",
+            "description": "Discussions related to experimental techniques and methods"
+          },
+          {
+            "name": "instrumentation-measurement",
+            "type": "text",
+            "description": "Discussions related to instrumentation and measurement"
+          },
+          {
+            "name": "applied-physics",
+            "type": "text",
+            "description": "Discussions related to applied physics and engineering"
+          },
+          {
+            "name": "materials-science",
+            "type": "text",
+            "description": "Discussions related to materials science and properties"
+          },
+          {
+            "name": "nanotechnology",
+            "type": "text",
+            "description": "Discussions related to nanotechnology and nanoscale physics"
+          },
+          {
+            "name": "optics-photonics",
+            "type": "text",
+            "description": "Discussions related to optics and photonics"
+          },
+          {
+            "name": "plasma-physics",
+            "type": "text",
+            "description": "Discussions related to plasma physics and applications"
+          },
+          {
+            "name": "geophysics",
+            "type": "text",
+            "description": "Discussions related to geophysics and Earth sciences"
+          },
+          {
+            "name": "acoustics",
+            "type": "text",
+            "description": "Discussions related to acoustics and sound"
+          }
+        ]
+      },
+      {
+        "name": "INTERDISCIPLINARY & EMERGING AREAS",
+        "channels": [
+          {
+            "name": "quantum-computing-information",
+            "type": "text",
+            "description": "Discussions related to quantum computing and information"
+          },
+          {
+            "name": "quantum-optics",
+            "type": "text",
+            "description": "Discussions related to quantum optics and light-matter interactions"
+          },
+          {
+            "name": "quantum-materials",
+            "type": "text",
+            "description": "Discussions related to quantum materials and their properties"
+          },
+          {
+            "name": "soft-matter-physics",
+            "type": "text",
+            "description": "Discussions related to soft matter physics and complex fluids"
+          },
+          {
+            "name": "nonlinear-dynamics-chaos",
+            "type": "text",
+            "description": "Discussions related to nonlinear dynamics and chaos theory"
+          },
+          {
+            "name": "complex-systems",
+            "type": "text",
+            "description": "Discussions related to complex systems and emergent phenomena"
+          },
+          {
+            "name": "econophysics",
+            "type": "text",
+            "description": "Discussions related to econophysics and financial modeling"
+          },
+          {
+            "name": "sociophysics",
+            "type": "text",
+            "description": "Discussions related to sociophysics and social dynamics"
+          },
+          {
+            "name": "biophysics-biomedical-applications",
+            "type": "text",
+            "description": "Discussions related to biophysics and biomedical applications"
+          },
+          {
+            "name": "environmental-physics",
+            "type": "text",
+            "description": "Discussions related to environmental physics and climate science"
+          },
+          {
+            "name": "energy-sustainability",
+            "type": "text",
+            "description": "Discussions related to energy physics and sustainable technologies"
+          }
+        ]
+      },
+      {
+        "name": "EDUCATION & PROFESSIONAL DEVELOPMENT",
+        "channels": [
+          {
+            "name": "physics-education-pedagogy",
+            "type": "text",
+            "description": "Discussions related to physics education and teaching methods"
+          },
+          {
+            "name": "science-communication-outreach",
+            "type": "text",
+            "description": "Discussions related to science communication and public outreach"
+          },
+          {
+            "name": "undergrad-grad-resources",
+            "type": "text",
+            "description": "Resources and advice for undergraduate and graduate students"
+          },
+          {
+            "name": "career-advice-opportunities",
+            "type": "text",
+            "description": "Career advice and job opportunities in physics and related fields"
+          },
+          {
+            "name": "conferences-workshops",
+            "type": "text",
+            "description": "Information about upcoming conferences, workshops, and events"
+          },
+          {
+            "name": "history-philosophy-physics",
+            "type": "text",
+            "description": "Discussions related to the history and philosophy of physics"
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY RESOURCES",
+        "channels": [
+          {
+            "name": "journal-club-paper-discussions",
+            "type": "text",
+            "description": "Discussions and reviews of recent physics papers and publications"
+          },
+          {
+            "name": "code-sharing-open-source",
+            "type": "text",
+            "description": "Share and discuss code snippets, libraries, and open-source projects"
+          },
+          {
+            "name": "physics-q-and-a",
+            "type": "text",
+            "description": "Ask and answer questions related to physics concepts and problems"
+          },
+          {
+            "name": "physics-problems-puzzles",
+            "type": "text",
+            "description": "Share and solve physics problems, puzzles, and brain teasers"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "mod-only-discussions",
+            "type": "text",
+            "description": "Private channel for moderator discussions and coordination"
+          },
+          {
+            "name": "server-feedback-suggestions",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the server"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their expertise and interests"
+          },
+          {
+            "name": "bot-commands-automod",
+            "type": "text",
+            "description": "Configure and manage bot commands and automoderation"
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,243 @@
+{
+    "name": "Forestry Hub",
+    "categories": [
+      {
+        "name": "WELCOME & COMMUNITY",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the forestry community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to forestry"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the forestry industry"
+          }
+        ]
+      },
+      {
+        "name": "FOREST ECOLOGY & MANAGEMENT",
+        "channels": [
+          {
+            "name": "forest-ecology",
+            "type": "text",
+            "description": "Discussions about forest ecosystems, biodiversity, and ecological processes"
+          },
+          {
+            "name": "silviculture",
+            "type": "text",
+            "description": "Share and discuss information about silvicultural systems, tree planting, and stand management"
+          },
+          {
+            "name": "forest-inventory",
+            "type": "text",
+            "description": "Discussions about forest inventory techniques, sampling methods, and data analysis"
+          },
+          {
+            "name": "forest-health",
+            "type": "text",
+            "description": "Share and discuss strategies for monitoring and managing forest health, pests, and diseases"
+          },
+          {
+            "name": "fire-management",
+            "type": "text",
+            "description": "Discussions about wildfire prevention, suppression, and the role of fire in forest ecosystems"
+          }
+        ]
+      },
+      {
+        "name": "FOREST OPERATIONS & ENGINEERING",
+        "channels": [
+          {
+            "name": "harvesting-and-logging",
+            "type": "text",
+            "description": "Share and discuss information about timber harvesting techniques, equipment, and best practices"
+          },
+          {
+            "name": "forest-roads-and-transportation",
+            "type": "text",
+            "description": "Discussions about forest road design, construction, and maintenance"
+          },
+          {
+            "name": "wood-processing-and-products",
+            "type": "text",
+            "description": "Share and discuss information about wood processing technologies, value-added products, and market trends"
+          },
+          {
+            "name": "forest-engineering",
+            "type": "text",
+            "description": "Discussions about forest engineering principles, operational planning, and decision support systems"
+          }
+        ]
+      },
+      {
+        "name": "FOREST CONSERVATION & SUSTAINABILITY",
+        "channels": [
+          {
+            "name": "sustainable-forest-management",
+            "type": "text",
+            "description": "Share and discuss strategies for sustainable forest management, certification, and best practices"
+          },
+          {
+            "name": "forest-conservation",
+            "type": "text",
+            "description": "Discussions about forest conservation, protected areas, and biodiversity preservation"
+          },
+          {
+            "name": "climate-change-and-forests",
+            "type": "text",
+            "description": "Share and discuss information about the role of forests in climate change mitigation and adaptation"
+          },
+          {
+            "name": "community-forestry",
+            "type": "text",
+            "description": "Discussions about community-based forest management, social forestry, and indigenous knowledge systems"
+          },
+          {
+            "name": "agroforestry",
+            "type": "text",
+            "description": "Share and discuss information about agroforestry systems, practices, and benefits"
+          }
+        ]
+      },
+      {
+        "name": "FOREST POLICY & ECONOMICS",
+        "channels": [
+          {
+            "name": "forest-policy",
+            "type": "text",
+            "description": "Discussions about forest policies, legislation, and governance at local, national, and international levels"
+          },
+          {
+            "name": "forest-economics",
+            "type": "text",
+            "description": "Share and discuss information about forest resource valuation, market analysis, and economic impact studies"
+          },
+          {
+            "name": "payments-for-ecosystem-services",
+            "type": "text",
+            "description": "Discussions about payments for ecosystem services, carbon markets, and other incentive-based mechanisms"
+          },
+          {
+            "name": "forest-certification",
+            "type": "text",
+            "description": "Share and discuss information about forest certification schemes, standards, and auditing processes"
+          }
+        ]
+      },
+      {
+        "name": "FORESTRY EDUCATION & CAREERS",
+        "channels": [
+          {
+            "name": "forestry-programs",
+            "type": "text",
+            "description": "Discussions about forestry education, curricula, and university programs"
+          },
+          {
+            "name": "professional-development",
+            "type": "text",
+            "description": "Share and discuss opportunities for professional development, training, and certification in forestry"
+          },
+          {
+            "name": "job-opportunities",
+            "type": "text",
+            "description": "Post and discuss job openings, internships, and career opportunities in the forestry sector"
+          },
+          {
+            "name": "mentorship-and-networking",
+            "type": "text",
+            "description": "Connect with mentors, share experiences, and build professional networks in the forestry community"
+          }
+        ]
+      },
+      {
+        "name": "FORESTRY RESEARCH & INNOVATION",
+        "channels": [
+          {
+            "name": "research-projects",
+            "type": "text",
+            "description": "Share and discuss ongoing or completed forestry research projects, methodologies, and findings"
+          },
+          {
+            "name": "remote-sensing-and-gis",
+            "type": "text",
+            "description": "Discussions about remote sensing technologies, GIS applications, and spatial analysis in forestry"
+          },
+          {
+            "name": "data-science-and-modeling",
+            "type": "text",
+            "description": "Share and discuss information about data science techniques, statistical modeling, and decision support tools in forestry"
+          },
+          {
+            "name": "innovative-technologies",
+            "type": "text",
+            "description": "Discussions about innovative technologies, such as drones, AI, and IoT, and their applications in forestry"
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY ENGAGEMENT",
+        "channels": [
+          {
+            "name": "general-chat",
+            "type": "text",
+            "description": "Casual conversations and off-topic discussions for the forestry community"
+          },
+          {
+            "name": "events-and-conferences",
+            "type": "text",
+            "description": "Share and discuss information about forestry events, conferences, and workshops"
+          },
+          {
+            "name": "forestry-projects-showcase",
+            "type": "text",
+            "description": "Showcase and discuss interesting forestry projects, case studies, and success stories"
+          },
+          {
+            "name": "server-feedback",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the Forestry Hub server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or specialization"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,209 @@
+
+{
+    "name": "Golf Industry Community",
+    "categories": [
+      {
+        "name": "WELCOME & GENERAL",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the golf community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything golf-related"
+          },
+          {
+            "name": "golf-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the world of golf"
+          }
+        ]
+      },
+      {
+        "name": "GOLF COURSES & TRAVEL",
+        "channels": [
+          {
+            "name": "course-reviews",
+            "type": "text",
+            "description": "Share your experiences, ratings, and opinions on golf courses you've played"
+          },
+          {
+            "name": "course-architecture",
+            "type": "text",
+            "description": "Discussions about golf course design, layouts, and architecture"
+          },
+          {
+            "name": "golf-travel",
+            "type": "text", 
+            "description": "Recommendations and advice for golf trips, resorts, and destinations"
+          },
+          {
+            "name": "golf-real-estate",
+            "type": "text",
+            "description": "Discussions about golf communities, properties, and real estate investments"
+          }
+        ]
+      },
+      {
+        "name": "INSTRUCTION & TRAINING",
+        "channels": [
+          {
+            "name": "swing-tips-drills",
+            "type": "text",
+            "description": "Share your best swing tips, practice drills, and training aids"
+          },
+          {
+            "name": "short-game-putting",
+            "type": "text",
+            "description": "Techniques and strategies for improving your short game and putting"
+          },
+          {
+            "name": "mental-game-psychology",
+            "type": "text",
+            "description": "Discussions about the mental aspects of golf, such as focus, confidence, and resilience"
+          },
+          {
+            "name": "fitness-nutrition",
+            "type": "text",
+            "description": "Golf-specific fitness routines, stretches, and nutrition advice for optimal performance"
+          }
+        ]
+      },
+      {
+        "name": "EQUIPMENT & GEAR",
+        "channels": [
+          {
+            "name": "clubs-balls-tech",
+            "type": "text",
+            "description": "Discussions about the latest golf clubs, balls, and equipment technology"
+          },
+          {
+            "name": "club-fitting-customization",
+            "type": "text",
+            "description": "Advice on getting properly fitted for clubs and customizing your gear"
+          },
+          {
+            "name": "apparel-accessories",
+            "type": "text",
+            "description": "Recommendations for golf clothing, shoes, gloves, and accessories"
+          },
+          {
+            "name": "product-reviews-comparisons",
+            "type": "text",
+            "description": "In-depth reviews and comparisons of golf products and equipment"
+          }
+        ]
+      },
+      {
+        "name": "TOURNAMENTS & EVENTS",
+        "channels": [
+          {
+            "name": "pga-tour-updates",
+            "type": "text",
+            "description": "News, scores, and discussions about the latest PGA Tour events"
+          },
+          {
+            "name": "lpga-tour-updates",
+            "type": "text",
+            "description": "Coverage and conversations about the LPGA Tour and women's golf"
+          },
+          {
+            "name": "amateur-junior-golf",
+            "type": "text",
+            "description": "Discussions about amateur and junior golf tournaments, rankings, and player development"
+          },
+          {
+            "name": "fantasy-betting",
+            "type": "text",
+            "description": "Talk about fantasy golf leagues, betting odds, and tournament predictions"
+          }
+        ]
+      },
+      {
+        "name": "GOLF BUSINESS & INDUSTRY",
+        "channels": [
+          {
+            "name": "golf-management-operations",
+            "type": "text",
+            "description": "Discussions related to managing golf courses, clubs, and facilities"
+          },
+          {
+            "name": "marketing-promotions",
+            "type": "text",
+            "description": "Strategies for marketing golf products, services, and growing the game"
+          },
+          {
+            "name": "golf-technology-innovation",
+            "type": "text",
+            "description": "Exploring new technologies, apps, and innovations in the golf industry"  
+          },
+          {
+            "name": "jobs-careers",
+            "type": "text",
+            "description": "Job postings, career advice, and networking opportunities in the golf industry"
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY & LIFESTYLE",
+        "channels": [
+          {
+            "name": "golf-art-photography",
+            "type": "text",
+            "description": "Share your golf-related artwork, photos, and creative projects"
+          },
+          {
+            "name": "golf-books-movies",
+            "type": "text",
+            "description": "Discuss your favorite golf books, movies, documentaries, and media"
+          },
+          {
+            "name": "golf-memes-humor",
+            "type": "text",
+            "description": "Light-hearted channel for sharing golf jokes, memes, and funny stories"
+          },
+          {
+            "name": "golf-events-meetups",
+            "type": "text",
+            "description": "Organize and join local golf outings, events, and meetups with other community members"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "rules-faq",
+            "type": "text",
+            "description": "Server rules, frequently asked questions, and community guidelines"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests and expertise"
+          },
+          {
+            "name": "mod-only-chat",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management"
+          },
+          {
+            "name": "bot-commands-log",
+            "type": "text",
+            "description": "Reference for bot commands and auto-generated server logs"
+          }
+        ]
+      }
+    ]
+  }

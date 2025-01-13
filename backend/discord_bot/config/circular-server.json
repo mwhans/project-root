@@ -1,0 +1,174 @@
+{
+    "name": "Circular Economy Hub",
+    "categories": [
+      {
+        "name": "WELCOME & COMMUNITY",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the circular economy community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to the circular economy"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the circular economy industry"
+          }
+        ]
+      },
+      {
+        "name": "CIRCULAR DESIGN",
+        "channels": [
+          {
+            "name": "eco-design",
+            "type": "text",
+            "description": "Discussions about designing products and services for circularity and environmental sustainability"
+          },
+          {
+            "name": "material-selection",
+            "type": "text",
+            "description": "Share and discuss information about selecting sustainable and recyclable materials"
+          },
+          {
+            "name": "design-for-disassembly",
+            "type": "text",
+            "description": "Discussions about designing products for easy disassembly, repair, and recycling"
+          },
+          {
+            "name": "biomimicry",
+            "type": "text",
+            "description": "Share and discuss strategies for applying biomimicry principles in circular design"
+          },
+          {
+            "name": "lifecycle-assessment",
+            "type": "text",
+            "description": "Discussions about conducting lifecycle assessments to evaluate environmental impact"
+          }
+        ]
+      },
+      {
+        "name": "CIRCULAR BUSINESS MODELS",
+        "channels": [
+          {
+            "name": "product-as-a-service",
+            "type": "text",
+            "description": "Discussions about implementing product-as-a-service models for circularity"
+          },
+          {
+            "name": "sharing-economy",
+            "type": "text",
+            "description": "Share and discuss information about sharing economy platforms and their role in the circular economy"
+          },
+          {
+            "name": "remanufacturing",
+            "type": "text",
+            "description": "Discussions about remanufacturing strategies and best practices"
+          },
+          {
+            "name": "circular-procurement",
+            "type": "text",
+            "description": "Share and discuss strategies for implementing circular procurement policies and practices"
+          },
+          {
+            "name": "reverse-logistics",
+            "type": "text",
+            "description": "Discussions about reverse logistics and closed-loop supply chains"
+          }
+        ]
+      },
+      {
+        "name": "RESOURCE RECOVERY",
+        "channels": [
+          {
+            "name": "recycling-technologies",
+            "type": "text",
+            "description": "Discussions about advanced recycling technologies and innovations"
+          },
+          {
+            "name": "waste-management",
+            "type": "text",
+            "description": "Share and discuss information about sustainable waste management practices"
+          },
+          {
+            "name": "urban-mining",
+            "type": "text",
+            "description": "Discussions about urban mining and recovering valuable materials from waste streams"
+          },
+          {
+            "name": "industrial-symbiosis",
+            "type": "text",
+            "description": "Share and discuss strategies for fostering industrial symbiosis and resource exchange"
+          },
+          {
+            "name": "bio-based-materials",
+            "type": "text",
+            "description": "Discussions about the use of bio-based and biodegradable materials in the circular economy"
+          }
+        ]
+      },
+      {
+        "name": "POLICY & REGULATION",
+        "channels": [
+          {
+            "name": "extended-producer-responsibility",
+            "type": "text",
+  ...(about 80 lines omitted)...
+            "description": "Share and discuss information about circular economy events, conferences, and workshops"
+          },
+          {
+            "name": "job-opportunities",
+            "type": "text",
+            "description": "Post and discuss job openings, internships, and collaboration opportunities in the circular economy"
+          },
+          {
+            "name": "resource-sharing",
+            "type": "text",
+            "description": "Share and exchange useful resources, tools, and materials for circular economy research and implementation"
+          },
+          {
+            "name": "server-feedback",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the Circular Economy Hub server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or specialization"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

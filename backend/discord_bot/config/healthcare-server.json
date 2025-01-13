@@ -1,0 +1,277 @@
+{
+    "categories": [
+        {
+            "name": "CENTRAL LOBBY & ANNOUNCEMENTS",
+            "channels": [
+                {
+                    "name": "official-bulletins",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true,
+                        "admin_only": true
+                    },
+                    "description": "Server-wide announcements about new features, rule changes, or major industry news"
+                },
+                {
+                    "name": "lobby-and-introductions", 
+                    "type": "text",
+                    "description": "A casual gathering space for newcomers to introduce themselves, ask where to go for specific healthcare topics"
+                },
+                {
+                    "name": "general-healthcare-discussion",
+                    "type": "text", 
+                    "description": "Open talks about anything healthcare-related that doesn't fit into specialized channels"
+                },
+                {
+                    "name": "support-and-faq",
+                    "type": "text",
+                    "description": "Basic help for server navigation, FAQ about healthcare resources or AI usage"
+                },
+                {
+                    "name": "historical-records",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Archive of important past announcements, official policy changes, or major events"
+                }
+            ]
+        },
+        {
+            "name": "CLINICAL CARE & PATIENT MANAGEMENT",
+            "channels": [
+                {
+                    "name": "primary-care-hub",
+                    "type": "text",
+                    "description": "Discussions around preventive care, chronic disease management, patient education"
+                },
+                {
+                    "name": "specialty-care-floor",
+                    "type": "text",
+                    "description": "Topics including cardiology, oncology, neurology, orthopedics, and other specialties" 
+                },
+                {
+                    "name": "care-coordination",
+                    "type": "text",
+                    "description": "Focus on patient handoffs, referrals, transitions of care, discharge planning"
+                },
+                {
+                    "name": "ai-clinical-decision-support",
+                    "type": "text", 
+                    "description": "Automated diagnostic aids, treatment recommendations, or risk stratification from AI"
+                }
+            ]
+        },
+        {
+            "name": "MEDICAL RESEARCH & INNOVATION",
+            "channels": [
+                {
+                    "name": "clinical-trials-court",
+                    "type": "text",
+                    "description": "Discussions on trial design, patient recruitment, adverse event monitoring, results reporting"
+                },
+                {
+                    "name": "translational-research",
+                    "type": "text",
+                    "description": "Bench-to-bedside discussions, preclinical studies, animal models, proof-of-concept trials"
+                },
+                {
+                    "name": "drug-discovery-and-development", 
+                    "type": "text",
+                    "description": "Target identification, lead optimization, pharmacokinetics, toxicology studies"
+                },
+                {
+                    "name": "ai-research-assistant",
+                    "type": "text",
+                    "description": "AI-driven literature searches, hypothesis generation, data analysis and visualization"
+                },
+                {
+                    "name": "research-grants-and-funding",
+                    "type": "text", 
+                    "description": "Discussions on NIH, NSF, or other grant applications, budgets, progress reports"
+                }
+            ]
+        },
+        {
+            "name": "HEALTHCARE IT & INFORMATICS",
+            "channels": [
+                {
+                    "name": "ehr-and-interoperability-lounge",
+                    "type": "text",
+                    "description": "Discussions on electronic health records, data exchange standards, FHIR, HL7"
+                },
+                {
+                    "name": "clinical-analytics-and-bi",
+                    "type": "text",
+                    "description": "Healthcare data warehousing, SQL queries, dashboards, population health analytics"
+                },
+                {
+                    "name": "telemedicine-and-remote-monitoring",
+                    "type": "text",
+                    "description": "Video visits, remote patient monitoring devices, asynchronous telemedicine"
+                },
+                {
+                    "name": "ai-powered-diagnostics",
+                    "type": "text",
+                    "description": "AI agent that analyzes medical images, lab results, or patient data to suggest diagnoses"
+                }
+            ]
+        },
+        {
+            "name": "HEALTH POLICY & ADMINISTRATION",  
+            "channels": [
+                {
+                    "name": "healthcare-economics-101",
+                    "type": "text",
+                    "description": "Discussions on healthcare costs, reimbursement models, value-based care"
+                },
+                {
+                    "name": "policy-and-reform-debates",
+                    "type": "text",
+                    "description": "Affordable Care Act, Medicare for All, drug pricing, scope of practice laws"
+                },
+                {
+                    "name": "ai-policy-analyst",
+                    "type": "text",
+                    "description": "Automated modeling of policy impacts, cost projections, or population health outcomes"
+                },
+                {
+                    "name": "global-health-and-equity", 
+                    "type": "text",
+                    "description": "Discussions on health disparities, social determinants of health, global disease burdens"
+                }
+            ]
+        },
+        {
+            "name": "REGULATORY & COMPLIANCE COMMISSION",
+            "channels": [
+                {
+                    "name": "healthcare-regulations-roundtable",
+                    "type": "text", 
+                    "description": "A general forum to monitor changes in HIPAA, HITECH, FDA, CMS rules"
+                },
+                {
+                    "name": "patient-privacy-office",
+                    "type": "text",
+                    "description": "Discussions on safeguarding PHI, data de-identification, patient consent management"
+                },
+                {
+                    "name": "compliance-alerts",
+                    "type": "text",
+                    "description": "Real-time channel for new regulatory proposals, compliance deadlines, or enforcement actions"  
+                },
+                {
+                    "name": "ai-compliance-monitor",
+                    "type": "text",
+                    "description": "An AI agent that scans for potential HIPAA violations, billing fraud, or safety issues"
+                }
+            ]
+        },
+        {
+            "name": "MEDICAL DEVICES & TECHNOLOGY",
+            "channels": [
+                {
+                    "name": "device-engineering-and-design",
+                    "type": "text",
+                    "description": "Discussion on medical device prototyping, CAD models, 3D printing, electrical schematics"
+                },
+                {
+                    "name": "clinical-testing-and-validation",
+                    "type": "text", 
+                    "description": "Bench testing, animal studies, human factors testing, biocompatibility assessments"
+                },
+                {
+                    "name": "regulatory-affairs-and-qa",
+                    "type": "text",
+                    "description": "FDA submissions, ISO standards, design controls, post-market surveillance" 
+                },
+                {
+                    "name": "ai-powered-devices",
+                    "type": "text",
+                    "description": "Smart devices with embedded AI for real-time monitoring, closed-loop therapies, or guidance"
+                }
+            ]
+        },
+        {
+            "name": "DIGITAL HEALTH & INNOVATION",
+            "channels": [
+                {
+                    "name": "health-apps-and-wearables",
+                    "type": "text",
+                    "description": "Fitness trackers, nutrition apps, sleep monitors, digital biomarkers"
+                },
+                {
+                    "name": "blockchain-in-healthcare",
+                    "type": "text", 
+                    "description": "Blockchain for supply chain, patient identity, consent management, data monetization"
+                },
+                {
+                    "name": "vr-and-ar-in-medicine",
+                    "type": "text",
+                    "description": "Virtual reality for pain management, rehab, or surgical training; AR for guided procedures"
+                },
+                {
+                    "name": "digital-health-regulations",
+                    "type": "text",
+                    "description": "Tracking FDA's Digital Health Center of Excellence, Pre-Cert program, SaMD policies" 
+                }
+            ]
+        },
+        {
+            "name": "PUBLIC HEALTH & EPIDEMIOLOGY",
+            "channels": [
+                {
+                    "name": "outbreak-investigations",
+                    "type": "text", 
+                    "description": "Discussions on disease surveillance, contact tracing, epidemic curves, attack rates"
+                },
+                {
+                    "name": "environmental-health",
+                    "type": "text",
+                    "description": "Air and water quality monitoring, food safety, occupational health, built environment"
+                },
+                {
+                    "name": "health-promotion-and-behavior",
+                    "type": "text",
+                    "description": "Health education campaigns, smoking cessation, diet and exercise programs"
+                },
+                {
+                    "name": "ai-epidemiologist",
+                    "type": "text",
+                    "description": "AI agent for real-time outbreak detection, transmission modeling, intervention optimization"
+                }
+            ]
+        },
+        {
+            "name": "ADMINISTRATIVE & OPERATIONS",
+            "channels": [
+                {
+                    "name": "mod-and-admin-council",
+                    "type": "text",
+                    "permissions": {
+                        "admin_only": true  
+                    },
+                    "description": "Coordination for server moderators, admins, AI agent developers, and internal decisions"
+                },
+                {
+                    "name": "audit-and-logs",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Automated logging of system or AI activities; key server changes, suspicious events, or big announcements"
+                },
+                {
+                    "name": "server-improvements",
+                    "type": "text",
+                    "description": "Public channel for members to suggest new channels, features, or improvements to the healthcare system's structure" 
+                },
+                {
+                    "name": "bot-commands-and-utilities",
+                    "type": "text",
+                    "description": "A dedicated channel to call AI bots or run slash commands for healthcare data, or to fetch medical references"
+                }
+            ]
+        }
+    ]
+}

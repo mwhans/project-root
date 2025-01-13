@@ -1,0 +1,283 @@
+{
+    "name": "Real Estate Industry Hub",
+    "categories": [
+      {
+        "name": "WELCOME & GENERAL",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the real estate community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything real estate-related"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the world of real estate"
+          }
+        ]
+      },
+      {
+        "name": "RESIDENTIAL REAL ESTATE",
+        "channels": [
+          {
+            "name": "home-buying-selling",
+            "type": "text",
+            "description": "Discussions and advice for home buyers and sellers"
+          },
+          {
+            "name": "mortgages-financing",
+            "type": "text",
+            "description": "Information about mortgage products, rates, and financing options"
+          },
+          {
+            "name": "home-inspections-appraisals",
+            "type": "text",
+            "description": "Discussions about home inspections, appraisals, and property valuations"
+          },
+          {
+            "name": "residential-investing",
+            "type": "text",
+            "description": "Strategies and opportunities for investing in residential real estate"
+          }
+        ]
+      },
+      {
+        "name": "COMMERCIAL REAL ESTATE",
+        "channels": [
+          {
+            "name": "office-spaces",
+            "type": "text",
+            "description": "Discussions about leasing, buying, and managing office properties"
+          },
+          {
+            "name": "retail-hospitality",
+            "type": "text",
+            "description": "Topics related to retail spaces, hotels, and hospitality properties"
+          },
+          {
+            "name": "industrial-warehouses",
+            "type": "text",
+            "description": "Conversations about industrial properties, warehouses, and logistics facilities"
+          },
+          {
+            "name": "commercial-investing",
+            "type": "text",
+            "description": "Strategies and opportunities for investing in commercial real estate"
+          }
+        ]
+      },
+      {
+        "name": "PROPERTY MANAGEMENT",
+        "channels": [
+          {
+            "name": "tenant-screening",
+            "type": "text",
+            "description": "Best practices for screening tenants and minimizing risks"
+          },
+          {
+            "name": "leases-contracts",
+            "type": "text",
+            "description": "Discussions about lease agreements, contracts, and legal considerations"
+          },
+          {
+            "name": "maintenance-repairs",
+            "type": "text",
+            "description": "Tips and advice for maintaining properties and handling repairs"
+          },
+          {
+            "name": "property-tech-software",
+            "type": "text",
+            "description": "Recommendations for property management software and technologies"
+          }
+        ]
+      },
+      {
+        "name": "REAL ESTATE MARKETING",
+        "channels": [
+          {
+            "name": "online-marketing",
+            "type": "text",
+            "description": "Strategies for marketing properties online through websites, social media, and email"
+          },
+          {
+            "name": "traditional-marketing",
+            "type": "text",
+            "description": "Discussions about offline marketing techniques like print ads, open houses, and networking"
+          },
+          {
+            "name": "branding-design",
+            "type": "text",
+            "description": "Tips for creating a strong real estate brand and designing effective marketing materials"
+          },
+          {
+            "name": "video-photography",
+            "type": "text",
+            "description": "Best practices for capturing high-quality property photos and videos"
+          }
+        ]
+      },
+      {
+        "name": "REAL ESTATE TECHNOLOGY",
+        "channels": [
+          {
+            "name": "prop-tech-startups",
+            "type": "text",
+            "description": "Discussions about emerging property technology startups and innovations"
+          },
+          {
+            "name": "blockchain-real-estate",
+            "type": "text",
+            "description": "Exploring the potential applications of blockchain in real estate transactions and records"
+          },
+          {
+            "name": "virtual-augmented-reality",
+            "type": "text",
+            "description": "Using virtual and augmented reality for property tours and visualizations"
+          },
+          {
+            "name": "data-analytics",
+            "type": "text",
+            "description": "Leveraging data analytics and machine learning for real estate insights and predictions"
+          }
+        ]
+      },
+      {
+        "name": "REAL ESTATE EDUCATION & CAREERS",
+        "channels": [
+          {
+            "name": "licensing-certifications",
+            "type": "text",
+            "description": "Information about real estate licensing requirements and professional certifications"
+          },
+          {
+            "name": "continuing-education",
+            "type": "text",
+            "description": "Recommendations for continuing education courses and professional development"
+          },
+          {
+            "name": "career-advice",
+            "type": "text",
+            "description": "Tips and guidance for building a successful career in real estate"
+          },
+          {
+            "name": "job-opportunities",
+            "type": "text",
+            "description": "Postings for real estate job openings and career opportunities"
+          }
+        ]
+      },
+      {
+        "name": "REAL ESTATE LAW & REGULATIONS",
+        "channels": [
+          {
+            "name": "legal-qa",
+            "type": "text",
+            "description": "Questions and answers about real estate legal issues and regulations"
+          },
+          {
+            "name": "zoning-land-use",
+            "type": "text",
+            "description": "Discussions about zoning laws, land use regulations, and permitting processes"
+          },
+          {
+            "name": "fair-housing-compliance",
+            "type": "text",
+            "description": "Information and resources for complying with fair housing laws and anti-discrimination regulations"
+          },
+          {
+            "name": "international-real-estate-law",
+            "type": "text",
+            "description": "Conversations about legal considerations for international real estate transactions and investments"
+          }
+        ]
+      },
+      {
+        "name": "REAL ESTATE FINANCE & ECONOMICS",
+        "channels": [
+          {
+            "name": "market-analysis",
+            "type": "text",
+            "description": "Discussions and insights about real estate market trends, conditions, and forecasts"
+          },
+          {
+            "name": "property-valuation",
+            "type": "text",
+            "description": "Techniques and methodologies for assessing property values and investment potential"
+          },
+          {
+            "name": "real-estate-investment-trusts",
+            "type": "text",
+            "description": "Information and analysis of publicly traded REITs and real estate investment funds"
+          },
+          {
+            "name": "economic-indicators",
+            "type": "text",
+            "description": "Examining the impact of economic indicators like interest rates, inflation, and GDP on real estate markets"
+          }
+        ]
+      },
+      {
+        "name": "REAL ESTATE SUSTAINABILITY",
+        "channels": [
+          {
+            "name": "green-building",
+            "type": "text",
+            "description": "Discussions about environmentally friendly building materials, techniques, and certifications"
+          },
+          {
+            "name": "energy-efficiency",
+            "type": "text",
+            "description": "Tips and technologies for improving the energy efficiency of properties"
+          },
+          {
+            "name": "sustainable-development",
+            "type": "text",
+            "description": "Conversations about sustainable land use, urban planning, and development practices"
+          },
+          {
+            "name": "climate-resilience",
+            "type": "text",
+            "description": "Strategies for making properties and communities more resilient to climate change impacts"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "rules-faq",
+            "type": "text",
+            "description": "Server rules, frequently asked questions, and community guidelines"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests and expertise"
+          },
+          {
+            "name": "mod-only-chat",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management"
+          },
+          {
+            "name": "bot-commands-log",
+            "type": "text",
+            "description": "Reference for bot commands and auto-generated server logs"
+          }
+        ]
+      }
+    ]
+  }

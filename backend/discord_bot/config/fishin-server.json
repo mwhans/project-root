@@ -1,0 +1,248 @@
+{
+    "name": "Fishing Hub",
+    "categories": [
+      {
+        "name": "WELCOME & COMMUNITY",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the fishing community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to fishing"
+          },
+          {
+            "name": "fishing-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the fishing industry"
+          }
+        ]
+      },
+      {
+        "name": "FISHING TECHNIQUES",
+        "channels": [
+          {
+            "name": "freshwater-fishing",
+            "type": "text",
+            "description": "Discussions about techniques, tips, and strategies for freshwater fishing"
+          },
+          {
+            "name": "saltwater-fishing",
+            "type": "text",
+            "description": "Share and discuss information about saltwater fishing techniques and best practices"
+          },
+          {
+            "name": "fly-fishing",
+            "type": "text",
+            "description": "Discussions about fly fishing gear, techniques, and destinations"
+          },
+          {
+            "name": "ice-fishing",
+            "type": "text",
+            "description": "Share and discuss strategies, safety tips, and gear for ice fishing"
+          },
+          {
+            "name": "kayak-fishing",
+            "type": "text",
+            "description": "Discussions about kayak fishing techniques, equipment, and adventures"
+          },
+          {
+            "name": "catch-and-release",
+            "type": "text",
+            "description": "Share and discuss best practices for catch-and-release fishing and fish handling"
+          }
+        ]
+      },
+      {
+        "name": "FISH SPECIES",
+        "channels": [
+          {
+            "name": "bass-fishing",
+            "type": "text",
+            "description": "Discussions about largemouth, smallmouth, and striped bass fishing"
+          },
+          {
+            "name": "trout-fishing",
+            "type": "text",
+            "description": "Share and discuss information about rainbow, brown, and brook trout fishing"
+          },
+          {
+            "name": "salmon-fishing",
+            "type": "text",
+            "description": "Discussions about Atlantic, Pacific, and Coho salmon fishing techniques and destinations"
+          },
+          {
+            "name": "walleye-fishing",
+            "type": "text",
+            "description": "Share and discuss strategies for targeting and catching walleye"
+          },
+          {
+            "name": "catfish-fishing",
+            "type": "text",
+            "description": "Discussions about channel, blue, and flathead catfish fishing techniques"
+          },
+          {
+            "name": "other-species",
+            "type": "text",
+            "description": "Share and discuss information about fishing for other species, such as panfish, pike, muskie, and more"
+          }
+        ]
+      },
+      {
+        "name": "FISHING GEAR",
+        "channels": [
+          {
+            "name": "rods-and-reels",
+            "type": "text",
+            "description": "Discussions about fishing rods, reels, and their maintenance"
+          },
+          {
+            "name": "lures-and-baits",
+            "type": "text",
+            "description": "Share and discuss information about artificial lures, live baits, and their effectiveness"
+          },
+          {
+            "name": "fishing-line",
+            "type": "text",
+            "description": "Discussions about monofilament, braided, and fluorocarbon fishing lines"
+          },
+          {
+            "name": "electronics-and-technology",
+            "type": "text",
+            "description": "Share and discuss strategies for using fish finders, GPS, and other fishing electronics"
+          },
+          {
+            "name": "boats-and-motors",
+            "type": "text",
+            "description": "Discussions about fishing boats, motors, and their maintenance"
+          },
+          {
+            "name": "gear-reviews",
+            "type": "text",
+            "description": "Share and discuss reviews of fishing gear, equipment, and accessories"
+          }
+        ]
+      },
+      {
+        "name": "FISHING DESTINATIONS",
+        "channels": [
+          {
+            "name": "local-fishing-spots",
+            "type": "text",
+            "description": "Share and discuss information about local fishing spots, access points, and regulations"
+          },
+          {
+            "name": "fishing-trips",
+            "type": "text",
+            "description": "Discussions about planning and organizing fishing trips, both local and international"
+          },
+          {
+            "name": "fishing-resorts",
+            "type": "text",
+            "description": "Share and discuss experiences and recommendations for fishing resorts and lodges"
+          },
+          {
+            "name": "fishing-tournaments",
+            "type": "text",
+            "description": "Discussions about upcoming fishing tournaments, rules, and registration"
+          }
+        ]
+      },
+      {
+        "name": "CONSERVATION & SUSTAINABILITY",
+        "channels": [
+          {
+            "name": "fisheries-management",
+            "type": "text",
+            "description": "Discussions about fisheries management, regulations, and policies"
+          },
+          {
+            "name": "habitat-restoration",
+            "type": "text",
+            "description": "Share and discuss information about fish habitat restoration projects and initiatives"
+          },
+          {
+            "name": "invasive-species",
+            "type": "text",
+            "description": "Discussions about the impact and management of invasive fish species"
+          },
+          {
+            "name": "sustainable-fishing-practices",
+            "type": "text",
+            "description": "Share and discuss best practices for sustainable fishing and responsible resource use"
+          }
+        ]
+      },
+      {
+        "name": "COMMUNITY ENGAGEMENT",
+        "channels": [
+          {
+            "name": "fishing-stories",
+            "type": "text",
+            "description": "Share your favorite fishing stories, experiences, and memories"
+          },
+          {
+            "name": "fishing-photos",
+            "type": "text",
+            "description": "Post and discuss your best fishing photos and catches"
+          },
+          {
+            "name": "fishing-events",
+            "type": "text",
+            "description": "Share and discuss information about fishing events, meetups, and gatherings"
+          },
+          {
+            "name": "fishing-education",
+            "type": "text",
+            "description": "Discussions about fishing education programs, workshops, and resources for beginners"
+          },
+          {
+            "name": "fishing-marketplace",
+            "type": "text",
+            "description": "Buy, sell, or trade fishing gear, equipment, and accessories"
+          },
+          {
+            "name": "server-feedback",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the Fishing Hub server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or specialization"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

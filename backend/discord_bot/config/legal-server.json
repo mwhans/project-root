@@ -1,0 +1,296 @@
+{
+    "categories": [
+        {
+            "name": "GLOBAL COURT HALL",
+            "channels": [
+                {
+                    "name": "official-announcements",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true,
+                        "admin_only": true
+                    },
+                    "description": "Central feed for official statements, server-wide policy updates, or major legal precedents"
+                },
+                {
+                    "name": "global-newsroom",
+                    "type": "text",
+                    "description": "Summaries of significant changes in international law, major legislative updates, global crises affecting legal systems"
+                },
+                {
+                    "name": "historical-records",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Archive of past announcements, important case decisions, and historical documents"
+                }
+            ]
+        },
+        {
+            "name": "COURT OF GENERAL AFFAIRS",
+            "channels": [
+                {
+                    "name": "lobby-and-introductions",
+                    "type": "text",
+                    "description": "A general channel for newcomers to say hello, get oriented, and ask basic questions about the legal system"
+                },
+                {
+                    "name": "faq-and-support",
+                    "type": "text",
+                    "description": "Quick how-to's, server guidelines, tech/troubleshooting, frequently asked questions"
+                },
+                {
+                    "name": "general-discussion",
+                    "type": "text",
+                    "description": "Casual or cross-disciplinary discussions that don't fit neatly into a specialized court channel"
+                },
+                {
+                    "name": "off-topic-cafe",
+                    "type": "text",
+                    "description": "Non-legal, lighthearted conversation to keep specialized channels clear"
+                }
+            ]
+        },
+        {
+            "name": "NATIONAL LEGAL SYSTEMS",
+            "channels": [
+                {
+                    "name": "criminal-law-court",
+                    "type": "text",
+                    "description": "Discussion and resolution of criminal law issues, case examples, procedures, AI analysis of penal codes"
+                },
+                {
+                    "name": "civil-law-court",
+                    "type": "text",
+                    "description": "Disputes between private parties, contract issues, tort claims, negligence suits, etc"
+                },
+                {
+                    "name": "family-law-court",
+                    "type": "text",
+                    "description": "Divorce proceedings, custody issues, adoption, guardianship, etc"
+                },
+                {
+                    "name": "administrative-law-court",
+                    "type": "text",
+                    "description": "Challenges to government agency decisions, regulatory compliance, licensing disputes"
+                },
+                {
+                    "name": "labor-and-employment-court",
+                    "type": "text",
+                    "description": "Workplace disputes, labor regulations, union issues, wage claims"
+                },
+                {
+                    "name": "tax-law-court",
+                    "type": "text",
+                    "description": "Issues about taxation, audits, legal strategies for businesses/individuals, disputes with tax authorities"
+                }
+            ]
+        },
+        {
+            "name": "INTERNATIONAL LAW & CROSS-BORDER DISPUTES",
+            "channels": [
+                {
+                    "name": "international-court-of-justice",
+                    "type": "text",
+                    "description": "Debates and resolution of public international law issues, disputes between states, treaty interpretation"
+                },
+                {
+                    "name": "international-criminal-court",
+                    "type": "text",
+                    "description": "Focus on international crimes like genocide, war crimes, crimes against humanity"
+                },
+                {
+                    "name": "trade-and-commerce-tribunal",
+                    "type": "text",
+                    "description": "WTO-related disputes, cross-border business litigation, maritime law, shipping claims, etc"
+                },
+                {
+                    "name": "human-rights-council",
+                    "type": "text",
+                    "description": "Discussions or claims related to universal human rights, protections, investigations of violations"
+                },
+                {
+                    "name": "treaty-library",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Repository of treaties, conventions, and international agreements with ongoing commentary or updates"
+                }
+            ]
+        },
+        {
+            "name": "SPECIALIZED AREAS OF LAW",
+            "channels": [
+                {
+                    "name": "corporate-and-securities-law",
+                    "type": "text",
+                    "description": "Corporate governance, shareholder disputes, M&A, IPOs, securities regulations"
+                },
+                {
+                    "name": "banking-and-finance-law",
+                    "type": "text",
+                    "description": "Regulations around banking, lending, fintech, crypto compliance, insurance law"
+                },
+                {
+                    "name": "intellectual-property-court",
+                    "type": "text",
+                    "description": "Copyright, patents, trademarks, trade secrets, licensing agreements"
+                },
+                {
+                    "name": "environmental-law-court",
+                    "type": "text",
+                    "description": "Climate change litigation, pollution, resource management, conservation regulations"
+                },
+                {
+                    "name": "technology-and-privacy-law",
+                    "type": "text",
+                    "description": "Data protection, cybersecurity, AI-related regulations, privacy legislation, e-discovery"
+                },
+                {
+                    "name": "healthcare-and-biomedical-law",
+                    "type": "text",
+                    "description": "Medical malpractice, pharmaceutical regulations, public health mandates, biotech patent disputes"
+                }
+            ]
+        },
+        {
+            "name": "LEGISLATIVE & GOVERNANCE CHAMBERS",
+            "channels": [
+                {
+                    "name": "legislative-floor",
+                    "type": "text",
+                    "description": "Drafting, debating, and passing new bills"
+                },
+                {
+                    "name": "executive-cabinet",
+                    "type": "text",
+                    "description": "Oversight of the legal system's day-to-day administration"
+                },
+                {
+                    "name": "public-hearings-and-comments",
+                    "type": "text",
+                    "description": "Public discussion on proposed rules, regulations, or major changes"
+                },
+                {
+                    "name": "voting-and-verdicts",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Official record of results from legislative votes or referendums"
+                }
+            ]
+        },
+        {
+            "name": "APPELLATE & SUPREME COURT",
+            "channels": [
+                {
+                    "name": "court-of-appeals",
+                    "type": "text",
+                    "description": "For users or AI agents to appeal decisions made in lower courts"
+                },
+                {
+                    "name": "supreme-court",
+                    "type": "text",
+                    "description": "Final authority on the server's highest-level disputes"
+                },
+                {
+                    "name": "constitutional-debates",
+                    "type": "text",
+                    "description": "For deep discussion of foundational principles and major rule changes"
+                }
+            ]
+        },
+        {
+            "name": "LEGAL RESEARCH & EDUCATION",
+            "channels": [
+                {
+                    "name": "legal-library",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Repository of legal documents, case law references, e-books, and study materials"
+                },
+                {
+                    "name": "case-studies-and-precedents",
+                    "type": "text",
+                    "description": "Collection of landmark cases, major rulings, and their significance"
+                },
+                {
+                    "name": "legal-education-courses",
+                    "type": "text",
+                    "description": "Channels for workshops, study groups, and training sessions"
+                },
+                {
+                    "name": "references-and-citations",
+                    "type": "text",
+                    "description": "Quick reference channel for case citation formats and guidelines"
+                }
+            ]
+        },
+        {
+            "name": "AI AGENTS & AUTOMATED LEGAL TOOLS",
+            "channels": [
+                {
+                    "name": "ai-agent-court-clerk",
+                    "type": "text",
+                    "description": "Automated record-keeping, document generation, scheduling"
+                },
+                {
+                    "name": "ai-legal-research-assistant",
+                    "type": "text",
+                    "description": "Automated searches for relevant statutes, precedents, or regulations"
+                },
+                {
+                    "name": "ai-mediator",
+                    "type": "text",
+                    "description": "Automated dispute resolution and negotiations"
+                },
+                {
+                    "name": "ai-expert-witness",
+                    "type": "text",
+                    "description": "Specialized technical subject-matter AI analysis"
+                },
+                {
+                    "name": "ai-translator",
+                    "type": "text",
+                    "description": "Automatic translation of legal documents"
+                }
+            ]
+        },
+        {
+            "name": "ADMINISTRATIVE & OPERATIONS",
+            "channels": [
+                {
+                    "name": "server-administration",
+                    "type": "text",
+                    "permissions": {
+                        "admin_only": true
+                    },
+                    "description": "Internal coordinator channel for moderators and admins"
+                },
+                {
+                    "name": "audit-and-logs",
+                    "type": "text",
+                    "permissions": {
+                        "read_only": true
+                    },
+                    "description": "Automatic logging of major server or AI actions"
+                },
+                {
+                    "name": "server-feedback-and-suggestions",
+                    "type": "text",
+                    "description": "Public channel for users to propose changes to server layout, roles, or policies"
+                },
+                {
+                    "name": "bot-commands",
+                    "type": "text",
+                    "description": "Dedicated channel for running all slash-commands or advanced bot instructions"
+                }
+            ]
+        }
+    ]
+} 

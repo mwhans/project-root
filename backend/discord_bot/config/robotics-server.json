@@ -1,0 +1,179 @@
+{
+    "name": "Robotics Hub",
+    "categories": [
+      {
+        "name": "WELCOME & COMMUNITY",
+        "channels": [
+          {
+            "name": "server-announcements",
+            "type": "text",
+            "description": "Important updates, events, and changes related to the server"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the robotics community! Share your background and interests"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "Open discussions about anything related to robotics"
+          },
+          {
+            "name": "industry-news",
+            "type": "text",
+            "description": "Latest news, trends, and happenings in the robotics industry"
+          }
+        ]
+      },
+      {
+        "name": "ROBOT DESIGN & DEVELOPMENT",
+        "channels": [
+          {
+            "name": "mechanical-design",
+            "type": "text",
+            "description": "Discussions about robot mechanical design, CAD modeling, and prototyping"
+          },
+          {
+            "name": "electrical-design",
+            "type": "text",
+            "description": "Share and discuss information about robot electrical design, circuits, and components"
+          },
+          {
+            "name": "software-development",
+            "type": "text",
+            "description": "Discussions about robot software development, programming languages, and frameworks"
+          },
+          {
+            "name": "sensors-and-actuators",
+            "type": "text",
+            "description": "Share and discuss strategies for integrating sensors and actuators in robots"
+          },
+          {
+            "name": "control-systems",
+            "type": "text",
+            "description": "Discussions about robot control systems, algorithms, and architectures"
+          }
+        ]
+      },
+      {
+        "name": "ROBOT APPLICATIONS",
+        "channels": [
+          {
+            "name": "industrial-robotics",
+            "type": "text",
+            "description": "Discussions about industrial robots, automation, and manufacturing"
+          },
+          {
+            "name": "service-robotics",
+            "type": "text",
+            "description": "Share and discuss information about service robots, assistive technologies, and human-robot interaction"
+          },
+          {
+            "name": "mobile-robotics",
+            "type": "text",
+            "description": "Discussions about mobile robots, navigation, and autonomous systems"
+          },
+          {
+            "name": "agricultural-robotics",
+            "type": "text",
+            "description": "Share and discuss strategies for using robots in agriculture and precision farming"
+          },
+          {
+            "name": "medical-robotics",
+            "type": "text",
+            "description": "Discussions about medical robots, surgical robotics, and rehabilitation robotics"
+          },
+          {
+            "name": "space-robotics",
+            "type": "text",
+            "description": "Share and discuss information about robots for space exploration and extraterrestrial applications"
+          }
+        ]
+      },
+      {
+        "name": "AI & MACHINE LEARNING",
+        "channels": [
+          {
+            "name": "computer-vision",
+            "type": "text",
+            "description": "Discussions about computer vision techniques, algorithms, and applications in robotics"
+          },
+          {
+            "name": "natural-language-processing",
+            "type": "text",
+            "description": "Share and discuss information about NLP techniques for human-robot interaction and communication"
+          },
+          {
+            "name": "reinforcement-learning",
+            "type": "text",
+            "description": "Discussions about reinforcement learning algorithms and their use in robot learning and adaptation"
+          },
+          {
+            "name": "deep-learning",
+            "type": "text",
+            "description": "Share and discuss strategies for applying deep learning models in robotics"
+          },
+          {
+            "name": "robot-perception",
+            "type": "text",
+            "description": "Discussions about robot perception, sensor fusion, and environment understanding"
+          }
+        ]
+      },
+      {
+        "name": "SIMULATION & TESTING",
+        "channels": [
+          {
+            "name": "simulation-tools",
+            "type": "text",
+  ...(about 80 lines omitted)...
+            "description": "Share and discuss information about robotics events, conferences, and workshops"
+          },
+          {
+            "name": "job-opportunities",
+            "type": "text",
+            "description": "Post and discuss job openings, internships, and collaboration opportunities in robotics"
+          },
+          {
+            "name": "resource-sharing",
+            "type": "text",
+            "description": "Share and exchange useful resources, tools, and materials for robotics research and development"
+          },
+          {
+            "name": "server-feedback",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the Robotics Hub server"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "server-rules",
+            "type": "text",
+            "description": "Review and understand the server rules, guidelines, and code of conduct"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their interests, expertise, or specialization"
+          },
+          {
+            "name": "moderator-only",
+            "type": "text",
+            "permissions": {
+              "view_only": "moderators"
+            },
+            "description": "Private channel for moderators to discuss server management, moderation, and community issues"
+          },
+          {
+            "name": "bot-commands",
+            "type": "text",
+            "description": "Learn about and use bot commands for server management, moderation, and user engagement"
+          }
+        ]
+      }
+    ]
+  }

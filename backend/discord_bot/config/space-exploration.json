@@ -1,0 +1,300 @@
+{
+    "name": "Space Exploration Community",
+    "categories": [
+      {
+        "name": "SPACE SCIENCE DISCIPLINES",
+        "channels": [
+          {
+            "name": "astronomy-astrophysics",
+            "type": "text",
+            "description": "Discussions related to astronomy and astrophysics"
+          },
+          {
+            "name": "planetary-science",
+            "type": "text",
+            "description": "Discussions related to planetary science and exploration"
+          },
+          {
+            "name": "astrobiology",
+            "type": "text",
+            "description": "Discussions related to astrobiology and the search for life beyond Earth"
+          },
+          {
+            "name": "space-physics",
+            "type": "text",
+            "description": "Discussions related to space physics and the study of space environments"
+          },
+          {
+            "name": "cosmology",
+            "type": "text",
+            "description": "Discussions related to cosmology and the origin and evolution of the universe"
+          },
+          {
+            "name": "astrogeology",
+            "type": "text",
+            "description": "Discussions related to astrogeology and the study of extraterrestrial geology"
+          },
+          {
+            "name": "astrochemistry",
+            "type": "text",
+            "description": "Discussions related to astrochemistry and the study of chemical processes in space"
+          }
+        ]
+      },
+      {
+        "name": "SPACE TECHNOLOGY & ENGINEERING",
+        "channels": [
+          {
+            "name": "spacecraft-design-engineering",
+            "type": "text",
+            "description": "Discussions related to spacecraft design and engineering"
+          },
+          {
+            "name": "propulsion-systems",
+            "type": "text",
+            "description": "Discussions related to space propulsion systems and technologies"
+          },
+          {
+            "name": "robotics-automation",
+            "type": "text",
+            "description": "Discussions related to robotics and automation in space exploration"
+          },
+          {
+            "name": "instrumentation-sensors",
+            "type": "text",
+            "description": "Discussions related to space instrumentation and sensors"
+          },
+          {
+            "name": "space-materials-science",
+            "type": "text",
+            "description": "Discussions related to materials science and engineering for space applications"
+          },
+          {
+            "name": "space-power-systems",
+            "type": "text",
+            "description": "Discussions related to space power systems and technologies"
+          },
+          {
+            "name": "space-communication-systems",
+            "type": "text",
+            "description": "Discussions related to space communication systems and networks"
+          },
+          {
+            "name": "space-navigation-guidance",
+            "type": "text",
+            "description": "Discussions related to space navigation and guidance systems"
+          }
+        ]
+      },
+      {
+        "name": "SPACE MISSIONS & PROGRAMS",
+        "channels": [
+          {
+            "name": "iss-international-space-station",
+            "type": "text",
+            "description": "Discussions related to the International Space Station (ISS) and its operations"
+          },
+          {
+            "name": "mars-exploration",
+            "type": "text",
+            "description": "Discussions related to Mars exploration missions, rovers, orbiters, and future plans"
+          },
+          {
+            "name": "moon-exploration",
+            "type": "text",
+            "description": "Discussions related to past, present, and future Moon exploration missions"
+          },
+          {
+            "name": "asteroid-comet-missions",
+            "type": "text",
+            "description": "Discussions related to missions exploring asteroids, comets, and other small bodies"
+          },
+          {
+            "name": "solar-system-exploration",
+            "type": "text",
+            "description": "Discussions related to missions exploring planets, moons, and the outer solar system"
+          },
+          {
+            "name": "exoplanet-missions",
+            "type": "text",
+            "description": "Discussions related to missions searching for and studying exoplanets (e.g., Kepler, TESS, JWST)"
+          },
+          {
+            "name": "sun-heliophysics-missions",
+            "type": "text",
+            "description": "Discussions related to missions studying the Sun and heliophysics"
+          },
+          {
+            "name": "earth-observation-remote-sensing",
+            "type": "text",
+            "description": "Discussions related to Earth observation and remote sensing missions"
+          }
+        ]
+      },
+      {
+        "name": "SPACE AGENCIES & INTERNATIONAL COLLABORATION",
+        "channels": [
+          {
+            "name": "nasa",
+            "type": "text",
+            "description": "Discussions related to NASA (National Aeronautics and Space Administration) and its programs"
+          },
+          {
+            "name": "esa",
+            "type": "text",
+            "description": "Discussions related to ESA (European Space Agency) and its programs"
+          },
+          {
+            "name": "roscosmos",
+            "type": "text",
+            "description": "Discussions related to Roscosmos (Russian Space Agency) and its programs"
+          },
+          {
+            "name": "jaxa",
+            "type": "text",
+            "description": "Discussions related to JAXA (Japan Aerospace Exploration Agency) and its programs"
+          },
+          {
+            "name": "cnsa",
+            "type": "text",
+            "description": "Discussions related to CNSA (China National Space Administration) and its programs"
+          },
+          {
+            "name": "isro",
+            "type": "text",
+            "description": "Discussions related to ISRO (Indian Space Research Organisation) and its programs"
+          },
+          {
+            "name": "international-collaboration-partnerships",
+            "type": "text",
+            "description": "Discussions related to international collaboration and partnerships in space exploration"
+          }
+        ]
+      },
+      {
+        "name": "SPACE INDUSTRY & COMMERCIAL ACTIVITIES",
+        "channels": [
+          {
+            "name": "commercial-spaceflight",
+            "type": "text",
+            "description": "Discussions related to commercial spaceflight companies (e.g., SpaceX, Blue Origin, Virgin Galactic)"
+          },
+          {
+            "name": "satellite-industry-applications",
+            "type": "text",
+            "description": "Discussions related to the satellite industry and its applications"
+          },
+          {
+            "name": "space-tourism-suborbital-flights",
+            "type": "text",
+            "description": "Discussions related to space tourism and suborbital spaceflight experiences"
+          },
+          {
+            "name": "space-resource-utilization-mining",
+            "type": "text",
+            "description": "Discussions related to space resource utilization and mining"
+          },
+          {
+            "name": "space-startups-entrepreneurship",
+            "type": "text",
+            "description": "Discussions related to space startups and entrepreneurship opportunities"
+          }
+        ]
+      },
+      {
+        "name": "SPACE EDUCATION & PUBLIC ENGAGEMENT",
+        "channels": [
+          {
+            "name": "space-education-stem-outreach",
+            "type": "text",
+            "description": "Discussions related to space education and STEM outreach programs"
+          },
+          {
+            "name": "citizen-science-projects",
+            "type": "text",
+            "description": "Discussions related to citizen science projects and public participation in space exploration"
+          },
+          {
+            "name": "space-art-multimedia",
+            "type": "text",
+            "description": "Discussions related to space art, multimedia, and creative projects"
+          },
+          {
+            "name": "space-history-achievements",
+            "type": "text",
+            "description": "Discussions related to space exploration history and major achievements"
+          },
+          {
+            "name": "space-policy-law",
+            "type": "text",
+            "description": "Discussions related to space policy, law, and regulations"
+          },
+          {
+            "name": "space-advocacy-public-support",
+            "type": "text",
+            "description": "Discussions related to space advocacy and building public support for space exploration"
+          }
+        ]
+      },
+      {
+        "name": "GENERAL & COMMUNITY",
+        "channels": [
+          {
+            "name": "announcements",
+            "type": "text",
+            "description": "Important server-wide announcements and updates"
+          },
+          {
+            "name": "general-discussion",
+            "type": "text",
+            "description": "General discussions about space exploration and related topics"
+          },
+          {
+            "name": "introductions",
+            "type": "text",
+            "description": "Introduce yourself to the space exploration community!"
+          },
+          {
+            "name": "space-news-updates",
+            "type": "text",
+            "description": "Latest news and updates in the world of space exploration"
+          },
+          {
+            "name": "ask-an-expert",
+            "type": "text",
+            "description": "Ask questions and get answers from space exploration experts"
+          },
+          {
+            "name": "space-memes-humor",
+            "type": "text",
+            "description": "Share space-related memes, jokes, and humorous content"
+          }
+        ]
+      },
+      {
+        "name": "ADMINISTRATION",
+        "channels": [
+          {
+            "name": "mod-only-discussions",
+            "type": "text",
+            "description": "Private channel for moderator discussions and coordination"
+          },
+          {
+            "name": "server-feedback-suggestions",
+            "type": "text",
+            "description": "Provide feedback and suggestions for improving the server"
+          },
+          {
+            "name": "role-assignments",
+            "type": "text",
+            "description": "Assign roles to users based on their expertise and interests"
+          },
+          {
+            "name": "bot-commands-automod",
+            "type": "text",
+            "description": "Configure and manage bot commands and automoderation"
+          }
+        ]
+      }
+    ]
+  }
